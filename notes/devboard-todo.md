@@ -8,7 +8,8 @@ MCU side).
 
 | Sheet | File | State |
 |---|---|---|
-| Root | `opentone.kicad_sch` | **Old MCU**: U1 is still the STM32F446RCTx (LQFP64), nothing wired |
+| Root | `opentone.kicad_sch` | Sheet blocks only (old STM32F446RCTx U1 removed) |
+| MCU | `mcu.kicad_sch` | **STM32F446VET6 placed and wired** to every existing global label, ERC clean on its side |
 | Power | `power.kicad_sch` | **Done, wired, ERC clean** (one expected error, see below). Tidied by hand |
 | Audio | `audio.kicad_sch` | VS1053 wired and fixed. **No footprints** on 35 of 36 parts. CS43131 path not started |
 | Screens | `screens.kicad_sch` | Two FPC connectors (TN + Newhaven IPS) + backlight sinks, wired to global labels |
@@ -34,7 +35,6 @@ TODO
 - [ ] PCB: tie the MCP73831 exposed pad to GND (the KiCad symbol has no EP pin)
 - [ ] R5/R6/R7 can become 47k / 100k (delete R6), see the VBUS_SENSE discussion
 - [ ] Optional: name the nets the tidy pass left unnamed (`3V3_REG`, `3V3_FB`, `PROG_2K`)
-- Expected ERC error: MAX17048 SCL "not driven" until the MCU is wired
 
 ## Audio (`audio.kicad_sch`)
 
@@ -45,6 +45,8 @@ Fixed on 2026-10-18:
 - XTALI was shorted to XRESET: XTALI is now only on the crystal network, XRESET on `VSRESET` with its own 100k
   pull-down (R47).
 - XCS and XDCS were not connected: now `MP3_XCS` and `MP3_XDCS` global labels.
+- SPI2 and jack detect renamed to match the MCU sheet: `SPI2_SCK`, `SPI2_MISO`, `SPI2_MOSI` (were `CLK`,
+  `MISO`, `MOSI`), `HP1_DET` (was `JACK_SWITCH`). `VTX` (VS1053 UART TX) stays unconnected.
 - I2S out as global nets: `I2S_MCLK` (GPIO5), `I2S_SCLK` (GPIO6), `I2S_LRCK` (GPIO4), `I2S_SDATA` (GPIO7).
   VS1053 I2S: 48/96/192 kHz, MCLK = 12.288 MHz, 16 bits per channel, 3.3 V levels.
 
@@ -84,7 +86,7 @@ project are gone.
 
 TODO
 
-- [ ] Wire the global labels on the MCU sheet (ERC: dangling `BT_*` labels, U101 RESET "not driven" until then)
+- [x] Wire the global labels on the MCU sheet
 - [ ] Firmware: before pulling `BT_EN` low, put USART2, `BT_RESET` and the I2S lines in analog mode (back-powering)
 
 ## Screens (`screens.kicad_sch`)
@@ -103,18 +105,38 @@ Added on 2026-10-18 (replaces the old screen symbol + connector on the root shee
 TODO
 
 - [ ] Check the FH12 contact side (bottom contact) against both panels' FPC before ordering
-- [ ] Wire `TFT_*` and `NRST` on the MCU sheet
+- [x] Wire `TFT_*` and `NRST` on the MCU sheet
 - [ ] Tune the ballast and reference resistors after measuring each panel
 - [ ] Optional: ERC flags Q201/Q301 as "differs from library" (embedded AO3400A copy): update the symbol from the
   library in KiCad
 
+## MCU (`mcu.kicad_sch`)
+
+Added on 2026-10-18, pinout from `docs/public/pinout/LQFP100/mapping.json`:
+
+- U401 STM32F446VET6 (LQFP100). +3.3V → JP401 (drain jumper, bridged) → `MCU_3V3`: 6 × 100n (one per VDD) +
+  4.7u, VBAT tied to VDD with its own 100n. VDDA/VREF+ through FB401 + 1u/100n (`MCU_VDDA`). VCAP_1/VCAP_2:
+  2.2u each (DS10693 table 18).
+- HSE 8 MHz (Y401, 3225 4-pin, 15p) and LSE 32.768 kHz (Y402, 3215, 6.8p).
+- NRST: 100n + SW401, also on the panels' RESX. BOOT0: 10k pull-down + SW402 to `MCU_3V3` (DFU).
+- J401 SWD 2x5 1.27 mm (SWO on PB3, RESET on NRST), J402 6-pin 2.54 mm matching the Nucleo's ST-LINK CN4,
+  J403 log UART4 (PA0 TX, PA1 RX), J404 spare GPIO header (PA2, PA15, PB4, PC9, PC10, PC13).
+- I2C1 pull-ups R402/R403 4.7k on the always-on +3.3V (there were none anywhere).
+- Global labels for blocks that have no sheet yet (ERC `global_label_dangling`, expected): `PSRAM_*`, `SD_CK`,
+  `SD_CMD`, `SD_D0`, `SD_EN`, `SD_CD`, `VS_EN`, `DRV_EN`, `DAC_RESET`, `DAC_EN`, `HP2_DET`, `BTN_*`, `LOCK_SW`,
+  `MPR121_IRQ`.
+
+TODO
+
+- [ ] Pick the crystals and recompute the load caps (2 × (CL − stray), AN2867). HSE assumed CL 10 pF, LSE 6 pF
+- [ ] Buttons / click wheel: the `Buttons` and `click-wheel-base-devboard` sheets are still the breakout
+  versions (MPR121 on an FPC connector, buttons on header J2 with local `SW_*` labels): bring them on the board
+  with `I2C1_SCL`/`I2C1_SDA`, `MPR121_IRQ`, `BTN_*` and `LOCK_SW` global labels
+- [ ] Footprints for the reset/boot buttons (SW_SPST_PTS810 for now) and the SWD header (SMD 2x5) to confirm
+
 ## Not started (from `plans/test-board.md`)
 
-- [ ] **MCU sheet**: replace U1 with the STM32F446VET6 (LQFP100), pinout from `docs/public/pinout/LQFP100/mapping.json`
-  - SWD header (PA13, PA14, NRST, SWO PB3), reset button, BOOT0 pull-down + button (DFU)
-  - 8 MHz HSE, 32.768 kHz LSE, VCAP_1, VDDA filter, decoupling on every VDD, a drain jumper on the MCU VDD
-  - Wire every global label of the other sheets: USB, VBUS_SENSE, CHG_STAT, FG_ALRT, I2C1, I2S (none on the MCU),
-    VS1053 SPI2 + XCS/XDCS/DREQ/XRESET, BT UART + EN/RESET
+
 - [ ] PSRAM (APS6404L) on QUADSPI bank 2, with 22-33 Ω series footprints
 - [ ] SD card on SDIO 1-bit (PC12, PD2, PC8), TPS22917 (`SD_EN`, PA7), card detect (PA8), pull-ups on the switched
   rail
