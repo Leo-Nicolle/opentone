@@ -634,16 +634,12 @@
       "Buttons"
     ],
     [
-      "cd416ea8-5a7a-445f-9d82-6d6499825b26",
-      "bluetooth"
+      "f264427c-823d-4b44-a1da-3ad43f8e46cf",
+      "Bluetooth"
     ],
     [
       "b5c555f6-528d-43ac-8e68-bae54383ced5",
       "click-wheel-base-devboard"
-    ],
-    [
-      "f264427c-823d-4b44-a1da-3ad43f8e46cf",
-      "BT Devboard"
     ]
   ],
   "text_variables": {}

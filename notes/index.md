@@ -132,6 +132,19 @@ code it references.
 
 ## Plans & TODOs
 
+- `notes/timeline.md` — project history by phase (2019 → Oct 2026), a
+  breakdown of every part (firmware, UI, wheel, BT, syncer, docs, tests,
+  validation, PCB, power, case) with estimated completion, and the global
+  figure (~55 %).
+- `notes/devboard-todo.md` — state of the test-board schematic
+  (`hardware/opentone/`), sheet by sheet: what is wired and checked (power,
+  VS1053, Bluetooth module on board, the two screen connectors with their
+  backlight sinks), the CS43131 decisions on hold, and the blocks not started
+  yet (STM32F446VE sheet, PSRAM, SD, load switches).
+- `notes/screens.md` — the current ILI9341 TN panel (pinout, draw) versus the
+  Newhaven IPS panels (backlight, pinout, what to buy), backlight dimming, and
+  how both panels sit on the test board (shared bus, constant-current sinks).
+
 - `.agents/TODO.md` — unprioritised idea backlog: UI/UX (settings, "goto",
   playlist system, shuffle), dev-logging macro, hardware power management,
   indexer as a Rust/Tauri app, podcasts/audiobooks (tree navigation, resume
