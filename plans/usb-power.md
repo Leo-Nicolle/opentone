@@ -48,6 +48,7 @@ USB-C VBUS ─ F2 ─┬─ MCP73831 VDD ─── VBAT ─ JP1 ─ J3 JST-PH Li
                                  │
                                VSYS ─┬─ U11 TPS63802 → 3V3_REG ─ JP2 ─ +3.3V
                                      └─ AP7312 → +1V8, AVDD_LDO ─ JP4 ─ +3.3VA
+                          3V3_EN (R39 to VSYS) ─ EN of both, pulled low by the slider in OFF
 
 USB-C D+/D- ─ U10 USBLC6-2SC6 ─ R30/R31 0 Ω ─ USB_DP / USB_DM (PA12 / PA11)
 VBUS ─ R5∥R6 / R7 divider ─ VBUS_SENSE (PA9)
@@ -117,9 +118,9 @@ thermistor, used by Tangara): it replaces both the charger and the load-sharing 
 | R37 / R38 | 511 kΩ / 91 kΩ | C101775 / C104555 | 3.3 V (VFB = 500 mV, table 10-5). Low stock in 0805, plenty in 0402 (C64042 / C100696) |
 | C62 / C63 / C64 | 10 µF in / 22 µF out / 22 µF out DNP | C15850 / C45783 (basic) | the datasheet says a single 22 µF is enough at 3.3 V |
 | MODE | to GND | | power save mode |
-| R39 + TP1 | 100 kΩ EN pull-up to VSYS + test pad 3V3_EN | C149504 (basic) | fixes the EN bug, room for a future soft-power latch |
+| R39 + TP1 | 470 kΩ EN pull-up to VSYS + test pad 3V3_EN | C17709 (basic) | fixes the EN bug. 3V3_EN is a global label: the OFF / HOLD / ON slider (SW506, `buttons.kicad_sch`) pulls it low. 470k: ~9 µA in OFF, and the worst-case EN leakage (AP7312 ±1 µA per pin) still leaves > 1.4 V at a 3.0 V battery |
 | JP2 | bridged solder jumper 3V3_REG → +3.3V | | cut it to measure the whole 3V3 drain |
-| AP7312 | AP7312-1833W6-7, **input moved from +3.3V to VSYS** | C195066 | OUT1 1.8 V (VS1053 CVDD, later the CS43131), OUT2 3.3 V analog. C65 1 µF (C28323, basic) on its input |
+| AP7312 | AP7312-1833W6-7, **input moved from +3.3V to VSYS** | C195066 | OUT1 1.8 V (VS1053 CVDD, later the CS43131), OUT2 3.3 V analog. C65 1 µF (C28323, basic) on its input. EN1/EN2 on 3V3_EN (were on VSYS), so OFF also turns it off. Diodes lists it as NRND (AP7342/AP7346 replace it) |
 | JP4 + FB3 + C66 | 3-pad jumper, 600 Ω ferrite, 10 µF | | +3.3VA (VS1053 AVDD) picks AP7312 OUT2 (default) or the +3.3V through FB3. Below ~3.5 V of battery OUT2 follows the battery, so we compare both |
 | JP1 | bridged solder jumper on VBAT | | cut it to measure the battery drain. The per-block jumpers go on each block's sheet (test-board.md) |
 
@@ -138,8 +139,8 @@ Datasheets: `datasheets/tps63802.pdf`, `datasheets/MCP73831.pdf`, `datasheets/MA
 ## Pinout
 
 No change: USB on PA9/PA11/PA12, STAT on PB0, ALRT on PE6, I2C1 on PB6/PB7 are already in
-`docs/public/pinout/LQFP100/mapping.json`. The MCU sheet still has the old STM32F446RC (LQFP64): the global labels
-above are waiting for the F446VE.
+`docs/public/pinout/LQFP100/mapping.json`. The global labels above are wired to the STM32F446VE on
+`hardware/opentone/mcu.kicad_sch` (2026-10-18), with the BOOT0 button for DFU.
 
 ## Tests
 

@@ -1,4 +1,4 @@
-27259039866400710
+27260853796345505
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -107940,6 +107940,13 @@ SW_SKQGAFE010
 4
 4
 opentone
+Texas_DLA0010A_VSON-HR-10_2x3mm_P0.5mm
+TI DLA0010A VSON-HR 10 pins 2x3 mm, land pattern from TPS63802 datasheet (SLVSEU9D, 4223750/D)
+VSON-HR DLA0010A TPS63802
+0
+10
+10
+opentone
 clickwheel
 
 
@@ -107955,10 +107962,10 @@ clickwheel_1
 6
 opentone
 fsc-bt1035
-Feasycom FSC-BT1035 Bluetooth 5.2 module (QCC3056), 13.0x26.9mm, 52 castellated edge pads; sits flat in a board cutout, plain SMD pads on the cutout edge (0.2mm copper pullback), solder-bridged to the castellations, 0.15mm cutout clearance per side, 1.0mm pitch
+Feasycom FSC-BT1035 Bluetooth 5.2 module (QCC3056), 13.0x26.9mm, 52 castellated edge pads; sits flat in a board cutout, plain SMD pads on the cutout edge (flush with the cutout edge) on both layers, stitched by a 0.3mm via per pin, solder-bridged to the castellations, 0.15mm cutout clearance per side, 1.0mm pitch
 Bluetooth module Feasycom FSC-BT1035 QCC3056 audio castellated edge-mount
 0
-52
+156
 52
 opentone
 fsc-bt1046

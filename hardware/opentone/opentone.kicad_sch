@@ -4,8 +4,7 @@
 	(generator_version "9.0")
 	(uuid "0122bb8c-dbef-4db1-a6c6-9be780a38d9f")
 	(paper "A4")
-	(lib_symbols
-	)
+	(lib_symbols)
 	(sheet
 		(at 18.288 62.484)
 		(size 55.118 37.338)
@@ -133,8 +132,8 @@
 		)
 	)
 	(sheet
-		(at 19.05 113.03)
-		(size 20.32 8.89)
+		(at 160.02 60.96)
+		(size 50.8 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -147,9 +146,9 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "b5c555f6-528d-43ac-8e68-bae54383ced5")
-		(property "Sheetname" "click-wheel-base-devboard"
-			(at 19.05 112.3184 0)
+		(uuid "a8a5035a-b6af-49cd-acc2-ce2f3f023daf")
+		(property "Sheetname" "MCU"
+			(at 160.02 60.2484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -157,8 +156,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "click-wheel-base-devboard.kicad_sch"
-			(at 19.05 122.5046 0)
+		(property "Sheetfile" "mcu.kicad_sch"
+			(at 160.02 86.9446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -254,48 +253,6 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f"
 					(page "5")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 160.02 60.96)
-		(size 50.8 25.4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "a8a5035a-b6af-49cd-acc2-ce2f3f023daf")
-		(property "Sheetname" "MCU"
-			(at 160.02 60.2484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "mcu.kicad_sch"
-			(at 160.02 86.9446 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f"
-					(page "8")
 				)
 			)
 		)

@@ -6377,16 +6377,6 @@
 	)
 	(wire
 		(pts
-			(xy 212.09 72.39) (xy 224.79 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "044b3313-e8b5-4bff-a07a-b5c389e8d46a")
-	)
-	(wire
-		(pts
 			(xy 101.6 26.67) (xy 105.41 26.67)
 		)
 		(stroke
@@ -6847,6 +6837,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 72.39) (xy 224.79 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "926d019d-a0f4-48ca-a897-4f869d0bebc3")
+	)
+	(wire
+		(pts
 			(xy 266.7 63.5) (xy 262.89 63.5)
 		)
 		(stroke
@@ -7245,16 +7245,6 @@
 		)
 		(uuid "3aa8c349-f799-4b07-98ca-2335abc07435")
 	)
-	(label "3V3_EN"
-		(at 113.03 134.62 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "4ddd418f-1341-48e1-96a4-22e11dc50d91")
-	)
 	(label "USB_C_DM"
 		(at 40.64 101.6 0)
 		(effects
@@ -7575,6 +7565,28 @@
 			)
 		)
 	)
+	(global_label "3V3_EN"
+		(shape input)
+		(at 113.03 134.62 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4ddd418f-1341-48e1-96a4-22e11dc50d91")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 113.03 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "USB_DP"
 		(shape bidirectional)
 		(at 116.84 71.12 0)
@@ -7849,7 +7861,7 @@
 			)
 		)
 	)
-	(global_label "VSYS"
+	(global_label "3V3_EN"
 		(shape bidirectional)
 		(at 224.79 74.93 180)
 		(fields_autoplaced yes)
@@ -11542,7 +11554,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "470k"
 			(at 115.57 128.27 90)
 			(effects
 				(font
@@ -12275,6 +12287,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"

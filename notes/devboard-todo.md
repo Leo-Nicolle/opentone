@@ -14,8 +14,7 @@ MCU side).
 | Audio | `audio.kicad_sch` | VS1053 wired and fixed. **No footprints** on 35 of 36 parts. CS43131 path not started |
 | Screens | `screens.kicad_sch` | Two FPC connectors (TN + Newhaven IPS) + backlight sinks, wired to global labels |
 | Bluetooth | `bluetooth.kicad_sch` | FSC-BT1035 on the board, wired to global labels for the MCU |
-| Buttons | `buttons.kicad_sch` | MPR121 + click wheel + 5 buttons, from the breakout days |
-| click-wheel-base-devboard | `click-wheel-base-devboard.kicad_sch` | Button header (J2) + 10k pull-ups |
+| Buttons | `buttons.kicad_sch` | **MPR121 + 5 SKQG buttons + OFF/HOLD/ON slider, wired**, wheel on a 6-pin FPC or header |
 
 ## Power (`power.kicad_sch`)
 
@@ -26,6 +25,8 @@ Design and part numbers: `plans/usb-power.md`.
 - Charger MCP73831 (JP3: 500/100 mA), load sharing D7 (B5819W) + Q1 (AO3401A) → `VSYS`, LiPo on J3 through JP1.
 - MAX17048 gauge on VBAT, I2C1, `FG_ALRT`.
 - TPS63802 buck-boost → JP2 → `+3.3V`. AP7312 from VSYS → `+1V8` and, through JP4, `+3.3VA`.
+- Both enabled by `3V3_EN` (R39 470k to VSYS, global label): the OFF position of the slider on the Buttons sheet
+  pulls it low. The AP7312 EN pins used to be tied to VSYS (always on).
 - Global nets: `VBUS`, `VSYS`, `VBAT`, `USB_DP`, `USB_DM`, `VBUS_SENSE`, `CHG_STAT`, `FG_ALRT`, `I2C1_SCL`, `I2C1_SDA`.
 
 TODO
@@ -123,16 +124,46 @@ Added on 2026-10-18, pinout from `docs/public/pinout/LQFP100/mapping.json`:
   J403 log UART4 (PA0 TX, PA1 RX), J404 spare GPIO header (PA2, PA15, PB4, PC9, PC10, PC13).
 - I2C1 pull-ups R402/R403 4.7k on the always-on +3.3V (there were none anywhere).
 - Global labels for blocks that have no sheet yet (ERC `global_label_dangling`, expected): `PSRAM_*`, `SD_CK`,
-  `SD_CMD`, `SD_D0`, `SD_EN`, `SD_CD`, `VS_EN`, `DRV_EN`, `DAC_RESET`, `DAC_EN`, `HP2_DET`, `BTN_*`, `LOCK_SW`,
-  `MPR121_IRQ`.
+  `SD_CMD`, `SD_D0`, `SD_EN`, `SD_CD`, `VS_EN`, `DRV_EN`, `DAC_RESET`, `DAC_EN`, `HP2_DET`.
 
 TODO
 
 - [ ] Pick the crystals and recompute the load caps (2 × (CL − stray), AN2867). HSE assumed CL 10 pF, LSE 6 pF
-- [ ] Buttons / click wheel: the `Buttons` and `click-wheel-base-devboard` sheets are still the breakout
-  versions (MPR121 on an FPC connector, buttons on header J2 with local `SW_*` labels): bring them on the board
-  with `I2C1_SCL`/`I2C1_SDA`, `MPR121_IRQ`, `BTN_*` and `LOCK_SW` global labels
 - [ ] Footprints for the reset/boot buttons (SW_SPST_PTS810 for now) and the SWD header (SMD 2x5) to confirm
+
+## Buttons (`buttons.kicad_sch`)
+
+Redone on 2026-10-18: the MPR121 moved from the click-wheel board to the test board. Same core as the Adafruit
+breakout (`github.com/adafruit/Adafruit-MPR121-PCB`), without its regulator and level shifter (3.3 V only):
+
+- U501 MPR121QR2 on +3.3V → JP501 (drain jumper) → `MPR_VDD`, 100n + 1u. VREG 100n, REXT 75k 1%.
+- ADDR on VDD: address 0x5B (0x5A is the DRV2605L). `I2C1_SCL`/`I2C1_SDA` (pull-ups on the MCU sheet), `~IRQ`
+  → `MPR121_IRQ` (PE4) with a 10k pull-up on +3.3V.
+- Wheel electrodes on ELE0 right, ELE1 left, ELE2 top, ELE3 bottom, as the firmware reads them
+  (`software/src/ClickWheel.hpp`; the old wheel-board sheet used ELE1/7/8/11), plus ELE4 = `WHEEL_CENTER`, a
+  spare center electrode (not used by the firmware yet). ELE5-ELE11 not connected.
+- Two wheel connectors in parallel: 1 top, 2 right, 3 bottom, 4 left, 5 GND (as the `clickwheel` symbol),
+  6 center. J501 6-pin 0.5 mm FPC, J502 6-pin 2.54 mm header. Use one at a time.
+  J501 is the Jushuo AFC07-S06FCA-00 (LCSC C262553, bottom contact, slide lock, stock KiCad footprint).
+- SW501-SW505 SKQGAFE010 (center, top, right, bottom, left), soldered on the board under the wheel: pins 1-2 on
+  `BTN_*` (PE11-PE15) with a 10k pull-up on +3.3V, pins 3-4 on GND. Active low, as on the old click-wheel devboard
+  (its `click-wheel-base-devboard` project was deleted on 2026-10-18, it's in git history).
+- SW506 power / hold slider, C&K OS103011MS8QP1 (SP3T, LCSC C221831), order OFF - HOLD - ON, common on GND:
+  - OFF pulls `3V3_EN` low: TPS63802 and AP7312 off, the charger and the gauge stay on the battery (charging
+    over USB still works). ~9 µA in R39 plus the gauge.
+  - HOLD pulls `LOCK_SW` (PE3, 10k pull-up R508) low.
+  - ON: both open.
+  - ON → OFF passes HOLD: the firmware saves the state and finishes the SD writes on the `LOCK_SW` falling edge.
+  - Symbol `opentone:SW_SP3T_OS103`: KiCad's `SW_SP3T` has the common on pin 3, the OS103 has it on 2
+    (datasheet: positions 1-2, 2-3, 2-4).
+- Removed: the electrode pattern (Clickwheel1) and the two 8-pin FH12 connectors of the wheel-board design.
+
+TODO
+
+- [ ] Check J501's contact side against the wheel's flex
+- [ ] SW506 footprint is KiCad's OS103012MU1QP1 (same 1 / 2-3-4 terminal layout): check it against the
+  OS103011MS8QP1 drawing, and where the slider sits in the case
+- [ ] Firmware: `LOCK_SW` HOLD handling (save + SD flush on the falling edge), `WHEEL_CENTER` on ELE4 if needed
 
 ## Not started (from `plans/test-board.md`)
 

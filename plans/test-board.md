@@ -14,7 +14,7 @@ and pinout as the final board (`docs/public/pinout/LQFP100/`, `datasheets/lqfp10
 - Test the battery charging / gauge monitoring
 - Test a couple of screens on two FPC connectors: the current cheap AliExpress TN one and a Newhaven NHD-2.4-240320AF-CSXP
   (IPS), to see the difference between IPS and TN panels and measure the drain pros/cons (`hardware/opentone/screens.kicad_sch`).
-- Test the USB route: files transferts, firmware flashing of the STM32 and battery charging: have a dedicated ubs-C connector on the board that goes through our MCP73831-2-MC, etc. See the power section in hardware/opentone/opentone.kicad_sch
+- Test the USB route: files transferts, firmware flashing of the STM32 and battery charging: have a dedicated ubs-C connector on the board that goes through our MCP73831-2-MC, etc. See `hardware/opentone/power.kicad_sch`
 - Test the difference between audio from the vs1053 directly and from a DAC (Cyrrus CS43131-CWZR): have two Jacks, one coming from the vs01053b and one from the cyrrus (connected via I2s to the vs1053)
 - Have the Bluetooth module (FSC-BT1035) on the board, wired to the MCU (`hardware/opentone/bluetooth.kicad_sch`)
 
@@ -71,6 +71,11 @@ No Nucleo means we design what it gave us for free:
 - 8 MHz HSE crystal (USB needs it) and 32.768 kHz LSE crystal (RTC, wake-up from stop mode)
 - Decoupling on every VDD pin, the VCAP_1 capacitor, VDDA filtered (ferrite + caps): follow the datasheet
 - The STM32 gets its own VDD jumper like the other blocks, so its drain is measured the same way
+
+Done in `hardware/opentone/mcu.kicad_sch` (2026-10-18, details in `notes/devboard-todo.md`): JP401 on the MCU
+VDD, 6 × 100n + 4.7u, VDDA through a ferrite, 2 × 2.2u on VCAP_1/VCAP_2 (the LQFP100 has two), 8 MHz HSE and
+32.768 kHz LSE, reset and BOOT0 buttons, a 2x5 1.27 mm SWD header plus a 6-pin header matching the Nucleo's
+ST-LINK (CN4), the UART4 log header, a spare GPIO header and the I2C1 pull-ups.
 
 ### SD card: SPI or SDIO
 
@@ -208,11 +213,10 @@ On the current dev board we do not have any battery management, we need to test 
 Notes:
 
 - The MCP73831 has no power path: when the device runs while charging, the charger sees the system current
-  as charge current and may never terminate. Check what D5/D6 do in `power.kicad_sch`: a Schottky between
-  the battery and the system loses ~0.3 V, which hurts at the end of the discharge. The usual fix is a
-  P-MOSFET + Schottky load sharing (Adafruit and SparkFun boards do it).
+  as charge current and may never terminate. Done: `power.kicad_sch` now has P-MOSFET + Schottky load sharing
+  (Q1 AO3401A + D7 B5819W → `VSYS`), see `plans/usb-power.md`.
 - The MCP73831 has no thermistor input: no battery temperature protection while charging.
-- The MAX17048 gauge is in the pinout but not on the power sheet yet.
+- The MAX17048 gauge is on the power sheet (I2C1, `FG_ALRT` on PE6), wired to the MCU.
 - To test the gauge: log one full discharge and compare it with a known load or the power profiler.
   ModelGauge needs a few cycles to converge.
 
@@ -258,11 +262,8 @@ We need to design the proper routing for all of that, let's find some opensource
 
 Notes:
 
-- In `power.kicad_sch` the USB-C data lines go to a CP2102N (USB to UART), not to the STM32. With that:
-  - Mass storage is not possible: D+/D- must go to PA11/PA12 (OTG_FS)
-  - Flashing works through the UART bootloader only, with BOOT0 and NRST driven from DTR/RTS
-  - Going straight to PA11/PA12 gives both mass storage and DFU flashing, and removes the CP2102N. DFU
-    needs a BOOT0 button.
+- Done: the CP2102N is gone, the USB-C data lines go straight to PA11/PA12 (OTG_FS) through 0R, VBUS sense on
+  PA9. That gives both mass storage and DFU flashing; the BOOT0 button (SW402) is on the MCU sheet.
 - The CC resistors are right: two separate 5.1 kΩ (a single shared one fails with C-to-C chargers).
 - While the SD card is mounted as a USB drive, the player cannot touch it: the firmware has to stop playback.
 
@@ -278,8 +279,8 @@ Notes:
 
 - CS43131-CWZR is (I think) the WLCSP package: 0.4 mm pitch, no hand soldering. The QFN one is
   CS43131-CNZ. Check before ordering.
-- The DAC needs a 1.8 V rail, an I2C address on the shared bus and a RESET pin: none of them are in the
-  pinout yet.
+- The DAC needs a 1.8 V rail, an I2C address on the shared bus and a RESET pin: decided (AP2112K-1.8 on
+  `DAC_EN` PE2, address 0x30, RESET on PE1), see `notes/devboard-todo.md`. The sheet is not drawn yet.
 - The VS1053 has a single I2S output, already going to the BT module. It now has to reach both the BT
   module and the DAC: add jumpers to pick the route.
 - The VS1053 jack ground is GBUF, not GND. If the board is powered over USB by the laptop and the jack goes

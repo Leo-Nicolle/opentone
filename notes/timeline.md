@@ -2,7 +2,7 @@
 
 Where OpenTone (formerly OpenPod) comes from, what each part of the project
 looks like today, and how far it is from done. Written 2026-10-18 from the git
-history (127 commits), `docs/blog/`, `notes/`, `plans/TODO.md` and
+history (130 commits), `docs/blog/`, `notes/`, `plans/TODO.md` and
 `plans/roadmap.md`.
 
 The percentages are estimates ("magic hat" numbers): they weigh what works
@@ -11,18 +11,20 @@ measured.
 
 ## At a glance
 
-**Global completion: ~55 %.**
+**Global completion: ~57 %.**
 
 - **Software: ~80 %.** Firmware, UI, syncer, docs, tests and the bench are all
   in daily use. What's left is polish (settings, playlists, bug list) and the
   firmware for parts that don't exist yet (power, battery, USB).
-- **Hardware: ~20 %.** Every module is validated on a Nucleo-F446RE plus a
-  perfboard, but there is no PCB yet beyond the dev boards. Power, battery and
-  USB haven't been validated, and the case is barely started.
+- **Hardware: ~25 %.** Every module is validated on a Nucleo-F446RE plus a
+  perfboard. The test-board schematic (bare STM32F446VET6, power, USB, audio,
+  Bluetooth, screens, click wheel) is mostly drawn, but nothing is laid out or
+  ordered yet. Power, battery and USB haven't been validated, and the case is
+  barely started.
 
-The hardware is the long tail: the next steps (NUCLEO-F446ZE port, carrier PCB,
-current measurements, iPod-sized board, case) are sequential, and each needs a
-PCB order.
+The hardware is the long tail: the next steps (finish the test-board
+schematic, layout and order, bring-up and current measurements, iPod-sized
+board, case) are sequential, and each needs a PCB order.
 
 ## Activity
 
@@ -39,7 +41,7 @@ the "Rebirth" PRs hold ~90k added lines between them):
 2025-07  █                                                           1  (squash of Apr–Jul work)
    ...   (14 months in the drawer)
 2026-09  ██████████████████████████████████████                     38
-2026-10  ██████████████████████████████████████████████████████████ 58
+2026-10  █████████████████████████████████████████████████████████████ 61
 ```
 
 ## Past steps
@@ -131,22 +133,41 @@ the "Rebirth" PRs hold ~90k added lines between them):
   Tuning page over Web Serial.
 - Project renamed **OpenPod → OpenTone** (PR #3).
 
+### 7. Test-board schematic (18 Oct 2026)
+
+The Nucleo plus breakouts gives way to one test board with a bare
+STM32F446VET6 (`plans/test-board.md`, state in `notes/devboard-todo.md`).
+
+- **Power** (`plans/usb-power.md`): USB-C straight to the MCU (DFU and mass
+  storage, CP2102N removed), MCP73831 charger with load sharing, MAX17048
+  gauge, TPS63802 buck-boost, AP7312 for 1.8 V and analog 3.3 V.
+- **Audio**: VS1053 schematic bugs fixed (shorted GPIOs, XTALI on XRESET,
+  unconnected chip selects). CS43131 DAC decisions taken, sheet not drawn.
+- **Bluetooth** module and **both screens** (TN + Newhaven IPS, shared bus,
+  constant-current backlights) on the board.
+- **MCU sheet**: STM32F446VET6 with crystals, reset/DFU buttons, SWD and
+  Nucleo ST-LINK headers, log UART, wired to every other sheet.
+- **Click wheel**: MPR121 on the board (Adafruit core), electrodes on a 6-pin
+  FPC or header with a spare center electrode, the 5 mechanical buttons.
+- **OFF / HOLD / ON slider**: OFF cuts the regulators through `3V3_EN`, HOLD is
+  the lock, and going to OFF passes HOLD so the firmware can save first.
+
 ## Breakdown by part
 
 | Part | State | Done | What's left |
 | --- | --- | --- | --- |
 | **Firmware: audio** | MP3, FLAC up to 24-bit, interrupt-fed FIFO, 0 underruns on the bench | 85 % | Rough seek transition. Gapless vs gap setting. Hi-res (24/96) needs a better MCU. The refill margin is thin after the memory tightening (TODO) |
 | **Firmware: library and storage** | Paged `index.pack`, search trie, covers, podcasts, 100k tracks | 85 % | Pre-warm the cache after boot (cold keystroke 179 ms, open a list 1 s p95). Playlists. Shuffle |
-| **Firmware: system** | Logging macros, bench hooks, haptics | 45 % | Power management, battery gauge, USB file transfer, port to the F446ZE/LQFP100 pinout |
+| **Firmware: system** | Logging macros, bench hooks, haptics | 45 % | Power management, battery gauge, USB file transfer, port to the LQFP100 test-board pinout. HOLD handling (save and flush the SD on the slider) |
 | **UI** | Menus, Now Playing, search, overlay, gears, boot screen, BT screens, podcasts, UI builder | 80 % | Settings screen. Goto from Now Playing. Scrolling breadcrumb. Accented glyphs. Bugs: covers missing in Now Playing, play vs center button, seek-mode capture, rounded bars. Covers animation (`plans/covers-animation.md`). Dimmed BT icon |
-| **Input: click wheel** | Capacitive wheel (MPR121), buttons, haptics, scroll gears tuned | 70 % | Decide whether the center button stays capacitive. Check the wheel fits the iPod case. Center/ring articulation. Final PCB version |
+| **Input: click wheel** | Capacitive wheel (MPR121), buttons, haptics, scroll gears tuned. On the test board: MPR121 on board, 6-pin wheel connector with a spare center electrode, buttons wired | 70 % | Decide whether the center button stays capacitive (both are wired now). Check the wheel fits the iPod case. Center/ring articulation. Wheel flex for the 6-pin connector |
 | **Bluetooth** | Validated, driver, UI, tests | 85 % | BT1035 is EOL: move to the FSC-BT1026x footprint. Receiver drop/reconnect. VBAT decoupling |
 | **Indexer / syncer** | Rust CLI + desktop + web app, CI releases, podcasts, pack file | 85 % | Keep .m4a unconverted. Tests for every input format. Live "on the card" counter. Check the remove/blacklist flow. Auto-remove listened podcasts |
 | **Docs / website** | VitePress, 11 blog posts, tools (click wheel, UI builder, pinout studio, bench, scroll tuning, sync) | 70 % | User manual (`docs/manual/` is a stub). `docs/about.md` still lists the old BOM. Timeline page with charts (TODO). Flash-from-the-website button |
 | **Tests** | 23 host test files (PlatformIO), `cargo test`, on-device e2e via the bench | 70 % | Bench dataset without covers. Bench compare tool misreports "worse" entries. Nothing covers power or USB yet |
-| **Validation / benchmarks** | Screen, VS1053, SD, PSRAM, wheel, haptics, buttons and BT validated. Full bench at 6k and 100k tracks | 60 % | Power buttons, power management, battery, USB. Current draw per part, and a battery size from it |
-| **Electronics / PCB** | Hand-soldered perfboard. KiCad schematics (audio, power, BT, buttons). BT and click-wheel dev boards. LQFP100 allocation | 25 % | Buy a NUCLEO-F446ZE and port. Carrier PCB (charger, TPS22917 switches, MAX17048, USB, test points). XRESET pull-up and anti-pop stage. Final iPod-sized board |
-| **Power / battery / USB** | Pin plan (`notes/next-step-pinout.md`), USB speed research | 10 % | All of it: circuits, measurements, firmware |
+| **Validation / benchmarks** | Screen, VS1053, SD, PSRAM, wheel, haptics, buttons and BT validated. Full bench at 6k and 100k tracks | 60 % | Power slider, power management, battery, USB. Current draw per part, and a battery size from it |
+| **Electronics / PCB** | Hand-soldered perfboard. BT and click-wheel dev boards. LQFP100 allocation. Test-board schematic: MCU, power/USB, VS1053, BT, both screens, MPR121 + buttons + power slider, all wired | 35 % | Test-board sheets still missing: PSRAM, SD card, CS43131 DAC, DRV2605L, load switches. Footprints (audio sheet), layout, order, bring-up. XRESET pull-up and anti-pop stage. Final iPod-sized board |
+| **Power / battery / USB** | Circuits designed on the test board (`plans/usb-power.md`): USB-C to the MCU, charger with load sharing, gauge, buck-boost, OFF/HOLD/ON slider. USB speed research | 25 % | Order the parts JLC doesn't stock (TPS63802, MAX17048). Build and validate: charging, termination under load, gauge accuracy, current per block. All the firmware |
 | **Case / mechanical** | Printed click-wheel holder and buttons. iPod 5th-gen faceplate/back plate reference models just added | 10 % | Fit the board, screen, wheel and battery in the iPod-classic case. Mount the screen for its good viewing angle |
 
 ## How the global number is computed
@@ -164,17 +185,21 @@ has been spent on it:
 | Docs | 5 % | 70 % | 3.5 |
 | Tests | 5 % | 70 % | 3.5 |
 | Validation | 5 % | 60 % | 3.0 |
-| Electronics / PCB | 17 % | 25 % | 4.3 |
-| Power / battery / USB | 10 % | 10 % | 1.0 |
+| Electronics / PCB | 17 % | 35 % | 6.0 |
+| Power / battery / USB | 10 % | 25 % | 2.5 |
 | Case | 10 % | 10 % | 1.0 |
-| **Total** | 100 % | | **≈ 54 %** |
+| **Total** | 100 % | | **≈ 57 %** |
 
-## What's next (from `notes/new-nucleo-plan.md`)
+## What's next (from `plans/test-board.md`)
 
-1. NUCLEO-F446ZE: port the firmware to the LQFP100 pinout.
-2. Carrier PCB: power, battery, USB, real connectors and test points.
-3. Measure each subsystem's current, then write the power, battery and USB
-   firmware.
+The test board replaces the NUCLEO-F446ZE + carrier PCB plan of
+`notes/new-nucleo-plan.md`: the STM32F446VET6 sits directly on it.
+
+1. Finish the test-board schematic: PSRAM, SD card, CS43131 DAC, DRV2605L,
+   load switches, audio footprints (`notes/devboard-todo.md`).
+2. Layout, order, bring-up. Port the firmware to the LQFP100 pinout.
+3. Measure each block's current through its drain jumper, then write the
+   power, battery and USB firmware.
 4. iPod-sized final board with the LQFP100, then the case.
 
 `plans/TODO.md` asks for deadlines on these, "instead of putting it back in
