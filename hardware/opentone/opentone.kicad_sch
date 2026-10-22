@@ -1,10 +1,56 @@
 (kicad_sch
-	(version 20250114)
+	(version 20260306)
 	(generator "eeschema")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(uuid "0122bb8c-dbef-4db1-a6c6-9be780a38d9f")
 	(paper "A4")
 	(lib_symbols)
+	(sheet
+		(at 160.02 96.52)
+		(size 50.8 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "147be100-05e8-4c37-937e-7a15207462e1")
+		(property "Sheetname" "Memory"
+			(at 160.02 95.8084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "memory.kicad_sch"
+			(at 160.02 122.5046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f"
+					(page "8")
+				)
+			)
+		)
+	)
 	(sheet
 		(at 18.288 62.484)
 		(size 55.118 37.338)
@@ -18,11 +64,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "624e7c04-d7d5-4e26-80cd-388aaab1d060")
 		(property "Sheetname" "Audio"
 			(at 18.288 61.7724 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32,6 +80,8 @@
 		)
 		(property "Sheetfile" "audio.kicad_sch"
 			(at 18.288 100.4066 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -60,11 +110,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "89f9057f-f2b8-4b1e-8a19-f61bc42bac09")
 		(property "Sheetname" "Screens"
 			(at 84.328 105.9684 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -74,6 +126,8 @@
 		)
 		(property "Sheetfile" "screens.kicad_sch"
 			(at 84.328 127.5846 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -102,11 +156,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "a2d473bc-020f-4f45-b688-c249a4b738f4")
 		(property "Sheetname" "Buttons"
 			(at 82.296 21.6404 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -116,6 +172,8 @@
 		)
 		(property "Sheetfile" "buttons.kicad_sch"
 			(at 82.296 57.9886 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -144,11 +202,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "a8a5035a-b6af-49cd-acc2-ce2f3f023daf")
 		(property "Sheetname" "MCU"
 			(at 160.02 60.2484 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -158,6 +218,8 @@
 		)
 		(property "Sheetfile" "mcu.kicad_sch"
 			(at 160.02 86.9446 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -186,11 +248,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "ddcf786c-06d2-421e-b65a-77775151c20a")
 		(property "Sheetname" "Power"
 			(at 18.034 18.0844 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -200,6 +264,8 @@
 		)
 		(property "Sheetfile" "power.kicad_sch"
 			(at 18.034 56.7186 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -228,11 +294,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "f264427c-823d-4b44-a1da-3ad43f8e46cf")
 		(property "Sheetname" "Bluetooth"
 			(at 83.058 63.2964 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -242,6 +310,8 @@
 		)
 		(property "Sheetfile" "bluetooth.kicad_sch"
 			(at 83.058 94.8186 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
