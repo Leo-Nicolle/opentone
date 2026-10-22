@@ -124,7 +124,7 @@ thermistor, used by Tangara): it replaces both the charger and the load-sharing 
 |---|---|---|---|
 | U11 | TPS63802DLAR buck-boost (replaces the LM3671) | not at JLC | **self-sourced**. 1.3-5.5 V in, 2 A, 11 µA Iq. `datasheets/power/tps63802.pdf`. Footprint `opentone:Texas_DLA0010A_VSON-HR-10_2x3mm_P0.5mm` (from the datasheet land pattern) |
 | L3 | 0.47 µH Murata DFE252012P-R47M=P2 (2.5x2.0x1.2 mm) | C237552 | Isat 5.7 A, 4.0 A thermal, 27 mΩ. Replaced the XFL4015 (TI's first pick, terminals only under the body, not hand-solderable). End terminals like a 1008 chip; footprint `L_1008_2520Metric_Pad1.43x2.20mm_HandSolder`. TI also lists the DFE201612E (2.0x1.6) |
-| R37 / R38 | 511 kΩ / 91 kΩ | C227946 / C137671 (Yageo AC0603FR-07511KL / RC0603FR-0791KL) | 3.3 V (VFB = 500 mV, table 10-5). The only extended resistors |
+| R37 / R38 | 511 kΩ / 91 kΩ | C23194 / C23265 (UNI-ROYAL 0603WAF5113T5E extended / 0603WAF9102T5E preferred, 1 %) | 3.3 V (VFB = 500 mV, table 10-5). Same series as every other resistor |
 | C62 / C63 / C64 | 10 µF in / 22 µF out / 22 µF out DNP | C15850 / C45783 (basic) | the datasheet says a single 22 µF is enough at 3.3 V |
 | MODE | to GND | | power save mode |
 | R39 + TP1 | 470 kΩ EN pull-up to VSYS + test pad 3V3_EN | C23178 (basic) | fixes the EN bug. 3V3_EN is a global label: the OFF / HOLD / ON slider (SW506, `buttons.kicad_sch`) pulls it low. 470k: ~9 µA in OFF. Since 2026-10-22 it only drives the TPS63802 EN (the VS1053 LDOs are on VS_EN) |

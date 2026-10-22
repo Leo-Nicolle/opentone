@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-22",
+  "generated": "2026-10-23",
   "source": "hardware/opentone/*.kicad_sch + datasheets/overrides.json",
   "generator": "scripts/datasheets.py",
   "categories": [
@@ -17,24 +17,108 @@
   ],
   "parts": [
     {
+      "id": "cs43131-cnz",
+      "mpn": "CS43131-CNZ",
+      "manufacturer": "Cirrus Logic",
+      "lcsc": "",
+      "category": "audio",
+      "description": "130 dB 32-bit DAC + Class H headphone amp, QFN-40. I2C 0x30 (ADR to GND), MCLK 12.288 MHz from the VS1053 through the PLL",
+      "values": [
+        "CS43131-CNZ"
+      ],
+      "refs": [
+        "U701"
+      ],
+      "sheets": [
+        "dac"
+      ],
+      "inBom": true,
+      "url": "https://statics.cirrus.com/pubs/proDatasheet/CS43131_DS1155F2.pdf",
+      "file": "datasheets/audio/cs43131.pdf"
+    },
+    {
+      "id": "pca9306dcur",
+      "mpn": "PCA9306DCUR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "C33196",
+      "category": "audio",
+      "description": "I2C level shifter 3.3 V <-> 1.8 V. EN/VREF2 through R702 200k from DAC_EN: the DAC leaves I2C1 when it is off",
+      "values": [
+        "PCA9306DCUR"
+      ],
+      "refs": [
+        "U704"
+      ],
+      "sheets": [
+        "dac"
+      ],
+      "inBom": true,
+      "url": "https://www.ti.com/lit/ds/symlink/pca9306.pdf",
+      "file": "datasheets/audio/pca9306dcur.pdf"
+    },
+    {
       "id": "sj-43515ts-smt-tr",
       "mpn": "SJ-43515TS-SMT-TR",
       "manufacturer": "Same Sky (Formerly CUI Devices)",
       "lcsc": "C5353507",
       "category": "audio",
-      "description": "",
+      "description": "3.5 mm TRRS SMD jack with tip switch: 1 sleeve, 2 tip, 3 ring 1, 4 ring 2, 5 tip switch (closed to tip without a plug)",
       "values": [
         "SJ-43515TS-SMT-TR"
       ],
       "refs": [
-        "Jack1"
+        "Jack1",
+        "Jack2"
       ],
       "sheets": [
-        "audio"
+        "audio",
+        "dac"
       ],
       "inBom": true,
       "url": "https://www.sameskydevices.com/product/resource/sj-4351x-smt.pdf",
       "file": "datasheets/audio/sj-43515ts-smt-tr.pdf"
+    },
+    {
+      "id": "sn74avc4t245pwr",
+      "mpn": "SN74AVC4T245PWR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "C81461",
+      "category": "audio",
+      "description": "4-bit level shifter, I2S 3.3 V -> 1.8 V (A to B fixed). Outputs Hi-Z when DAC_1V8 is off",
+      "values": [
+        "SN74AVC4T245PWR"
+      ],
+      "refs": [
+        "U703"
+      ],
+      "sheets": [
+        "dac"
+      ],
+      "inBom": true,
+      "url": "https://www.ti.com/lit/ds/symlink/sn74avc4t245.pdf",
+      "file": "datasheets/audio/sn74avc4t245pwr.pdf"
+    },
+    {
+      "id": "tpd1e10b06dpyr",
+      "mpn": "TPD1E10B06DPYR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "C48260",
+      "category": "audio",
+      "description": "Bidirectional ESD, jack 2 (CS43131 outputs swing below ground)",
+      "values": [
+        "TPD1E10B06DPYR"
+      ],
+      "refs": [
+        "D701",
+        "D702",
+        "D703"
+      ],
+      "sheets": [
+        "dac"
+      ],
+      "inBom": true,
+      "url": "https://www.ti.com/lit/ds/symlink/tpd1e10b06.pdf",
+      "file": "datasheets/audio/tpd1e10b06dpyr.pdf"
     },
     {
       "id": "tpd4e05u06dqar",
@@ -87,17 +171,6 @@
           "url": "https://www.vlsi.fi/fileadmin/app_notes/vs10xx-comparison.pdf"
         }
       ]
-    },
-    {
-      "inBom": false,
-      "url": "https://statics.cirrus.com/pubs/proDatasheet/CS43131_DS1155F2.pdf",
-      "refs": [],
-      "id": "cs43131",
-      "mpn": "CS43131",
-      "manufacturer": "Cirrus Logic",
-      "category": "audio",
-      "description": "DAC + headphone amp (evaluated, not used)",
-      "file": "datasheets/audio/cs43131.pdf"
     },
     {
       "inBom": false,
@@ -337,7 +410,7 @@
       "manufacturer": "Alpha & Omega Semiconductor",
       "lcsc": "C15127",
       "category": "discretes",
-      "description": "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23",
+      "description": "Battery reverse-polarity guard: drain on J3+, source on VBAT, gate to GND. On (~60 mOhm) both ways with a correct pack, off with a reversed one",
       "values": [
         "AO3401A"
       ],
@@ -830,8 +903,7 @@
       "category": "passives",
       "description": "Unpolarized capacitor",
       "values": [
-        "4.7nF",
-        "4n7"
+        "4.7nF"
       ],
       "refs": [
         "C60",
@@ -854,7 +926,7 @@
       "category": "passives",
       "description": "",
       "values": [
-        "6.8p"
+        "6.8pF"
       ],
       "refs": [
         "C415",
@@ -936,8 +1008,7 @@
       "category": "passives",
       "description": "LED resistor",
       "values": [
-        "1k",
-        "1k 1%"
+        "1k"
       ],
       "refs": [
         "R113",
@@ -961,7 +1032,7 @@
       "manufacturer": "UNI-ROYAL",
       "lcsc": "C25804",
       "category": "passives",
-      "description": "Resistor",
+      "description": "DAC_INT pull-up (open drain, VP domain = +3.3V)",
       "values": [
         "10k"
       ],
@@ -976,10 +1047,12 @@
         "R506",
         "R507",
         "R508",
-        "R607"
+        "R607",
+        "R706"
       ],
       "sheets": [
         "buttons",
+        "dac",
         "mcu",
         "memory",
         "power"
@@ -996,11 +1069,11 @@
       "category": "passives",
       "description": "BT_EN pull-up: module powered by default",
       "values": [
-        "100k",
-        "100K"
+        "100k"
       ],
       "refs": [
         "R3",
+        "R6",
         "R7",
         "R8",
         "R16",
@@ -1020,12 +1093,15 @@
         "R313",
         "R509",
         "R610",
-        "R620"
+        "R620",
+        "R701",
+        "R705"
       ],
       "sheets": [
         "audio",
         "bluetooth",
         "buttons",
+        "dac",
         "memory",
         "power",
         "screens"
@@ -1065,7 +1141,7 @@
       "category": "passives",
       "description": "",
       "values": [
-        "10"
+        "10R"
       ],
       "refs": [
         "R13"
@@ -1085,7 +1161,7 @@
       "category": "passives",
       "description": "",
       "values": [
-        "1R 1%"
+        "1R"
       ],
       "refs": [
         "R212",
@@ -1121,6 +1197,26 @@
       "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
     },
     {
+      "id": "0603waf2003t5e",
+      "mpn": "0603WAF2003T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C25811",
+      "category": "passives",
+      "description": "PCA9306 EN/VREF2 bias from DAC_EN",
+      "values": [
+        "200k"
+      ],
+      "refs": [
+        "R702"
+      ],
+      "sheets": [
+        "dac"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706350726930432",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
       "id": "0603waf200jt5e",
       "mpn": "0603WAF200JT5E",
       "manufacturer": "UNI-ROYAL",
@@ -1128,7 +1224,7 @@
       "category": "passives",
       "description": "",
       "values": [
-        "20"
+        "20R"
       ],
       "refs": [
         "R2",
@@ -1169,7 +1265,7 @@
       "category": "passives",
       "description": "",
       "values": [
-        "470"
+        "470R"
       ],
       "refs": [
         "R22"
@@ -1187,15 +1283,18 @@
       "manufacturer": "UNI-ROYAL",
       "lcsc": "C23162",
       "category": "passives",
-      "description": "",
+      "description": "I2C pull-up, 1.8 V side",
       "values": [
         "4.7k"
       ],
       "refs": [
         "R402",
-        "R403"
+        "R403",
+        "R703",
+        "R704"
       ],
       "sheets": [
+        "dac",
         "mcu"
       ],
       "inBom": true,
@@ -1298,6 +1397,26 @@
       "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
     },
     {
+      "id": "0603waf5113t5e",
+      "mpn": "0603WAF5113T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23194",
+      "category": "passives",
+      "description": "Resistor",
+      "values": [
+        "511k"
+      ],
+      "refs": [
+        "R37"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8586178161256513537",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
       "id": "0603waf5602t5e",
       "mpn": "0603WAF5602T5E",
       "manufacturer": "UNI-ROYAL",
@@ -1325,7 +1444,7 @@
       "category": "passives",
       "description": "",
       "values": [
-        "75k 1%"
+        "75k"
       ],
       "refs": [
         "R502"
@@ -1338,24 +1457,24 @@
       "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
     },
     {
-      "id": "ac0603fr-07511kl",
-      "mpn": "AC0603FR-07511KL",
-      "manufacturer": "YAGEO",
-      "lcsc": "C227946",
+      "id": "0603waf9102t5e",
+      "mpn": "0603WAF9102T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23265",
       "category": "passives",
       "description": "Resistor",
       "values": [
-        "511k"
+        "91k"
       ],
       "refs": [
-        "R37"
+        "R38"
       ],
       "sheets": [
         "power"
       ],
       "inBom": true,
-      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8754855564801118208",
-      "file": "datasheets/passives/ac0603fr-07511kl.pdf"
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706328207712256",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
     },
     {
       "id": "cc0603krx7r9bb104",
@@ -1365,9 +1484,7 @@
       "category": "passives",
       "description": "Unpolarized capacitor",
       "values": [
-        "100nF",
-        "100n",
-        "0.1uF"
+        "100nF"
       ],
       "refs": [
         "C30",
@@ -1402,12 +1519,19 @@
         "C503",
         "C505",
         "C601",
-        "C606"
+        "C606",
+        "C704",
+        "C705",
+        "C706",
+        "C717",
+        "C718",
+        "C719"
       ],
       "sheets": [
         "audio",
         "bluetooth",
         "buttons",
+        "dac",
         "mcu",
         "memory",
         "power",
@@ -1425,8 +1549,7 @@
       "category": "passives",
       "description": "Unpolarized capacitor",
       "values": [
-        "1uF",
-        "1u"
+        "1uF"
       ],
       "refs": [
         "C34",
@@ -1444,12 +1567,15 @@
         "C502",
         "C504",
         "C506",
-        "C603"
+        "C603",
+        "C701",
+        "C702"
       ],
       "sheets": [
         "audio",
         "bluetooth",
         "buttons",
+        "dac",
         "mcu",
         "memory",
         "power",
@@ -1467,8 +1593,7 @@
       "category": "passives",
       "description": "Unpolarized capacitor",
       "values": [
-        "10uF",
-        "10u"
+        "10uF"
       ],
       "refs": [
         "C33",
@@ -1499,7 +1624,7 @@
       "category": "passives",
       "description": "",
       "values": [
-        "10u"
+        "10uF"
       ],
       "refs": [
         "C203",
@@ -1518,15 +1643,24 @@
       "manufacturer": "Samsung Electro-Mechanics",
       "lcsc": "C23630",
       "category": "passives",
-      "description": "",
+      "description": "Unpolarized capacitor",
       "values": [
-        "2.2u"
+        "2.2uF"
       ],
       "refs": [
         "C411",
-        "C412"
+        "C412",
+        "C707",
+        "C708",
+        "C711",
+        "C712",
+        "C713",
+        "C714",
+        "C715",
+        "C716"
       ],
       "sheets": [
+        "dac",
         "mcu"
       ],
       "inBom": true,
@@ -1539,15 +1673,17 @@
       "manufacturer": "Samsung Electro-Mechanics",
       "lcsc": "C19666",
       "category": "passives",
-      "description": "",
+      "description": "Unpolarized capacitor",
       "values": [
-        "4.7u"
+        "4.7uF"
       ],
       "refs": [
         "C407",
-        "C602"
+        "C602",
+        "C703"
       ],
       "sheets": [
+        "dac",
         "mcu",
         "memory"
       ],
@@ -1563,7 +1699,7 @@
       "category": "passives",
       "description": "Unpolarized capacitor",
       "values": [
-        "1n"
+        "1nF"
       ],
       "refs": [
         "C108",
@@ -1585,7 +1721,7 @@
       "category": "passives",
       "description": "",
       "values": [
-        "15p"
+        "15pF"
       ],
       "refs": [
         "C413",
@@ -1648,14 +1784,16 @@
       "category": "passives",
       "description": "Unpolarized capacitor",
       "values": [
-        "22uF DNP",
         "22uF"
       ],
       "refs": [
         "C63",
-        "C64"
+        "C64",
+        "C709",
+        "C710"
       ],
       "sheets": [
+        "dac",
         "power"
       ],
       "inBom": true,
@@ -1771,26 +1909,6 @@
       "file": "datasheets/passives/gz1608d601tf.pdf"
     },
     {
-      "id": "rc0603fr-0791kl",
-      "mpn": "RC0603FR-0791KL",
-      "manufacturer": "YAGEO",
-      "lcsc": "C137671",
-      "category": "passives",
-      "description": "Resistor",
-      "values": [
-        "91k"
-      ],
-      "refs": [
-        "R38"
-      ],
-      "sheets": [
-        "power"
-      ],
-      "inBom": true,
-      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8755545249567514624",
-      "file": "datasheets/passives/rc0603fr-0791kl.pdf"
-    },
-    {
       "id": "max17048g-t10",
       "mpn": "MAX17048G+T10",
       "manufacturer": "Analog Devices",
@@ -1878,14 +1996,16 @@
       "manufacturer": "Texas Instruments",
       "lcsc": "",
       "category": "power",
-      "description": "300 mA ultra-low-noise LDO, 1.8 V fixed, active discharge, SOT-23-5. VS1053 CVDD (+1V8)",
+      "description": "300 mA ultra-low-noise LDO, 1.8 V fixed, active discharge, SOT-23-5. CS43131 VA/VCP/VD/VL (DAC_1V8), EN on DAC_EN",
       "values": [
         "TPS7A2018PDBVR"
       ],
       "refs": [
-        "U14"
+        "U14",
+        "U702"
       ],
       "sheets": [
+        "dac",
         "power"
       ],
       "inBom": true,

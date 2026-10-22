@@ -8113,7 +8113,7 @@
 				)
 			)
 		)
-		(property "Value" "20"
+		(property "Value" "20R"
 			(at 62.23 110.744 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9794,7 +9794,7 @@
 				)
 			)
 		)
-		(property "Value" "10"
+		(property "Value" "10R"
 			(at 62.23 105.41 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10464,7 +10464,7 @@
 				)
 			)
 		)
-		(property "Value" "20"
+		(property "Value" "20R"
 			(at 62.23 116.84 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13316,7 +13316,7 @@
 				)
 			)
 		)
-		(property "Value" "100K"
+		(property "Value" "100k"
 			(at 190.5 84.074 90)
 			(show_name no)
 			(do_not_autoplace no)

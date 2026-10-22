@@ -6548,7 +6548,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u"
+		(property "Value" "1uF"
 			(at 172.72 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6662,7 +6662,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u"
+		(property "Value" "1uF"
 			(at 73.66 83.82 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7778,7 +7778,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "75k 1%"
+		(property "Value" "75k"
 			(at 99.06 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8485,7 +8485,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u"
+		(property "Value" "1uF"
 			(at 182.88 144.78 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9615,7 +9615,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF"
 			(at 182.88 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9883,7 +9883,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF"
 			(at 63.5 83.82 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10708,7 +10708,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF"
 			(at 114.3 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)

@@ -10917,7 +10917,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "327f9978-1112-42e2-af85-bede1499af19")
 		(property "Reference" "C64"
 			(at 182.626 149.098 0)
@@ -10930,7 +10930,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22uF DNP"
+		(property "Value" "22uF"
 			(at 187.198 153.67 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14315,7 +14315,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
+		(property "Value" "100nF"
 			(at 218.694 149.606 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14648,7 +14648,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706265439817728"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706350726930432"
 			(at 41.91 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -15302,7 +15302,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8754855564801118208"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8586178161256513537"
 			(at 168.91 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -15324,7 +15324,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 168.91 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -15335,7 +15335,7 @@
 				)
 			)
 		)
-		(property "Part number" "AC0603FR-07511KL"
+		(property "Part number" "0603WAF5113T5E"
 			(at 168.91 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -15346,7 +15346,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C227946"
+		(property "LCSC" "C23194"
 			(at 168.91 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -17377,7 +17377,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8755545249567514624"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706328207712256"
 			(at 163.83 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -17399,7 +17399,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 163.83 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -17410,7 +17410,7 @@
 				)
 			)
 		)
-		(property "Part number" "RC0603FR-0791KL"
+		(property "Part number" "0603WAF9102T5E"
 			(at 163.83 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -17421,7 +17421,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C137671"
+		(property "LCSC" "C23265"
 			(at 163.83 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -18694,7 +18694,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470"
+		(property "Value" "470R"
 			(at 170.18 98.298 90)
 			(show_name no)
 			(do_not_autoplace no)
