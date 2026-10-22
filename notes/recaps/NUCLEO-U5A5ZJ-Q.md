@@ -3,8 +3,8 @@
 Reference notes for the STM32U5A5ZJT6Q MCU on the ST NUCLEO-U5A5ZJ-Q board (MB1549
 reference design), the candidate replacement for the current MCU in this project.
 
-Sources: `datasheets/nucleo144-boards.pdf` (UM2861 rev 10, covers NUCLEO-U575ZI-Q and
-NUCLEO-U5A5ZJ-Q, both built on the same MB1549 board) and `datasheets/DS_stm32u5a5zj.pdf`
+Sources: `datasheets/devboards/nucleo144-boards.pdf` (UM2861 rev 10, covers NUCLEO-U575ZI-Q and
+NUCLEO-U5A5ZJ-Q, both built on the same MB1549 board) and `datasheets/mcu/DS_stm32u5a5zj.pdf`
 (DS13543 rev 3).
 
 **Package**: the "Z" in `STM32U5A5ZJT6Q` = LQFP144. The trailing **Q** = "dedicated

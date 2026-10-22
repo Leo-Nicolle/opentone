@@ -70,7 +70,7 @@ impl AudioInfo {
     }
 }
 
-/// VS1053b FLAC plugin limits (datasheets/vs1053.pdf, "Supported FLAC
+/// VS1053b FLAC plugin limits (datasheets/audio/vs1053.pdf, "Supported FLAC
 /// Formats"): 48 kHz, 24-bit, stereo. Past LPC order 12 (outside the FLAC
 /// streamable subset) it can't decode in real time and stutters.
 pub const MAX_RATE: u32 = 48_000;

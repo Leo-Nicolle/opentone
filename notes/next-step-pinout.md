@@ -40,7 +40,7 @@ So there are **0 spare pins** today.
    supply. Sharing the SD card's switch works: both chips sit on SPI1 and are
    both idle when nothing is playing.
 5. **PC14/PC15 are not dead, just disconnected.** Confirmed in the Nucleo
-   user manual (UM1724, `datasheets/nucleo.pdf`, "OSC 32 kHz clock supply" and
+   user manual (UM1724, `datasheets/devboards/nucleo.pdf`, "OSC 32 kHz clock supply" and
    table 10 "Solder bridges"): on MB1136 C-02 and later, PC14/PC15 go to the
    X2 32 kHz crystal and SB48/SB49 (the link to the CN7 header) ship open.
    That's why continuity from the FPC to the header was fine but the pins

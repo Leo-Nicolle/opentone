@@ -1,6 +1,6 @@
 # FSC-BT1035 pinout and quick wiring
 
-Pin names and descriptions are from `datasheets/FSC-BT1035_Datasheet_EN.pdf`
+Pin names and descriptions are from `datasheets/bluetooth/FSC-BT1035_Datasheet_EN.pdf`
 (table 3-2). The physical layout matches the footprint
 `hardware/opentone/opentone.pretty/fsc-bt1035.kicad_mod`.
 
@@ -66,7 +66,7 @@ its I/O pins.
 
 ### I2S: VS1053 to module
 
-VS1053 pin numbers are for its LQFP-48 package (`datasheets/vs1053.pdf`, pin
+VS1053 pin numbers are for its LQFP-48 package (`datasheets/audio/vs1053.pdf`, pin
 table). Note the module pins are not in order.
 
 | Signal | VS1053 pin | VS1053 LQFP pin | Module pin | Module signal |

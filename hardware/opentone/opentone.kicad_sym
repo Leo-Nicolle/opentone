@@ -6823,7 +6823,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "datasheets/NHD-2.4-240320AF-CSXP.pdf"
+		(property "Datasheet" "${KIPRJMOD}/../../datasheets/display/NHD-2.4-240320AF-CSXP.pdf"
 			(at 0 0 0)
 			(effects
 				(font

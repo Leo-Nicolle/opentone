@@ -25,7 +25,7 @@
 //   !vol 40        VS1053 volume, 0 = loudest, 254 = quietest
 //   !i2scheck      sample the VS1053 I2S pins: are they toggling?
 //
-// AT commands: datasheets/FSC-BT1035_programming_user_guide.pdf
+// AT commands: datasheets/bluetooth/FSC-BT1035_programming_user_guide.pdf
 #include "pinout.h"
 #include "sound/VS1053_driver.h"
 #include "sound/startup_sound.h"

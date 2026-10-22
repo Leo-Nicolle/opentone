@@ -7313,7 +7313,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "${KIPRJMOD}/../../datasheets/FSC-BT1035_Datasheet_EN.pdf"
+		(property "Datasheet" "${KIPRJMOD}/../../datasheets/bluetooth/FSC-BT1035_Datasheet_EN.pdf"
 			(at 205.74 96.52 0)
 			(hide yes)
 			(show_name no)

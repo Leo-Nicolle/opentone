@@ -2339,7 +2339,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "datasheets/NHD-2.4-240320AF-CSXP.pdf"
+			(property "Datasheet" "${KIPRJMOD}/../../datasheets/display/NHD-2.4-240320AF-CSXP.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3460,7 +3460,7 @@
 		)
 		(uuid "5a6366bb-2970-43a9-9da9-7f33d68b623e")
 	)
-	(text "IPS panel: datasheets/NHD-2.4-240320AF-CSXP.pdf. LED 80-200 mA, Vf 2.7-3.4 V: at 82 mA from +3.3V the sink keeps ~0.2 V. Use VSYS if the current drops."
+	(text "IPS panel: datasheets/display/NHD-2.4-240320AF-CSXP.pdf. LED 80-200 mA, Vf 2.7-3.4 V: at 82 mA from +3.3V the sink keeps ~0.2 V. Use VSYS if the current drops."
 		(exclude_from_sim no)
 		(at 208.28 203.2 0)
 		(effects

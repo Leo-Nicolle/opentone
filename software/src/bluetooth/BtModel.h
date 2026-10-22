@@ -4,7 +4,7 @@
 // What the FSC-BT1035 tells us, and what we ask it to do, without the UART:
 // Bluetooth.hpp feeds it the module's lines and sends the commands it
 // queues. No display or hardware code, so it runs (and is tested) on the
-// host. AT commands: datasheets/FSC-BT1035_programming_user_guide.pdf.
+// host. AT commands: datasheets/bluetooth/FSC-BT1035_programming_user_guide.pdf.
 //
 // The module keeps its paired list (8 devices) and reconnects to the last
 // device by itself. What it can't keep, we do: an alias and a preferred

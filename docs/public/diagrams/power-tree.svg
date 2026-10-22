@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1360 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="power-tree-title power-tree-desc" id="power-tree-root">
+  <title id="power-tree-title">opentone power distribution tree</title>
+  <desc id="power-tree-desc">Power distribution of the opentone test board: USB-C and the LiPo cell feed VSYS through the MCP73831 charger and D7/Q1 load sharing; VSYS feeds the TPS63802 buck-boost (+3.3V), the TPS7A20 LDO pair (+1V8 and +3.3VA for the VS1053b) and the DRV2605L; the +3.3V rail feeds the MCU, memory, Bluetooth, panels, backlights, click wheel and the planned CS43131, each with its drain jumper and enable signal.</desc>
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap');</style>
+    <pattern id="power-tree-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.9" fill="#24212b" fill-opacity="0.10"/>
+    </pattern>
+    <marker id="power-tree-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5b5566"/></marker>
+    <marker id="power-tree-arrow-power" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9a5b0b"/></marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f7f5f0"/>
+  <rect width="100%" height="100%" fill="url(#power-tree-dots)" opacity="0.55"/>
+
+  <!-- ============ Zones ============ -->
+  <rect x="24" y="64" width="648" height="568" rx="8" fill="#24212b" fill-opacity="0.02" stroke="#24212b" stroke-opacity="0.10" stroke-width="0.8"/>
+  <rect x="292" y="68" width="112" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="348" y="77" fill="#6b6475" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.14em">SOURCES · CHARGE</text>
+
+  <rect x="720" y="64" width="224" height="568" rx="8" fill="#24212b" fill-opacity="0.02" stroke="#24212b" stroke-opacity="0.10" stroke-width="0.8"/>
+  <rect x="788" y="68" width="88" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="832" y="77" fill="#6b6475" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.14em">REGULATION</text>
+
+  <rect x="968" y="64" width="360" height="624" rx="8" fill="#24212b" fill-opacity="0.02" stroke="#24212b" stroke-opacity="0.10" stroke-width="0.8"/>
+  <rect x="1120" y="68" width="56" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="1148" y="77" fill="#6b6475" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.14em">LOADS</text>
+
+  <!-- ============ Unregulated paths (VBUS, VBAT, VSYS) ============ -->
+  <!-- USB-C → input protection -->
+  <line x1="208" y1="200" x2="264" y2="200" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+  <!-- Protection → charger -->
+  <line x1="356" y1="232" x2="356" y2="300" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+  <!-- Protection → VSYS through D7 -->
+  <path d="M 448,200 H 572 Q 580,200 580,208 V 420" fill="none" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+  <!-- Charger → LiPo (charge current) -->
+  <path d="M 264,340 H 132 Q 124,340 124,348 V 424" fill="none" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+  <!-- LiPo → VSYS through Q1 -->
+  <line x1="208" y1="460" x2="504" y2="460" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+  <!-- LiPo → gauge -->
+  <path d="M 124,496 V 552 Q 124,560 132,560 H 264" fill="none" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+  <!-- VSYS → TPS63802 -->
+  <path d="M 656,436 H 688 Q 696,436 696,428 V 322 Q 696,314 704,314 H 736" fill="none" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+  <!-- VSYS → LDO pair -->
+  <path d="M 656,460 H 700 Q 708,460 708,468 V 574 Q 708,582 716,582 H 736" fill="none" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+  <!-- VSYS → DRV2605L -->
+  <path d="M 656,484 H 672 Q 680,484 680,492 V 646 Q 680,654 688,654 H 1032" fill="none" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+
+  <!-- ============ Regulated rails ============ -->
+  <!-- TPS63802 → +3.3V bus -->
+  <line x1="928" y1="314" x2="984" y2="314" stroke="#9a5b0b" stroke-width="1.6"/>
+  <line x1="984" y1="118" x2="984" y2="510" stroke="#9a5b0b" stroke-width="2"/>
+  <circle cx="984" cy="314" r="3" fill="#9a5b0b"/>
+  <!-- Bus taps -->
+  <line x1="984" y1="118" x2="1032" y2="118" stroke="#9a5b0b" stroke-width="1.2" marker-end="url(#power-tree-arrow-power)"/>
+  <line x1="984" y1="174" x2="1032" y2="174" stroke="#9a5b0b" stroke-width="1.2" marker-end="url(#power-tree-arrow-power)"/>
+  <line x1="984" y1="230" x2="1032" y2="230" stroke="#9a5b0b" stroke-width="1.2" marker-end="url(#power-tree-arrow-power)"/>
+  <line x1="984" y1="286" x2="1032" y2="286" stroke="#9a5b0b" stroke-width="1.2" marker-end="url(#power-tree-arrow-power)"/>
+  <line x1="984" y1="342" x2="1032" y2="342" stroke="#9a5b0b" stroke-width="1.2" marker-end="url(#power-tree-arrow-power)"/>
+  <line x1="984" y1="398" x2="1032" y2="398" stroke="#9a5b0b" stroke-width="1.2" marker-end="url(#power-tree-arrow-power)"/>
+  <line x1="984" y1="454" x2="1032" y2="454" stroke="#9a5b0b" stroke-width="1.2" marker-end="url(#power-tree-arrow-power)"/>
+  <line x1="984" y1="510" x2="1032" y2="510" stroke="#9a5b0b" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#power-tree-arrow-power)"/>
+  <!-- LDO pair → VS1053b -->
+  <line x1="928" y1="582" x2="1032" y2="582" stroke="#9a5b0b" stroke-width="1.2" marker-end="url(#power-tree-arrow-power)"/>
+
+  <!-- ============ Labels ============ -->
+  <rect x="216" y="180" width="40" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="236" y="189" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">5 V</text>
+
+  <rect x="364" y="260" width="36" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="382" y="269" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">VBUS</text>
+
+  <rect x="480" y="180" width="56" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="508" y="189" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">VBUS · D7</text>
+
+  <rect x="168" y="320" width="48" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="192" y="329" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">CHARGE</text>
+
+  <rect x="328" y="440" width="56" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="356" y="449" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">VBAT · Q1</text>
+
+  <rect x="180" y="540" width="36" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="198" y="549" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">VBAT</text>
+
+  <rect x="652" y="360" width="36" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="670" y="369" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">VSYS</text>
+
+  <rect x="716" y="516" width="36" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="734" y="525" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">VSYS</text>
+
+  <rect x="842" y="634" width="36" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="860" y="643" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">VSYS</text>
+
+  <rect x="936" y="294" width="40" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="956" y="303" fill="#9a5b0b" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">+3.3V</text>
+
+  <rect x="940" y="562" width="80" height="12" rx="2" fill="#f7f5f0"/>
+  <text x="980" y="571" fill="#9a5b0b" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">+1V8 · +3.3VA</text>
+
+  <!-- ============ Source and charge nodes ============ -->
+  <!-- USB-C (external source) -->
+  <rect x="40" y="168" width="168" height="64" rx="6" fill="#f7f5f0"/>
+  <rect x="40" y="168" width="168" height="64" rx="6" fill="#5b5566" fill-opacity="0.10" stroke="#6b6475" stroke-width="1"/>
+  <rect x="48" y="176" width="28" height="12" rx="2" fill="none" stroke="#6b6475" stroke-opacity="0.40" stroke-width="0.8"/>
+  <text x="62" y="185" fill="#6b6475" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">EXT</text>
+  <text x="124" y="204" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif" text-anchor="middle">USB-C</text>
+  <text x="124" y="220" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">CC 5.1k · VBUS_SENSE PA9</text>
+
+  <!-- Input protection -->
+  <rect x="264" y="168" width="184" height="64" rx="6" fill="#f7f5f0"/>
+  <rect x="264" y="168" width="184" height="64" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="356" y="196" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif" text-anchor="middle">Input protection</text>
+  <text x="356" y="212" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">F2 polyfuse 750 mA</text>
+  <text x="356" y="225" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">USBLC6-2SC6 ESD</text>
+
+  <!-- Charger -->
+  <rect x="264" y="300" width="184" height="80" rx="6" fill="#f7f5f0"/>
+  <rect x="264" y="300" width="184" height="80" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="356" y="330" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif" text-anchor="middle">MCP73831 charger</text>
+  <text x="356" y="346" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">JP3: 500 / 100 mA</text>
+  <text x="356" y="359" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">STAT → CHG_STAT PB0</text>
+
+  <!-- LiPo (external source) -->
+  <rect x="40" y="424" width="168" height="72" rx="6" fill="#f7f5f0"/>
+  <rect x="40" y="424" width="168" height="72" rx="6" fill="#5b5566" fill-opacity="0.10" stroke="#6b6475" stroke-width="1"/>
+  <rect x="48" y="432" width="28" height="12" rx="2" fill="none" stroke="#6b6475" stroke-opacity="0.40" stroke-width="0.8"/>
+  <text x="62" y="441" fill="#6b6475" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">EXT</text>
+  <text x="124" y="460" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif" text-anchor="middle">LiPo cell</text>
+  <text x="124" y="475" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">JST-PH · 3.0 – 4.2 V</text>
+  <text x="124" y="488" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">JP1 drain</text>
+
+  <!-- Fuel gauge -->
+  <rect x="264" y="528" width="184" height="64" rx="6" fill="#f7f5f0"/>
+  <rect x="264" y="528" width="184" height="64" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="356" y="556" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif" text-anchor="middle">MAX17048 gauge</text>
+  <text x="356" y="572" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">I2C1 0x36 · ALRT PE6</text>
+
+  <!-- VSYS (focal) -->
+  <rect x="504" y="420" width="152" height="80" rx="6" fill="#f7f5f0"/>
+  <rect x="504" y="420" width="152" height="80" rx="6" fill="#972d6f" fill-opacity="0.08" stroke="#972d6f" stroke-width="1"/>
+  <rect x="512" y="428" width="36" height="12" rx="2" fill="none" stroke="#972d6f" stroke-opacity="0.50" stroke-width="0.8"/>
+  <text x="530" y="437" fill="#972d6f" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">RAIL</text>
+  <text x="580" y="462" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif" text-anchor="middle">VSYS</text>
+  <text x="580" y="477" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">D7 + Q1 load sharing</text>
+  <text x="580" y="490" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">3.0 – 5 V</text>
+
+  <!-- ============ Regulators ============ -->
+  <!-- TPS63802 (focal) -->
+  <rect x="736" y="276" width="192" height="76" rx="6" fill="#f7f5f0"/>
+  <rect x="736" y="276" width="192" height="76" rx="6" fill="#972d6f" fill-opacity="0.08" stroke="#972d6f" stroke-width="1"/>
+  <rect x="744" y="284" width="28" height="12" rx="2" fill="none" stroke="#972d6f" stroke-opacity="0.50" stroke-width="0.8"/>
+  <text x="758" y="293" fill="#972d6f" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">B-B</text>
+  <text x="832" y="312" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif" text-anchor="middle">TPS63802</text>
+  <text x="832" y="328" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">buck-boost · 2 A · JP2</text>
+  <text x="832" y="341" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">EN = 3V3_EN (slider)</text>
+
+  <!-- LDO pair -->
+  <rect x="736" y="548" width="192" height="68" rx="6" fill="#f7f5f0"/>
+  <rect x="736" y="548" width="192" height="68" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="832" y="570" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif" text-anchor="middle">TPS7A2018 + TPS7A2033</text>
+  <text x="832" y="586" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">LDOs · EN = VS_EN PA6 · JP6</text>
+  <text x="832" y="599" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace" text-anchor="middle">JP4: +3.3VA or +3.3V via FB3</text>
+
+  <!-- ============ Loads ============ -->
+  <!-- MCU -->
+  <rect x="1032" y="96" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="96" width="272" height="44" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="1044" y="115" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">STM32F446VET6</text>
+  <text x="1044" y="130" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">JP401 · VDDA via FB401</text>
+
+  <!-- PSRAM -->
+  <rect x="1032" y="152" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="152" width="272" height="44" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="1044" y="171" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">PSRAM APS6404L</text>
+  <text x="1044" y="186" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">JP601 · always on (page cache)</text>
+
+  <!-- microSD (switched) -->
+  <rect x="1032" y="208" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="208" width="272" height="44" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <rect x="1272" y="216" width="24" height="12" rx="2" fill="none" stroke="#9a5b0b" stroke-opacity="0.60" stroke-width="0.8"/>
+  <text x="1284" y="225" fill="#9a5b0b" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SW</text>
+  <text x="1044" y="227" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">microSD card</text>
+  <text x="1044" y="242" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">JP602 → TPS22917 · SD_EN</text>
+
+  <!-- Bluetooth (switched) -->
+  <rect x="1032" y="264" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="264" width="272" height="44" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <rect x="1272" y="272" width="24" height="12" rx="2" fill="none" stroke="#9a5b0b" stroke-opacity="0.60" stroke-width="0.8"/>
+  <text x="1284" y="281" fill="#9a5b0b" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SW</text>
+  <text x="1044" y="283" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">Bluetooth FSC-BT1035</text>
+  <text x="1044" y="298" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">JP5 → TPS22917 · BT_EN PD7</text>
+
+  <!-- Panels -->
+  <rect x="1032" y="320" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="320" width="272" height="44" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="1044" y="339" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">TFT panels ×2</text>
+  <text x="1044" y="354" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">JP201 / JP301 · VDD + VDDI</text>
+
+  <!-- MPR121 -->
+  <rect x="1032" y="376" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="376" width="272" height="44" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="1044" y="395" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">MPR121 click wheel</text>
+  <text x="1044" y="410" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">JP501 · same rail as I2C1 pull-ups</text>
+
+  <!-- Backlights -->
+  <rect x="1032" y="432" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="432" width="272" height="44" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="1044" y="451" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">Backlights ×2</text>
+  <text x="1044" y="466" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">JP202 / JP302: +3.3V or VSYS · PWM sink</text>
+
+  <!-- CS43131 (planned) -->
+  <rect x="1032" y="488" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="488" width="272" height="44" rx="6" fill="#f7f5f0" stroke="#5b5566" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="1264" y="496" width="32" height="12" rx="2" fill="none" stroke="#5b5566" stroke-opacity="0.40" stroke-width="0.8"/>
+  <text x="1280" y="505" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">PLAN</text>
+  <text x="1044" y="507" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">CS43131 DAC</text>
+  <text x="1044" y="522" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">AP2112K 1.8 V · DAC_EN · VP from VSYS</text>
+
+  <!-- VS1053b (switched through its LDOs) -->
+  <rect x="1032" y="560" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="560" width="272" height="44" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <rect x="1272" y="568" width="24" height="12" rx="2" fill="none" stroke="#9a5b0b" stroke-opacity="0.60" stroke-width="0.8"/>
+  <text x="1284" y="577" fill="#9a5b0b" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SW</text>
+  <text x="1044" y="579" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">VS1053b codec</text>
+  <text x="1044" y="594" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">CVDD +1V8 · AVDD + IOVDD +3.3VA</text>
+
+  <!-- DRV2605L (switched) -->
+  <rect x="1032" y="632" width="272" height="44" rx="6" fill="#f7f5f0"/>
+  <rect x="1032" y="632" width="272" height="44" rx="6" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <rect x="1272" y="640" width="24" height="12" rx="2" fill="none" stroke="#9a5b0b" stroke-opacity="0.60" stroke-width="0.8"/>
+  <text x="1284" y="649" fill="#9a5b0b" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SW</text>
+  <text x="1044" y="651" fill="#24212b" font-size="12" font-weight="600" font-family="'Space Grotesk', sans-serif">DRV2605L haptics</text>
+  <text x="1044" y="666" fill="#5b5566" font-size="9" font-family="'IBM Plex Mono', monospace">JP502 · DRV_EN PB5 shutdown</text>
+
+  <!-- ============ Legend ============ -->
+  <line x1="40" y1="712" x2="1320" y2="712" stroke="#24212b" stroke-opacity="0.10" stroke-width="0.8"/>
+  <text x="40" y="732" fill="#5b5566" font-size="8" font-family="'IBM Plex Mono', monospace" letter-spacing="0.18em">LEGEND</text>
+
+  <rect x="40" y="748" width="14" height="10" rx="2" fill="#5b5566" fill-opacity="0.10" stroke="#6b6475" stroke-width="1"/>
+  <text x="60" y="756" fill="#5b5566" font-size="8.5" font-family="'Space Grotesk', sans-serif">Source</text>
+
+  <rect x="128" y="748" width="14" height="10" rx="2" fill="#972d6f" fill-opacity="0.08" stroke="#972d6f" stroke-width="1"/>
+  <text x="148" y="756" fill="#5b5566" font-size="8.5" font-family="'Space Grotesk', sans-serif">Main rail / regulator</text>
+
+  <rect x="276" y="748" width="14" height="10" rx="2" fill="#ffffff" stroke="#24212b" stroke-width="1"/>
+  <text x="296" y="756" fill="#5b5566" font-size="8.5" font-family="'Space Grotesk', sans-serif">Block / load</text>
+
+  <rect x="384" y="748" width="14" height="10" rx="2" fill="#f7f5f0" stroke="#5b5566" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="404" y="756" fill="#5b5566" font-size="8.5" font-family="'Space Grotesk', sans-serif">Planned</text>
+
+  <rect x="472" y="747" width="22" height="12" rx="2" fill="none" stroke="#9a5b0b" stroke-opacity="0.60" stroke-width="0.8"/>
+  <text x="483" y="756" fill="#9a5b0b" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SW</text>
+  <text x="502" y="756" fill="#5b5566" font-size="8.5" font-family="'Space Grotesk', sans-serif">Switched by a GPIO</text>
+
+  <line x1="632" y1="753" x2="660" y2="753" stroke="#5b5566" stroke-width="1.2" marker-end="url(#power-tree-arrow)"/>
+  <text x="668" y="756" fill="#5b5566" font-size="8.5" font-family="'Space Grotesk', sans-serif">Unregulated (VBUS · VBAT · VSYS)</text>
+
+  <line x1="840" y1="753" x2="868" y2="753" stroke="#9a5b0b" stroke-width="1.2" marker-end="url(#power-tree-arrow-power)"/>
+  <text x="876" y="756" fill="#5b5566" font-size="8.5" font-family="'Space Grotesk', sans-serif">Regulated rail</text>
+
+  <line x1="968" y1="753" x2="996" y2="753" stroke="#9a5b0b" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#power-tree-arrow-power)"/>
+  <text x="1004" y="756" fill="#5b5566" font-size="8.5" font-family="'Space Grotesk', sans-serif">Planned rail</text>
+
+  <text x="1320" y="756" fill="#6b6475" font-size="8" font-family="'IBM Plex Mono', monospace" text-anchor="end">JPx = drain jumper (cut to measure)</text>
+</svg>

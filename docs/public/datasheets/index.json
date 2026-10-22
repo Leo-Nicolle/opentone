@@ -1,0 +1,1947 @@
+{
+  "generated": "2026-10-22",
+  "source": "hardware/opentone/*.kicad_sch + datasheets/overrides.json",
+  "generator": "scripts/datasheets.py",
+  "categories": [
+    "audio",
+    "bluetooth",
+    "connectors",
+    "devboards",
+    "discretes",
+    "display",
+    "input",
+    "mcu",
+    "memory",
+    "passives",
+    "power"
+  ],
+  "parts": [
+    {
+      "id": "sj-43515ts-smt-tr",
+      "mpn": "SJ-43515TS-SMT-TR",
+      "manufacturer": "Same Sky (Formerly CUI Devices)",
+      "lcsc": "C5353507",
+      "category": "audio",
+      "description": "",
+      "values": [
+        "SJ-43515TS-SMT-TR"
+      ],
+      "refs": [
+        "Jack1"
+      ],
+      "sheets": [
+        "audio"
+      ],
+      "inBom": true,
+      "url": "https://www.sameskydevices.com/product/resource/sj-4351x-smt.pdf",
+      "file": "datasheets/audio/sj-43515ts-smt-tr.pdf"
+    },
+    {
+      "id": "tpd4e05u06dqar",
+      "mpn": "TPD4E05U06DQAR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "C138714",
+      "category": "audio",
+      "description": "4-ch ESD array, 0.5 pF, 10 nA: jack lines L, R, GBUF and HP1_DET. Place right at Jack1, short GND path",
+      "values": [
+        "TPD4E05U06DQAR"
+      ],
+      "refs": [
+        "U15"
+      ],
+      "sheets": [
+        "audio"
+      ],
+      "inBom": true,
+      "url": "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf",
+      "file": "datasheets/audio/tpd4e05u06dqar.pdf"
+    },
+    {
+      "id": "vs1053b-l",
+      "mpn": "VS1053B-L",
+      "manufacturer": "VLSI Solution",
+      "lcsc": "C9922",
+      "category": "audio",
+      "description": "",
+      "values": [
+        "VS1053B-L"
+      ],
+      "refs": [
+        "VS1"
+      ],
+      "sheets": [
+        "audio"
+      ],
+      "inBom": true,
+      "url": "https://www.vlsi.fi/fileadmin/datasheets/vs1053.pdf",
+      "file": "datasheets/audio/vs1053.pdf",
+      "extra": [
+        {
+          "title": "VS10xx analog output app note",
+          "file": "datasheets/audio/vs10XXan_output.pdf",
+          "url": "https://www.vlsi.fi/fileadmin/app_notes/vs10XXan_output.pdf"
+        },
+        {
+          "title": "VS10xx family comparison",
+          "file": "datasheets/audio/vs10xx-comparison.pdf",
+          "url": "https://www.vlsi.fi/fileadmin/app_notes/vs10xx-comparison.pdf"
+        }
+      ]
+    },
+    {
+      "inBom": false,
+      "url": "https://statics.cirrus.com/pubs/proDatasheet/CS43131_DS1155F2.pdf",
+      "refs": [],
+      "id": "cs43131",
+      "mpn": "CS43131",
+      "manufacturer": "Cirrus Logic",
+      "category": "audio",
+      "description": "DAC + headphone amp (evaluated, not used)",
+      "file": "datasheets/audio/cs43131.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://www.vlsi.fi/fileadmin/datasheets/vs1063ds.pdf",
+      "refs": [],
+      "id": "vs1063",
+      "mpn": "VS1063a",
+      "manufacturer": "VLSI Solution",
+      "category": "audio",
+      "description": "Audio codec (alternative to VS1053)",
+      "file": "datasheets/audio/vs1063ds.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://www.vlsi.fi/fileadmin/datasheets/vs1073ds.pdf",
+      "refs": [],
+      "id": "vs1073",
+      "mpn": "VS1073",
+      "manufacturer": "VLSI Solution",
+      "category": "audio",
+      "description": "Audio codec (alternative to VS1053)",
+      "file": "datasheets/audio/vs1073ds.pdf"
+    },
+    {
+      "id": "fsc-bt1035",
+      "mpn": "FSC-BT1035",
+      "manufacturer": "Feasycom",
+      "lcsc": "",
+      "category": "bluetooth",
+      "description": "Feasycom FSC-BT1035 Bluetooth 5.2 module (QCC3056)",
+      "values": [
+        "FSC-BT1035"
+      ],
+      "refs": [
+        "U101"
+      ],
+      "sheets": [
+        "bluetooth"
+      ],
+      "inBom": true,
+      "url": "https://www.feasycom.com/datasheet/fsc-bt1035.pdf",
+      "file": "datasheets/bluetooth/FSC-BT1035_Datasheet_EN.pdf",
+      "extra": [
+        {
+          "title": "FSC-BT1035 programming user guide",
+          "file": "datasheets/bluetooth/FSC-BT1035_programming_user_guide.pdf",
+          "url": "https://document.feasycom.com/docs/audio/BT1035_EN/latest/_downloads/1522ecd733f972ecc0d22983f6564b04/FSC-BT1035_programming_user_guide_1.1.1.pdf"
+        },
+        {
+          "title": "Feasycom module comparison notes",
+          "file": "datasheets/bluetooth/bluetooth.md"
+        }
+      ]
+    },
+    {
+      "inBom": false,
+      "url": "https://www.feasycom.com/datasheet/fsc-bt1026.pdf",
+      "refs": [],
+      "id": "fsc-bt1026x",
+      "mpn": "FSC-BT1026x",
+      "manufacturer": "Feasycom",
+      "category": "bluetooth",
+      "description": "Bluetooth module (alternative)",
+      "file": "datasheets/bluetooth/FSC-BT1026x_Datasheet_EN.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://www.feasycom.com/datasheet/fsc-bt630.pdf",
+      "refs": [],
+      "id": "fsc-bt630",
+      "mpn": "FSC-BT630",
+      "manufacturer": "Feasycom",
+      "category": "bluetooth",
+      "description": "Bluetooth module (alternative)",
+      "file": "datasheets/bluetooth/FSC-BT630_Datasheet_EN.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://www.feasycom.com/datasheet/fsc-bt677d.pdf",
+      "refs": [],
+      "id": "fsc-bt677d",
+      "mpn": "FSC-BT677D",
+      "manufacturer": "Feasycom",
+      "category": "bluetooth",
+      "description": "Bluetooth module (alternative)",
+      "file": "datasheets/bluetooth/FSC-BT677D_Datasheet_EN.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://www.feasycom.com/datasheet/fsc-bt986.pdf",
+      "refs": [],
+      "id": "fsc-bt986",
+      "mpn": "FSC-BT986",
+      "manufacturer": "Feasycom",
+      "category": "bluetooth",
+      "description": "Bluetooth module (alternative)",
+      "file": "datasheets/bluetooth/FSC-BT986_Datasheet_EN.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://www.feasycom.com/datasheet/fsc-hc05.pdf",
+      "refs": [],
+      "id": "fsc-hc05",
+      "mpn": "FSC-HC05",
+      "manufacturer": "Feasycom",
+      "category": "bluetooth",
+      "description": "Bluetooth module (alternative)",
+      "file": "datasheets/bluetooth/FSC-HC05_Datasheet_EN.pdf"
+    },
+    {
+      "id": "20021121-00010c4lf",
+      "mpn": "20021121-00010C4LF",
+      "manufacturer": "Amphenol ICC",
+      "lcsc": "C150517",
+      "category": "connectors",
+      "description": "",
+      "values": [
+        "SWD 2x5 1.27mm"
+      ],
+      "refs": [
+        "J401"
+      ],
+      "sheets": [
+        "mcu"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588908950641659904",
+      "file": "datasheets/connectors/20021121-00010c4lf.pdf"
+    },
+    {
+      "id": "s2b-ph-sm4-tb-lf-sn",
+      "mpn": "S2B-PH-SM4-TB(LF)(SN)",
+      "manufacturer": "JST",
+      "lcsc": "C295747",
+      "category": "connectors",
+      "description": "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",
+      "values": [
+        "LiPo JST-PH"
+      ],
+      "refs": [
+        "J3"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8587740317575483392",
+      "file": "datasheets/connectors/s2b-ph-sm4-tb-lf-sn.pdf"
+    },
+    {
+      "id": "type-c-31-m-12",
+      "mpn": "TYPE-C-31-M-12",
+      "manufacturer": "Korean Hroparts Elec",
+      "lcsc": "C165948",
+      "category": "connectors",
+      "description": "",
+      "values": [
+        "USB_C_Receptacle"
+      ],
+      "refs": [
+        "USB1"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8550723676069908480",
+      "file": "datasheets/connectors/type-c-31-m-12.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://www.st.com/resource/en/data_brief/nucleo-f207zg.pdf",
+      "refs": [],
+      "id": "nucleo-f207zg",
+      "mpn": "NUCLEO-F207ZG",
+      "manufacturer": "STMicroelectronics",
+      "category": "devboards",
+      "description": "Nucleo-144 F207ZG data brief",
+      "file": "datasheets/devboards/DB_nucleo-f207zg.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf",
+      "refs": [],
+      "id": "nucleo-64",
+      "mpn": "NUCLEO-F446RE",
+      "manufacturer": "STMicroelectronics",
+      "category": "devboards",
+      "description": "UM1724 STM32 Nucleo-64 boards (MB1136)",
+      "file": "datasheets/devboards/nucleo.pdf",
+      "extra": [
+        {
+          "title": "Nucleo-64 pinout",
+          "file": "datasheets/devboards/nucleo.png"
+        },
+        {
+          "title": "Nucleo-64 pinout (upside down)",
+          "file": "datasheets/devboards/nucleo-upside-down.jpg"
+        }
+      ]
+    },
+    {
+      "inBom": false,
+      "url": "https://www.st.com/resource/en/user_manual/um2861-stm32u5-nucleo144-board-mb1549-stmicroelectronics.pdf",
+      "refs": [],
+      "id": "nucleo-u5a5zj-q",
+      "mpn": "NUCLEO-U5A5ZJ-Q",
+      "manufacturer": "STMicroelectronics",
+      "category": "devboards",
+      "description": "UM2861 STM32U5 Nucleo-144 board (MB1549)",
+      "file": "datasheets/devboards/nucleo144-boards.pdf"
+    },
+    {
+      "id": "ao3400a",
+      "mpn": "AO3400A",
+      "manufacturer": "Alpha & Omega Semiconductor",
+      "lcsc": "C20917",
+      "category": "discretes",
+      "description": "",
+      "values": [
+        "AO3400A"
+      ],
+      "refs": [
+        "Q201",
+        "Q301"
+      ],
+      "sheets": [
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8550723985357750272",
+      "file": "datasheets/discretes/ao3400a.pdf"
+    },
+    {
+      "id": "ao3401a",
+      "mpn": "AO3401A",
+      "manufacturer": "Alpha & Omega Semiconductor",
+      "lcsc": "C15127",
+      "category": "discretes",
+      "description": "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23",
+      "values": [
+        "AO3401A"
+      ],
+      "refs": [
+        "Q1",
+        "Q2"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf",
+      "file": "datasheets/discretes/ao3401a.pdf"
+    },
+    {
+      "id": "asmd1206-075",
+      "mpn": "ASMD1206-075",
+      "manufacturer": "Shenzhen JDT Fuse",
+      "lcsc": "C135339",
+      "category": "discretes",
+      "description": "",
+      "values": [
+        "ASMD1206-075"
+      ],
+      "refs": [
+        "F2"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899511045799936",
+      "file": "datasheets/discretes/asmd1206-075.pdf"
+    },
+    {
+      "id": "b5819w-sl",
+      "mpn": "B5819W SL",
+      "manufacturer": "Jiangsu Changjing Electronics",
+      "lcsc": "C8598",
+      "category": "discretes",
+      "description": "Schottky diode",
+      "values": [
+        "B5819W"
+      ],
+      "refs": [
+        "D7"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707605708554240",
+      "file": "datasheets/discretes/B5819W.pdf"
+    },
+    {
+      "id": "bss138lt1g",
+      "mpn": "BSS138LT1G",
+      "manufacturer": "onsemi",
+      "lcsc": "C82045",
+      "category": "discretes",
+      "description": "N-MOSFET (datasheet: 2SK3018 or equivalent)",
+      "values": [
+        "BSS138"
+      ],
+      "refs": [
+        "Q101"
+      ],
+      "sheets": [
+        "bluetooth"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8586181376869060608",
+      "file": "datasheets/discretes/bss138lt1g.pdf"
+    },
+    {
+      "id": "fc-135-32-7680ka-e",
+      "mpn": "FC-135 32.7680KA-E",
+      "manufacturer": "Seiko Epson",
+      "lcsc": "C20340322",
+      "category": "discretes",
+      "description": "",
+      "values": [
+        "32.768kHz"
+      ],
+      "refs": [
+        "Y402"
+      ],
+      "sheets": [
+        "mcu"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8604343754664914944",
+      "file": "datasheets/discretes/fc-135-32-7680ka-e.pdf"
+    },
+    {
+      "id": "k3a080001010",
+      "mpn": "K3A080001010",
+      "manufacturer": "KYX",
+      "lcsc": "C19076848",
+      "category": "discretes",
+      "description": "",
+      "values": [
+        "8MHz"
+      ],
+      "refs": [
+        "Y401"
+      ],
+      "sheets": [
+        "mcu"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8603109940500176896",
+      "file": "datasheets/discretes/k3a080001010.pdf"
+    },
+    {
+      "id": "kt-0603r",
+      "mpn": "KT-0603R",
+      "manufacturer": "Hubei KENTO Elec",
+      "lcsc": "C2286",
+      "category": "discretes",
+      "description": "Light emitting diode",
+      "values": [
+        "LED1",
+        "LED0",
+        "STATUS",
+        "LED"
+      ],
+      "refs": [
+        "D4",
+        "D101",
+        "D102",
+        "D401"
+      ],
+      "sheets": [
+        "bluetooth",
+        "mcu",
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8763907065070653440",
+      "file": "datasheets/discretes/kt-0603r.pdf"
+    },
+    {
+      "id": "smf5-0a",
+      "mpn": "SMF5.0A",
+      "manufacturer": "Littelfuse",
+      "lcsc": "C151296",
+      "category": "discretes",
+      "description": "5 V unidirectional TVS, 200 W, VBUS transient clamp after F2 (place next to USB1)",
+      "values": [
+        "SMF5.0A"
+      ],
+      "refs": [
+        "D8"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588884619031171072",
+      "file": "datasheets/discretes/smf5-0a.pdf"
+    },
+    {
+      "id": "txm12-288m0004322fbcdo00t",
+      "mpn": "TXM12.288M0004322FBCDO00T",
+      "manufacturer": "Yajingxin",
+      "lcsc": "C362472",
+      "category": "discretes",
+      "description": "",
+      "values": [
+        "12.288MHz"
+      ],
+      "refs": [
+        "Y1"
+      ],
+      "sheets": [
+        "audio"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588884093660094464",
+      "file": "datasheets/discretes/txm12-288m0004322fbcdo00t.pdf"
+    },
+    {
+      "id": "fh12-40s-0-5sh-55",
+      "mpn": "FH12-40S-0.5SH(55)",
+      "manufacturer": "Hirose",
+      "lcsc": "C202114",
+      "category": "display",
+      "description": "40-pin 0.5mm FPC connector for the TFT panels",
+      "values": [
+        "NHD-2.4-240320AF-CSXP",
+        "LCD_ILI9341_TN_40P"
+      ],
+      "refs": [
+        "J201",
+        "J301"
+      ],
+      "sheets": [
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8571711678368563200",
+      "file": "datasheets/display/fh12-40s-0-5sh-55.pdf"
+    },
+    {
+      "id": "mcp6001t-i-ot",
+      "mpn": "MCP6001T-I/OT",
+      "manufacturer": "Microchip",
+      "lcsc": "C116490",
+      "category": "display",
+      "description": "",
+      "values": [
+        "MCP6001"
+      ],
+      "refs": [
+        "U201",
+        "U301"
+      ],
+      "sheets": [
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://ww1.microchip.com/downloads/en/DeviceDoc/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf",
+      "file": "datasheets/display/mcp6001t-i-ot.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://cdn-shop.adafruit.com/datasheets/ILI9341.pdf",
+      "refs": [
+        "J201"
+      ],
+      "id": "ili9341-tft-2.4",
+      "mpn": "ILI9341",
+      "manufacturer": "Ilitek",
+      "category": "display",
+      "description": "2.4\" TN TFT module, ILI9341 controller (40-pin FPC)",
+      "file": "datasheets/display/ILI9341.pdf",
+      "extra": [
+        {
+          "title": "Screen pin notes",
+          "file": "datasheets/display/screen-pins.md"
+        },
+        {
+          "title": "Screen pinout",
+          "file": "datasheets/display/screen-pinout.png"
+        },
+        {
+          "title": "Screen dimensions",
+          "file": "datasheets/display/screen-dimensions.png"
+        },
+        {
+          "title": "Screen photo",
+          "file": "datasheets/display/screen-1.avif"
+        },
+        {
+          "title": "IM0-2 interface mode table",
+          "file": "datasheets/display/source-truth.webp"
+        }
+      ]
+    },
+    {
+      "inBom": false,
+      "url": "https://newhavendisplay.com/content/specs/NHD-2.4-240320AF-CSXP.pdf",
+      "refs": [
+        "J301"
+      ],
+      "id": "nhd-2.4-240320af-csxp",
+      "mpn": "NHD-2.4-240320AF-CSXP",
+      "manufacturer": "Newhaven Display",
+      "category": "display",
+      "description": "2.4\" IPS TFT module (40-pin FPC)",
+      "file": "datasheets/display/NHD-2.4-240320AF-CSXP.pdf"
+    },
+    {
+      "id": "drv2605ldgsr",
+      "mpn": "DRV2605LDGSR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "",
+      "category": "input",
+      "description": "Haptic driver for LRAs and ERMs with effect library, 2-5.2V, VSSOP-10",
+      "values": [
+        "DRV2605L"
+      ],
+      "refs": [
+        "U502"
+      ],
+      "sheets": [
+        "buttons"
+      ],
+      "inBom": true,
+      "url": "https://www.ti.com/lit/ds/symlink/drv2605l.pdf",
+      "file": "datasheets/input/drv2605l.pdf"
+    },
+    {
+      "id": "mpr121qr2",
+      "mpn": "MPR121QR2",
+      "manufacturer": "NXP",
+      "lcsc": "C91322",
+      "category": "input",
+      "description": "",
+      "values": [
+        "MPR121QR2"
+      ],
+      "refs": [
+        "U501"
+      ],
+      "sheets": [
+        "buttons"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588881668807528448",
+      "file": "datasheets/input/mpr121qr2.pdf"
+    },
+    {
+      "id": "pcm13smtr",
+      "mpn": "PCM13SMTR",
+      "manufacturer": "C&K",
+      "lcsc": "",
+      "category": "input",
+      "description": "",
+      "values": [
+        "OFF / HOLD / ON"
+      ],
+      "refs": [
+        "SW506"
+      ],
+      "sheets": [
+        "buttons"
+      ],
+      "inBom": true,
+      "url": "https://www.ckswitches.com/media/1424/pcm.pdf",
+      "file": "datasheets/input/pcm13smtr.pdf"
+    },
+    {
+      "id": "pts810sjg250smtrlfs",
+      "mpn": "PTS810SJG250SMTRLFS",
+      "manufacturer": "C&K",
+      "lcsc": "C221895",
+      "category": "input",
+      "description": "",
+      "values": [
+        "BOOT0 (DFU)",
+        "RESET"
+      ],
+      "refs": [
+        "SW401",
+        "SW402"
+      ],
+      "sheets": [
+        "mcu"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588910102677610496",
+      "file": "datasheets/input/pts810sjg250smtrlfs.pdf"
+    },
+    {
+      "id": "skqgafe010",
+      "mpn": "SKQGAFE010",
+      "manufacturer": "Alps Alpine",
+      "lcsc": "C202424",
+      "category": "input",
+      "description": "",
+      "values": [
+        "SKQGAFE010 Bottom",
+        "SKQGAFE010 Top",
+        "SKQGAFE010 Right",
+        "SKQGAFE010 Center",
+        "SKQGAFE010 Left"
+      ],
+      "refs": [
+        "SW501",
+        "SW502",
+        "SW503",
+        "SW504",
+        "SW505"
+      ],
+      "sheets": [
+        "buttons"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588894214143299585",
+      "file": "datasheets/input/skqgafe010.pdf"
+    },
+    {
+      "id": "stm32f446vet6",
+      "mpn": "STM32F446VET6",
+      "manufacturer": "STMicroelectronics",
+      "lcsc": "C91929",
+      "category": "mcu",
+      "description": "",
+      "values": [
+        "STM32F446VETx"
+      ],
+      "refs": [
+        "U401"
+      ],
+      "sheets": [
+        "mcu"
+      ],
+      "inBom": true,
+      "url": "https://www.st.com/resource/en/datasheet/stm32f446ve.pdf",
+      "file": "datasheets/mcu/stm32f446re.pdf",
+      "extra": [
+        {
+          "title": "RM0390 STM32F446xx reference manual",
+          "file": "datasheets/mcu/rm0390-stm32f446xx.pdf",
+          "url": "https://www.st.com/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf"
+        },
+        {
+          "title": "AN2606 system memory boot mode",
+          "file": "datasheets/mcu/an2606-introduction-to-system-memory-boot-mode-on-stm32-mcus-stmicroelectronics.pdf",
+          "url": "https://www.st.com/resource/en/application_note/an2606-introduction-to-system-memory-boot-mode-on-stm32-mcus-stmicroelectronics.pdf"
+        },
+        {
+          "title": "LQFP100 pin notes",
+          "file": "datasheets/mcu/lqfp100-pins.md"
+        },
+        {
+          "title": "LQFP100 pinout diagram",
+          "file": "datasheets/mcu/LQFP100-pinout.png"
+        },
+        {
+          "title": "LQFP100 pin / alternate-function table",
+          "file": "datasheets/mcu/test-pinouts.csv"
+        }
+      ]
+    },
+    {
+      "inBom": false,
+      "url": "https://www.st.com/resource/en/datasheet/stm32u5a5zj.pdf",
+      "refs": [],
+      "id": "stm32u5a5zj",
+      "mpn": "STM32U5A5ZJ",
+      "manufacturer": "STMicroelectronics",
+      "category": "mcu",
+      "description": "MCU (evaluated on NUCLEO-U5A5ZJ-Q)",
+      "file": "datasheets/mcu/DS_stm32u5a5zj.pdf"
+    },
+    {
+      "id": "aps6404l-3sqn-sn",
+      "mpn": "APS6404L-3SQN-SN",
+      "manufacturer": "AP Memory",
+      "lcsc": "",
+      "category": "memory",
+      "description": "",
+      "values": [
+        "APS6404L-3SQN-SN"
+      ],
+      "refs": [
+        "U601"
+      ],
+      "sheets": [
+        "memory"
+      ],
+      "inBom": true,
+      "url": "https://www.mouser.com/datasheet/2/1127/APM_PSRAM_QSPI_APS6404L_3SQR_v2_3_PKG-1954826.pdf",
+      "file": "datasheets/memory/APS6404L-3SQR-SN-2(ram).pdf"
+    },
+    {
+      "id": "dm3at-sf-pejm5",
+      "mpn": "DM3AT-SF-PEJM5",
+      "manufacturer": "Hirose",
+      "lcsc": "C114218",
+      "category": "memory",
+      "description": "",
+      "values": [
+        "DM3AT-SF-PEJM5"
+      ],
+      "refs": [
+        "J601"
+      ],
+      "sheets": [
+        "memory"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588898986388295681",
+      "file": "datasheets/memory/dm3at-sf-pejm5.pdf",
+      "extra": [
+        {
+          "title": "Hirose DM3 series catalog",
+          "file": "datasheets/memory/hirose-sd-card.pdf"
+        }
+      ]
+    },
+    {
+      "id": "0603b472k500nt",
+      "mpn": "0603B472K500NT",
+      "manufacturer": "FH (Guangdong Fenghua)",
+      "lcsc": "C53987",
+      "category": "passives",
+      "description": "Unpolarized capacitor",
+      "values": [
+        "4.7nF",
+        "4n7"
+      ],
+      "refs": [
+        "C60",
+        "C207",
+        "C307"
+      ],
+      "sheets": [
+        "power",
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8770989226131640320",
+      "file": "datasheets/passives/fenghua-0603-mlcc.pdf"
+    },
+    {
+      "id": "0603cg6r8c500nt",
+      "mpn": "0603CG6R8C500NT",
+      "manufacturer": "FH (Guangdong Fenghua)",
+      "lcsc": "C1679",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "6.8p"
+      ],
+      "refs": [
+        "C415",
+        "C416"
+      ],
+      "sheets": [
+        "mcu"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8770988127340892160",
+      "file": "datasheets/passives/fenghua-0603-mlcc.pdf"
+    },
+    {
+      "id": "0603waf0000t5e",
+      "mpn": "0603WAF0000T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C21189",
+      "category": "passives",
+      "description": "Quick output discharge (DNP when JP101 is closed)",
+      "values": [
+        "0R"
+      ],
+      "refs": [
+        "R30",
+        "R31",
+        "R51",
+        "R52",
+        "R53",
+        "R102",
+        "R216",
+        "R316",
+        "R601",
+        "R602",
+        "R603",
+        "R604",
+        "R605",
+        "R606",
+        "R611",
+        "R612",
+        "R613",
+        "R614"
+      ],
+      "sheets": [
+        "bluetooth",
+        "memory",
+        "power",
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8756450222375747584",
+      "file": "datasheets/passives/0603waf0000t5e.pdf"
+    },
+    {
+      "id": "0603waf1000t5e",
+      "mpn": "0603WAF1000T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C22775",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "100R"
+      ],
+      "refs": [
+        "R211",
+        "R311"
+      ],
+      "sheets": [
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706114222985216",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf1001t5e",
+      "mpn": "0603WAF1001T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C21190",
+      "category": "passives",
+      "description": "LED resistor",
+      "values": [
+        "1k",
+        "1k 1%"
+      ],
+      "refs": [
+        "R113",
+        "R114",
+        "R215",
+        "R315",
+        "R404"
+      ],
+      "sheets": [
+        "bluetooth",
+        "mcu",
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706098733010944",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf1002t5e",
+      "mpn": "0603WAF1002T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C25804",
+      "category": "passives",
+      "description": "Resistor",
+      "values": [
+        "10k"
+      ],
+      "refs": [
+        "R33",
+        "R40",
+        "R401",
+        "R501",
+        "R503",
+        "R504",
+        "R505",
+        "R506",
+        "R507",
+        "R508",
+        "R607"
+      ],
+      "sheets": [
+        "buttons",
+        "mcu",
+        "memory",
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706381320323072",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf1003t5e",
+      "mpn": "0603WAF1003T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C25803",
+      "category": "passives",
+      "description": "BT_EN pull-up: module powered by default",
+      "values": [
+        "100k",
+        "100K"
+      ],
+      "refs": [
+        "R3",
+        "R7",
+        "R8",
+        "R16",
+        "R17",
+        "R34",
+        "R36",
+        "R41",
+        "R42",
+        "R43",
+        "R44",
+        "R45",
+        "R46",
+        "R47",
+        "R101",
+        "R112",
+        "R213",
+        "R313",
+        "R509",
+        "R610",
+        "R620"
+      ],
+      "sheets": [
+        "audio",
+        "bluetooth",
+        "buttons",
+        "memory",
+        "power",
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706350726930432",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf1004t5e",
+      "mpn": "0603WAF1004T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C22935",
+      "category": "passives",
+      "description": "Resistor",
+      "values": [
+        "1M"
+      ],
+      "refs": [
+        "R18",
+        "R32",
+        "R35"
+      ],
+      "sheets": [
+        "audio",
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706152755920896",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf100jt5e",
+      "mpn": "0603WAF100JT5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C22859",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "10"
+      ],
+      "refs": [
+        "R13"
+      ],
+      "sheets": [
+        "audio"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706149802991616",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf100kt5e",
+      "mpn": "0603WAF100KT5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C22936",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "1R 1%"
+      ],
+      "refs": [
+        "R212",
+        "R312"
+      ],
+      "sheets": [
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706155561910272",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf2001t5e",
+      "mpn": "0603WAF2001T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C22975",
+      "category": "passives",
+      "description": "SYS_CTRL pull-up",
+      "values": [
+        "2k"
+      ],
+      "refs": [
+        "R21",
+        "R111"
+      ],
+      "sheets": [
+        "bluetooth",
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706189568917504",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf200jt5e",
+      "mpn": "0603WAF200JT5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C22950",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "20"
+      ],
+      "refs": [
+        "R2",
+        "R14"
+      ],
+      "sheets": [
+        "audio"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706172544782336",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf3902t5e",
+      "mpn": "0603WAF3902T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23153",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "39k"
+      ],
+      "refs": [
+        "R314"
+      ],
+      "sheets": [
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706240219467776",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf4700t5e",
+      "mpn": "0603WAF4700T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23179",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "470"
+      ],
+      "refs": [
+        "R22"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706265439817728",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf4701t5e",
+      "mpn": "0603WAF4701T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23162",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "4.7k"
+      ],
+      "refs": [
+        "R402",
+        "R403"
+      ],
+      "sheets": [
+        "mcu"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706251506339840",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf4702t5e",
+      "mpn": "0603WAF4702T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C25819",
+      "category": "passives",
+      "description": "Resistor",
+      "values": [
+        "47k"
+      ],
+      "refs": [
+        "R4",
+        "R5",
+        "R615",
+        "R616",
+        "R617",
+        "R618",
+        "R619"
+      ],
+      "sheets": [
+        "audio",
+        "memory",
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706364627128320",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf4703t5e",
+      "mpn": "0603WAF4703T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23178",
+      "category": "passives",
+      "description": "Resistor",
+      "values": [
+        "470k"
+      ],
+      "refs": [
+        "R39"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706262591750144",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf470kt5e",
+      "mpn": "0603WAF470KT5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23164",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "4.7R"
+      ],
+      "refs": [
+        "R201",
+        "R202",
+        "R203",
+        "R301",
+        "R302",
+        "R303",
+        "R304"
+      ],
+      "sheets": [
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706257118453760",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf5101t5e",
+      "mpn": "0603WAF5101T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23186",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "5.1k"
+      ],
+      "refs": [
+        "R19",
+        "R20"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706277024620544",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf5602t5e",
+      "mpn": "0603WAF5602T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23206",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "56k"
+      ],
+      "refs": [
+        "R214"
+      ],
+      "sheets": [
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706297052696576",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "0603waf7502t5e",
+      "mpn": "0603WAF7502T5E",
+      "manufacturer": "UNI-ROYAL",
+      "lcsc": "C23242",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "75k 1%"
+      ],
+      "refs": [
+        "R502"
+      ],
+      "sheets": [
+        "buttons"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706316903792640",
+      "file": "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf"
+    },
+    {
+      "id": "ac0603fr-07511kl",
+      "mpn": "AC0603FR-07511KL",
+      "manufacturer": "YAGEO",
+      "lcsc": "C227946",
+      "category": "passives",
+      "description": "Resistor",
+      "values": [
+        "511k"
+      ],
+      "refs": [
+        "R37"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8754855564801118208",
+      "file": "datasheets/passives/ac0603fr-07511kl.pdf"
+    },
+    {
+      "id": "cc0603krx7r9bb104",
+      "mpn": "CC0603KRX7R9BB104",
+      "manufacturer": "YAGEO",
+      "lcsc": "C14663",
+      "category": "passives",
+      "description": "Unpolarized capacitor",
+      "values": [
+        "100nF",
+        "100n",
+        "0.1uF"
+      ],
+      "refs": [
+        "C30",
+        "C31",
+        "C32",
+        "C37",
+        "C39",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C67",
+        "C102",
+        "C103",
+        "C202",
+        "C204",
+        "C205",
+        "C302",
+        "C304",
+        "C305",
+        "C401",
+        "C402",
+        "C403",
+        "C404",
+        "C405",
+        "C406",
+        "C408",
+        "C410",
+        "C417",
+        "C501",
+        "C503",
+        "C505",
+        "C601",
+        "C606"
+      ],
+      "sheets": [
+        "audio",
+        "bluetooth",
+        "buttons",
+        "mcu",
+        "memory",
+        "power",
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8667086713681608704",
+      "file": "datasheets/passives/cc0603krx7r9bb104.pdf"
+    },
+    {
+      "id": "cl10a105kb8nnnc",
+      "mpn": "CL10A105KB8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C15849",
+      "category": "passives",
+      "description": "Unpolarized capacitor",
+      "values": [
+        "1uF",
+        "1u"
+      ],
+      "refs": [
+        "C34",
+        "C52",
+        "C65",
+        "C68",
+        "C69",
+        "C104",
+        "C105",
+        "C107",
+        "C113",
+        "C206",
+        "C306",
+        "C409",
+        "C502",
+        "C504",
+        "C506",
+        "C603"
+      ],
+      "sheets": [
+        "audio",
+        "bluetooth",
+        "buttons",
+        "mcu",
+        "memory",
+        "power",
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8556213788459761664",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl10a106kp8nnnc",
+      "mpn": "CL10A106KP8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C19702",
+      "category": "passives",
+      "description": "Unpolarized capacitor",
+      "values": [
+        "10uF",
+        "10u"
+      ],
+      "refs": [
+        "C33",
+        "C35",
+        "C40",
+        "C66",
+        "C101",
+        "C201",
+        "C301",
+        "C605"
+      ],
+      "sheets": [
+        "audio",
+        "bluetooth",
+        "memory",
+        "power",
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707107920437248",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl10a106ma8nrnc",
+      "mpn": "CL10A106MA8NRNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C96446",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "10u"
+      ],
+      "refs": [
+        "C203",
+        "C303"
+      ],
+      "sheets": [
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8568525238768373760",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl10a225ko8nnnc",
+      "mpn": "CL10A225KO8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C23630",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "2.2u"
+      ],
+      "refs": [
+        "C411",
+        "C412"
+      ],
+      "sheets": [
+        "mcu"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707132658442240",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl10a475ko8nnnc",
+      "mpn": "CL10A475KO8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C19666",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "4.7u"
+      ],
+      "refs": [
+        "C407",
+        "C602"
+      ],
+      "sheets": [
+        "mcu",
+        "memory"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707103462166528",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl10b102kb8nnnc",
+      "mpn": "CL10B102KB8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C1588",
+      "category": "passives",
+      "description": "Unpolarized capacitor",
+      "values": [
+        "1n"
+      ],
+      "refs": [
+        "C108",
+        "C604"
+      ],
+      "sheets": [
+        "bluetooth",
+        "memory"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706978448228352",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl10c150jb8nnnc",
+      "mpn": "CL10C150JB8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C1644",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "15p"
+      ],
+      "refs": [
+        "C413",
+        "C414"
+      ],
+      "sheets": [
+        "mcu"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707088035516416",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl10c180jb8nnnc",
+      "mpn": "CL10C180JB8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C1647",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "18pF"
+      ],
+      "refs": [
+        "C36",
+        "C38"
+      ],
+      "sheets": [
+        "audio"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707035346395136",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl21a106kaynnne",
+      "mpn": "CL21A106KAYNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C15850",
+      "category": "passives",
+      "description": "Unpolarized capacitor",
+      "values": [
+        "10uF"
+      ],
+      "refs": [
+        "C61",
+        "C62"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706853615591424",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl21a226maqnnne",
+      "mpn": "CL21A226MAQNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C45783",
+      "category": "passives",
+      "description": "Unpolarized capacitor",
+      "values": [
+        "22uF DNP",
+        "22uF"
+      ],
+      "refs": [
+        "C63",
+        "C64"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706866429190144",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl21a475kaqnnne",
+      "mpn": "CL21A475KAQNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C1779",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "4.7uF"
+      ],
+      "refs": [
+        "C46",
+        "C47"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8556213325555400704",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "dfe252012p-r47m-p2",
+      "mpn": "DFE252012P-R47M=P2",
+      "manufacturer": "Murata Electronics",
+      "lcsc": "C237552",
+      "category": "passives",
+      "description": "Inductor",
+      "values": [
+        "0.47uH DFE252012P-R47M"
+      ],
+      "refs": [
+        "L3"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588902254896697344",
+      "file": "datasheets/passives/dfe252012p-r47m-p2.pdf"
+    },
+    {
+      "id": "grm1885c1h103ja01d",
+      "mpn": "GRM1885C1H103JA01D",
+      "manufacturer": "Murata",
+      "lcsc": "C85973",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "10nF"
+      ],
+      "refs": [
+        "C3",
+        "C29"
+      ],
+      "sheets": [
+        "audio"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588918774707314688",
+      "file": "datasheets/passives/grm1885c1h103ja01d.pdf"
+    },
+    {
+      "id": "grm31m5c1h473ja01l",
+      "mpn": "GRM31M5C1H473JA01L",
+      "manufacturer": "Murata",
+      "lcsc": "C21812",
+      "category": "passives",
+      "description": "",
+      "values": [
+        "47nF"
+      ],
+      "refs": [
+        "C9"
+      ],
+      "sheets": [
+        "audio"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588906170462949376",
+      "file": "datasheets/passives/grm31m5c1h473ja01l.pdf"
+    },
+    {
+      "id": "gz1608d601tf",
+      "mpn": "GZ1608D601TF",
+      "manufacturer": "Sunlord",
+      "lcsc": "C1002",
+      "category": "passives",
+      "description": "Ferrite bead",
+      "values": [
+        "600R@100MHz",
+        "600R/100MHz"
+      ],
+      "refs": [
+        "FB3",
+        "FB201",
+        "FB301",
+        "FB401"
+      ],
+      "sheets": [
+        "mcu",
+        "power",
+        "screens"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579709915071365120",
+      "file": "datasheets/passives/gz1608d601tf.pdf"
+    },
+    {
+      "id": "rc0603fr-0791kl",
+      "mpn": "RC0603FR-0791KL",
+      "manufacturer": "YAGEO",
+      "lcsc": "C137671",
+      "category": "passives",
+      "description": "Resistor",
+      "values": [
+        "91k"
+      ],
+      "refs": [
+        "R38"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8755545249567514624",
+      "file": "datasheets/passives/rc0603fr-0791kl.pdf"
+    },
+    {
+      "id": "max17048g-t10",
+      "mpn": "MAX17048G+T10",
+      "manufacturer": "Analog Devices",
+      "lcsc": "",
+      "category": "power",
+      "description": "1-cell LiPo fuel gauge, ModelGauge, I2C 0x36, TDFN-8 2x2 (T822+3)",
+      "values": [
+        "MAX17048G+T10"
+      ],
+      "refs": [
+        "U12"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX17048-MAX17049.pdf",
+      "file": "datasheets/power/MAX17048-MAX17049.pdf"
+    },
+    {
+      "id": "mcp73831-2aci-mc",
+      "mpn": "MCP73831-2ACI/MC",
+      "manufacturer": "Microchip",
+      "lcsc": "C150772",
+      "category": "power",
+      "description": "Single cell, Li-Ion/Li-Po charge management controller, 4.20V, Tri-State Status Output, in DFN-8 package",
+      "values": [
+        "MCP73831-2-MC"
+      ],
+      "refs": [
+        "bat-man1"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf",
+      "file": "datasheets/power/MCP73831.pdf"
+    },
+    {
+      "id": "tps22917dbvr",
+      "mpn": "TPS22917DBVR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "",
+      "category": "power",
+      "description": "Load switch, 1-5.5 V, 2 A, adjustable slew rate, quick output discharge",
+      "values": [
+        "TPS22917"
+      ],
+      "refs": [
+        "U102",
+        "U602"
+      ],
+      "sheets": [
+        "bluetooth",
+        "memory"
+      ],
+      "inBom": true,
+      "url": "https://www.ti.com/lit/ds/symlink/tps22917.pdf",
+      "file": "datasheets/power/tps22917dbvr.pdf"
+    },
+    {
+      "id": "tps63802dlar",
+      "mpn": "TPS63802DLAR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "",
+      "category": "power",
+      "description": "2-A buck-boost converter, 1.3-5.5 V in, adjustable out (VFB 500 mV), 11 uA Iq, VSON-HR-10 (DLA)",
+      "values": [
+        "TPS63802DLAR"
+      ],
+      "refs": [
+        "U11"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://www.ti.com/lit/ds/symlink/tps63802.pdf",
+      "file": "datasheets/power/tps63802.pdf"
+    },
+    {
+      "id": "tps7a2018pdbvr",
+      "mpn": "TPS7A2018PDBVR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "",
+      "category": "power",
+      "description": "300 mA ultra-low-noise LDO, 1.8 V fixed, active discharge, SOT-23-5. VS1053 CVDD (+1V8)",
+      "values": [
+        "TPS7A2018PDBVR"
+      ],
+      "refs": [
+        "U14"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://www.ti.com/lit/ds/symlink/tps7a20.pdf",
+      "file": "datasheets/power/tps7a20.pdf"
+    },
+    {
+      "id": "tps7a2033pdbvr",
+      "mpn": "TPS7A2033PDBVR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "",
+      "category": "power",
+      "description": "300 mA ultra-low-noise LDO, 3.3 V fixed, active discharge, SOT-23-5. VS1053 AVDD/IOVDD (+3.3VA via JP4)",
+      "values": [
+        "TPS7A2033PDBVR"
+      ],
+      "refs": [
+        "U13"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://www.ti.com/lit/ds/symlink/tps7a20.pdf",
+      "file": "datasheets/power/tps7a20.pdf"
+    },
+    {
+      "id": "usblc6-2sc6",
+      "mpn": "USBLC6-2SC6",
+      "manufacturer": "STMicroelectronics",
+      "lcsc": "C7519",
+      "category": "power",
+      "description": "Very low capacitance ESD protection diode, 2 data-line, SOT-23-6",
+      "values": [
+        "USBLC6-2SC6"
+      ],
+      "refs": [
+        "U10"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+      "file": "datasheets/power/DS_usblc6-2.pdf"
+    },
+    {
+      "inBom": false,
+      "url": "https://www.coilcraft.com/pdfs/xfl4015.pdf",
+      "refs": [],
+      "id": "xfl4015",
+      "mpn": "XFL4015",
+      "manufacturer": "Coilcraft",
+      "category": "power",
+      "description": "Power inductor (earlier candidate for the buck-boost)",
+      "file": "datasheets/power/xfl4015.pdf"
+    }
+  ]
+}

@@ -50,7 +50,7 @@ peripheral, dwc2, and does MSC + CDC composite).
 - **Speed:** 12 Mbit/s bus, **~1 MB/s** in practice for MSC.
 - **SD card:** SPI is fine (~2 MB/s cap, already above what USB can move).
 - **Pins:** none new. PA11/PA12 (D-/D+) and PA9 (VBUS sense) are already
-  reserved in [`lqfp100-pins.md`](../datasheets/lqfp100-pins.md). Needs a real
+  reserved in [`lqfp100-pins.md`](../datasheets/mcu/lqfp100-pins.md). Needs a real
   HSE crystal on the final board (the Nucleo borrows the ST-LINK's 8 MHz MCO).
 - **Board:** USB 2.0-only 16-pin USB-C receptacle, 5.1 kΩ on CC1/CC2,
   USBLC6-2SC6 on D+/D-, VBUS divider. FS routing is forgiving: test points and

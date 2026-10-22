@@ -5,7 +5,7 @@ a PSRAM breakout, a screen breakout, a click buttons breakout.
 
 Let's design a PCB with the MCU directly on it: a bare STM32F446VET6 (same chip as the F446RE, LQFP100 instead
 of LQFP64, so more pins), flashed over SWD with a standalone ST-LINK or the F446RE Nucleo's one. Same package
-and pinout as the final board (`docs/public/pinout/LQFP100/`, `datasheets/lqfp100-pins.md`). It should let us:
+and pinout as the final board (`docs/public/pinout/LQFP100/`, `datasheets/mcu/lqfp100-pins.md`). It should let us:
 
 - Test the QuadSPI PSRAM routing
 - Test putting the SD card on its own SPI bus
@@ -91,7 +91,7 @@ only on PC11 (PSRAM CS, and QUADSPI bank 2 has no other NCS pin).
 
 Instead of one 16-bit port, the screen data goes on two 8-bit halves: low byte on PC0-PC7, high byte on PD8-PD15.
 "The GPIO registers can be accessed by byte (8 bits), half-words (16 bits) or words (32 bits)"
-(`datasheets/rm0390-stm32f446xx.pdf`, §7.4), so each half is one `STRB` to the right byte of `ODR`, no masking,
+(`datasheets/mcu/rm0390-stm32f446xx.pdf`, §7.4), so each half is one `STRB` to the right byte of `ODR`, no masking,
 the other pins of the port are untouched (and the PD0-PD7 pins in alternate function mode ignore `ODR` anyway;
 TFT_DC/TFT_WR on PD0/PD1 go through the atomic `BSRR`):
 
@@ -101,7 +101,7 @@ TFT_DC/TFT_WR on PD0/PD1 go through the atomic `BSRR`):
 ```
 
 One more store per pixel than the full-port version, but the panel is the bottleneck anyway: the ILI9341 write
-cycle is 66 ns min (`datasheets/ILI9341.pdf`, tWC), 12 CPU cycles at 180 MHz, enough for 4 stores.
+cycle is 66 ns min (`datasheets/display/ILI9341.pdf`, tWC), 12 CPU cycles at 180 MHz, enough for 4 stores.
 It frees PD0-PD7, which gives:
 
 - PD2 for SDIO_CMD
@@ -149,7 +149,7 @@ What changes compared to `docs/public/pinout/LQFP100/mapping.json`:
 Unchanged: PSRAM (PB2, PC11, PE7-PE10), VS1053 SPI2 (PB12-PB15) and DREQ (PE5), I2C1 (PB6/PB7), MPR121 IRQ (PE4),
 MAX17048 ALRT (PE6), buttons (PE11-PE15), lock (PE3), USB (PA9, PA11, PA12), HSE, SWD + SWO.
 New: LSE crystal on PC14/PC15. EXTI lines stay unique (0, 1, 3-6, 8-15). Spare: PA2, PA15, PB4, PC9, PC10,
-PC13 (slow). Applied to `docs/public/pinout/LQFP100/mapping.json` and `datasheets/lqfp100-pins.md`.
+PC13 (slow). Applied to `docs/public/pinout/LQFP100/mapping.json` and `datasheets/mcu/lqfp100-pins.md`.
 
 Signal speed: every moved signal is on a 100 MHz FT pin. SDIO runs at 48 MHz max (clock shared with USB from
 the 48 MHz PLL output), the screen bus at ~15 MHz, USART2 sits on APB1 (45 MHz, up to ~2.8 Mbaud).
@@ -236,7 +236,7 @@ So I have this cheap TN and I want to buy a fancy IPS screen, see how they compa
 
 Notes:
 
-- The IPS panel is the Newhaven NHD-2.4-240320AF-CSXP (`datasheets/NHD-2.4-240320AF-CSXP.pdf`): ST7789VI
+- The IPS panel is the Newhaven NHD-2.4-240320AF-CSXP (`datasheets/display/NHD-2.4-240320AF-CSXP.pdf`): ST7789VI
   controller, same 40-pin 0.5 mm FPC size but another pin order. It runs 16-bit 8080 like the ILI9341 (IM0-IM2
   low), so both panels share the bus with one CS each. The driver needs the ST7789 init sequence (`0x21` inversion).
 - Designed in `hardware/opentone/screens.kicad_sch` (see `notes/screens.md`, "On the test board"):
@@ -266,6 +266,12 @@ Notes:
   PA9. That gives both mass storage and DFU flashing; the BOOT0 button (SW402) is on the MCU sheet.
 - The CC resistors are right: two separate 5.1 kΩ (a single shared one fails with C-to-C chargers).
 - While the SD card is mounted as a USB drive, the player cannot touch it: the firmware has to stop playback.
+
+### VS1053 analog supply (JP4)
+
+JP4 feeds the VS1053 AVDD/IOVDD either from its own LDO (U13) or from the buck-boost rail through a ferrite.
+Compare the noise at the headphone output in both positions, to know whether the final board needs the LDO.
+Procedure and trade-offs: "AVDD source A/B test (JP4)" in `notes/devboard-todo.md`.
 
 ## DAC vs vs1053
 

@@ -8,7 +8,7 @@
 // FSC-BT1035 Bluetooth module as an A2DP source: the VS1053's I2S output
 // (VS1053_driver::setI2SOutput()) goes straight into the module, which streams
 // it to headphones/speakers. Wiring: notes/BT-pinout.md. AT commands:
-// datasheets/FSC-BT1035_programming_user_guide.pdf.
+// datasheets/bluetooth/FSC-BT1035_programming_user_guide.pdf.
 //
 // This class owns the UART:
 //   - powers the module on (SYS_CTRL high, kept high),

@@ -5443,7 +5443,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Pinout: docs/public/pinout/LQFP100/mapping.json, datasheets/lqfp100-pins.md.\nNot wired yet (no sheet): PSRAM_*, SD_*, VS_EN, DRV_EN, DAC_*, HP2_DET, BTN_*, LOCK_SW, MPR121_IRQ."
+	(text "Pinout: docs/public/pinout/LQFP100/mapping.json, datasheets/mcu/lqfp100-pins.md.\nNot wired yet (no sheet): PSRAM_*, SD_*, VS_EN, DRV_EN, DAC_*, HP2_DET, BTN_*, LOCK_SW, MPR121_IRQ."
 		(exclude_from_sim no)
 		(at 177.8 248.92 0)
 		(effects

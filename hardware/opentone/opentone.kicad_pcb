@@ -2647,7 +2647,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706350726930432"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706152755920896"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -41151,7 +41151,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "${KIPRJMOD}/../../datasheets/FSC-BT1035_Datasheet_EN.pdf"
+		(property "Datasheet" "${KIPRJMOD}/../../datasheets/bluetooth/FSC-BT1035_Datasheet_EN.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -44948,7 +44948,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "${KIPRJMOD}/../../datasheets/APS6404L-3SQR-SN-2(ram).pdf"
+		(property "Datasheet" "${KIPRJMOD}/../../datasheets/memory/APS6404L-3SQR-SN-2(ram).pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -52853,7 +52853,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706381320323072"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706350726930432"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)

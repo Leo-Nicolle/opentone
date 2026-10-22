@@ -18,7 +18,13 @@ docs/public/sync-app/
 docs/.env
 docs/deploy.sh
 indexer/exports
-datasheets/*
+# Third-party datasheets are not redistributed: fetch them with
+# `python3 scripts/datasheets.py --download`. Only our own notes and the index inputs are tracked.
+datasheets/**
+!datasheets/**/
+!datasheets/overrides.json
+!datasheets/**/*.md
+!datasheets/mcu/test-pinouts.csv
 scripts/*.ttf
 scripts/*.png
 scripts/*.zip

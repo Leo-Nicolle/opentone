@@ -3427,7 +3427,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "${KIPRJMOD}/../../datasheets/APS6404L-3SQR-SN-2(ram).pdf"
+		(property "Datasheet" "${KIPRJMOD}/../../datasheets/memory/APS6404L-3SQR-SN-2(ram).pdf"
 			(at 147.32 83.82 0)
 			(hide yes)
 			(show_name no)

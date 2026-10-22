@@ -40,7 +40,7 @@ code it references.
   NUCLEO-F446ZE (LQFP144), design an "in-between" carrier PCB, then the
   iPod-sized final board. Contains the LQFP100 package recommendation and order
   of work. References `docs/recaps/bluetooth.md`, `docs/next-step-pinout.md`,
-  `datasheets/lqfp100-pins.md`.
+  `datasheets/mcu/lqfp100-pins.md`.
 
 ## Audio (VS1053b + FLAC)
 

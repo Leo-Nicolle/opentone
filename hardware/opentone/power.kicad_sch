@@ -9556,7 +9556,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706350726930432"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706152755920896"
 			(at 196.85 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -15744,7 +15744,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706381320323072"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706350726930432"
 			(at 189.23 55.88 0)
 			(hide yes)
 			(show_name no)

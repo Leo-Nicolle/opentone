@@ -212,9 +212,9 @@
       },
       {
         "pin": "PA6",
-        "role": "VS_EN (TPS22917 ON)",
+        "role": "VS_EN (U13/U14 TPS7A20 EN, 100k pull-down)",
         "macro": "VS_EN",
-        "note": "Hold XRESET low and the SPI2 lines low while the VS1053 is off. SPI2 is on APB1: 22.5 MHz max SCK."
+        "note": "Switches the whole VS1053 (+1V8 core, +3.3VA analog and IO). Before pulling it low, put SPI2, XCS, XDCS and XRESET in analog mode (back-powering). SPI2 is on APB1: 22.5 MHz max SCK."
       }
     ]
   },
@@ -254,7 +254,7 @@
         "pin": "PB5",
         "role": "EN (hardware shutdown)",
         "macro": "DRV_EN",
-        "note": "Optional."
+        "note": "100k pull-down on the board: the DRV2605L (on VSYS) stays in shutdown while the MCU is off."
       }
     ]
   },
@@ -320,9 +320,9 @@
     "pins": [
       {
         "pin": "PB1",
-        "role": "Jack 1 detect",
+        "role": "Jack 1 detect (ADC12_IN9)",
         "macro": "HP1_DET",
-        "note": "EXTI1."
+        "note": "Analog read, not EXTI: 47k pull-up to +3.3VA. Plug in: ~3.3 V; no plug: the tip switch shows LEFT (~1.2 V bias). Threshold ~2.2 V, sample time 480 cycles. Only valid while VS_EN is high."
       },
       {
         "pin": "PA10",
@@ -405,14 +405,26 @@
     ]
   },
   {
-    "peripheral": "Lock switch",
+    "peripheral": "Status LED",
+    "bus": "GPIO",
+    "pins": [
+      {
+        "pin": "PC13",
+        "role": "STATUS_LED (active low)",
+        "macro": "STATUS_LED",
+        "note": "Red LED D401 + R404 1k from MCU_3V3: drive PC13 low to light it (~1.4 mA). PC13 is in the backup domain: 3 mA sink max, 2 MHz, never source current. Also on J404 pin 6."
+      }
+    ]
+  },
+  {
+    "peripheral": "Power / hold slider",
     "bus": "GPIO",
     "pins": [
       {
         "pin": "PE3",
-        "role": "LOCK",
+        "role": "LOCK (HOLD position, active low)",
         "macro": "LOCK_SW",
-        "note": "Own EXTI line, can wake the MCU."
+        "note": "OFF / HOLD / ON slider: HOLD pulls it low, OFF pulls 3V3_EN low (no MCU pin). Going from ON to OFF passes HOLD, so save the state and finish SD writes on its falling edge. Own EXTI line, can wake the MCU."
       }
     ]
   },

@@ -156,7 +156,7 @@ the BT test).
 1. Idle, CS high.
 2. During a read/write loop.
 3. Its low-power mode, if the datasheet has one (check
-   `datasheets/APS6404L-3SQR-SN-2(ram).pdf`).
+   `datasheets/memory/APS6404L-3SQR-SN-2(ram).pdf`).
 
 ### MCU, for reference
 
@@ -215,5 +215,5 @@ To set the real threshold, add up the standby currents and divide the battery
 capacity by the total. For example, with a 600 mAh battery, 100 µA of total
 standby current empties it in about 250 days; 1 mA takes about 25 days.
 
-Then update `datasheets/lqfp100-pins.md` and the LQFP100 mapping: every module
+Then update `datasheets/mcu/lqfp100-pins.md` and the LQFP100 mapping: every module
 that doesn't need a switch frees its `_EN` pin.

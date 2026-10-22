@@ -17,7 +17,7 @@ export interface Assignment {
 
 /** Default pin mapping per package. LQFP64 is the firmware's — extracted from
  *  software/src/pinout.h and software/src/rendering/ILI9341_driver.h (plus
- *  main.cpp Wire3 / SPI defaults). LQFP100 is datasheets/lqfp100-pins.md. */
+ *  main.cpp Wire3 / SPI defaults). LQFP100 is datasheets/mcu/lqfp100-pins.md. */
 export const PACKAGE_ASSIGNMENTS: Record<PackageId, Assignment[]> = {
   LQFP64: lqfp64 as Assignment[],
   LQFP100: lqfp100 as Assignment[],

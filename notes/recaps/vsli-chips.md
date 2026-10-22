@@ -3,7 +3,7 @@
 Context: opentone currently uses the **VS1053b** for MP3/audio decoding. This compares it against
 the two newer pin-compatible parts in the same family, VS1063a and VS1073a (datasheets in
 `datasheets/`, prefixed `vs*`), plus VLSI's own 1-page comparison chart
-(`datasheets/vs10xx-comparison.pdf`).
+(`datasheets/audio/vs10xx-comparison.pdf`).
 
 ## TL;DR
 

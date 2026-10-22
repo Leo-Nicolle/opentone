@@ -63,7 +63,7 @@ Works great, and with my double buffering I think I have a great pipeline: refre
 
 IPS panels give a much wider viewing angle. I found some (not on AliExpress, with this size, resolution and pin count; maybe I lost my AliExpress search mojo?) from Newhaven Display for €13–18. Are they worth ~4–5× the price?
 
-Datasheets (the AF-CSXP one is also in `datasheets/NHD-2.4-240320AF-CSXP.pdf`):
+Datasheets (the AF-CSXP one is also in `datasheets/display/NHD-2.4-240320AF-CSXP.pdf`):
 [AF-CSXP](https://newhavendisplay.com/content/specs/NHD-2.4-240320AF-CSXP.pdf) ·
 [AF-CSXP-T](https://newhavendisplay.com/content/specs/NHD-2.4-240320AF-CSXP-T.pdf) ·
 [AF-CTXP](https://newhavendisplay.com/content/specs/NHD-2.4-240320AF-CTXP.pdf) ·

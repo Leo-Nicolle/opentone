@@ -56,7 +56,7 @@ to the time spent juggling pins.
 - It removes the pin and bus problems: one SPI bus per fast device, and a full
   port for the screen (one register write per pixel).
 - Use only pins that also exist on the LQFP100 package, following
-  `datasheets/lqfp100-pins.md`. That way you
+  `datasheets/mcu/lqfp100-pins.md`. That way you
   validate the final board's pinout before it goes to copper.
 - Room for what's still missing: power management, battery and USB need pins
   that don't exist today.
@@ -102,7 +102,7 @@ just don't constrain the carrier to it.
 | **LQFP100** | **81** | **Recommended.** 14 x 14 mm fits easily in an iPod-classic case, hand-solderable and inspectable. The allocation in `lqfp100-pins.md` leaves 16 pins spare. |
 | UFBGA144 | 114 | 10 x 10 mm, but needs a 4+ layer board, machine assembly and X-ray inspection. The extra pins aren't needed. |
 
-GPIO counts are from the F446 datasheet (`datasheets/stm32f446re.pdf`). The
+GPIO counts are from the F446 datasheet (`datasheets/mcu/stm32f446re.pdf`). The
 full LQFP100 pin table, extracted from that datasheet, is in
 `docs/public/pinout/LQFP100/pins.json`: pick the LQFP100 package in the
 [pinout studio](../docs/pinout.md) to see it with the allocation.
