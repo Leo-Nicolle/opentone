@@ -236,6 +236,52 @@
 		)
 	)
 	(sheet
+		(at 18.034 106.68)
+		(size 55.118 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.0006)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c05daabd-a37d-42db-a955-99e21a795887")
+		(property "Sheetname" "DAC"
+			(at 20.574 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "dac.kicad_sch"
+			(at 20.574 133.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 18.034 18.796)
 		(size 55.118 37.338)
 		(exclude_from_sim no)

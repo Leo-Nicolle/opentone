@@ -36,6 +36,7 @@ hardware/*/*autosave*
 hardware/*/\~*
 hardware/*/*.lck
 hardware/*/*.blend1
+hardware/opentone/.history
 
 # Scratch copy of software/ used for the UI redesign (docs/ui-builder work).
 .ui-work/

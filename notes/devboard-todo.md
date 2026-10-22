@@ -1,8 +1,8 @@
 # Dev board schematics: state and TODO
 
 State of `hardware/opentone/opentone.kicad_sch` (the test board of `plans/test-board.md`) on 2026-10-22.
-Checked from the exported netlist and ERC (`kicad-cli sch erc`: 3 items, the CS43131 labels waiting for their sheet:
-`DAC_EN`, `DAC_RESET`, `HP2_DET`). The audio sheet was snapped to the 1.27 mm grid (netlist unchanged), and the
+Checked from the exported netlist and ERC (`kicad-cli sch erc`: no errors; the DAC sheet still has
+`lib_symbol_mismatch` warnings on its passives, cleared by Tools → Update Symbols from Library). The audio sheet was snapped to the 1.27 mm grid (netlist unchanged), and the
 unused VS1053 TX (`VTX`) now has a no-connect flag.
 
 ## Sheets at a glance
@@ -12,7 +12,8 @@ unused VS1053 TX (`VTX`) now has a no-connect flag.
 | Root | `opentone.kicad_sch` | Sheet blocks only (old STM32F446RCTx U1 removed) |
 | MCU | `mcu.kicad_sch` | **STM32F446VET6 placed and wired** to every existing global label, ERC clean on its side |
 | Power | `power.kicad_sch` | **Done, wired, ERC clean**. VS1053 LDO on `VS_EN` + drain jumper, GND/GNDA net tie |
-| Audio | `audio.kicad_sch` | **VS1053 done**: switched by `VS_EN`, `HP1_DET` read by the ADC. CS43131 path on hold |
+| Audio | `audio.kicad_sch` | **VS1053 done**: switched by `VS_EN`, `HP1_DET` read by the ADC |
+| DAC | `dac.kicad_sch` | **CS43131 + jack 2 wired**, ERC clean (layout of the sheet still to tidy) |
 | Screens | `screens.kicad_sch` | Two FPC connectors (TN + Newhaven IPS) + backlight sinks, wired to global labels |
 | Bluetooth | `bluetooth.kicad_sch` | FSC-BT1035 on the board, wired to global labels for the MCU |
 | Buttons | `buttons.kicad_sch` | **MPR121 + 5 SKQG buttons + OFF/HOLD/ON slider + DRV2605L haptics, wired** |
@@ -86,59 +87,61 @@ TODO
   gets its return (a TRS plug's sleeve spans both contacts anyway) and the unused mic is just shorted to GBUF
   (no bias, no current). Leaving ring 2 open would cut the return of CTIA headsets (only L-R left: no voice).
   Never measure GBUF with the laptop's line-in while on USB. The old SJ1-3524NG had no switch: its pad 10 (HP1_DET) did not exist
-- [ ] CS43131 path, on its own sheet (on hold). Decided so far:
-  - CS43131-CNZ (QFN-40 5x5, footprint `TQFN-40-1EP_5x5mm_P0.4mm_EP3.5x3.5mm`), I2C address 0x30 (ADR to GND)
-  - VA/VCP/VD/VL all 1.8 V: AP2112K-1.8 from +3.3V, EN = `DAC_EN` (PE2), replaces the planned load switch
-  - VP from VSYS (needed for the 2 Vrms mode) or +3.3V, picked by a jumper. VP must come up first, so RESET stays
-    low (100k pull-down on PE1) until the 1.8 V rail is up
-  - VL pins take at most VL + 0.3 V: SN74AVC4T245 for I2S (3.3 → 1.8 V), PCA9306 for I2C, its EN from `DAC_EN` so
-    the DAC leaves the bus when it is off
-  - MCLK from the VS1053 (12.288 MHz, the CS43131 PLL accepts it), no crystal
-  - INT to PA2 (spare, EXTI2), jack 2 detect on the DAC's HP_DETECT (frees PA10)
-  - Open question: the datasheet gives no input threshold for RESET (VP domain). Fine with VP = 3.3 V, to check with
-    VP = VSYS
-  - Decoupling per Fig. 2-1 of `datasheets/audio/cs43131.pdf`
+- [x] CS43131 path: on its own sheet now, see "DAC" below
 
-## Bluetooth (`bluetooth.kicad_sch`)
+## DAC (`dac.kicad_sch`)
 
-Redone on 2026-10-18: the FSC-BT1035 sits on the test board (it was a separate devboard plugged in through
-headers). `bt_devboard.kicad_sch` became this sheet, the old connector sheet and the standalone `bt_devboard`
-project are gone.
+Drawn on 2026-10-22, from `datasheets/audio/cs43131.pdf` (DS1155F2, Fig. 2-1 and sections 4.3, 4.5, 5.2, 8).
+The goal is the A/B test of `plans/test-board.md` ("DAC vs vs1053"): same audio, two analog stages, two jacks.
 
-- Supply: +3.3V → JP5 (drain jumper) → TPS22917 (U102, `BT_EN` = PD7, 100k pull-up) → VBAT_IN / VDD_IO. JP101
-  bypasses the switch. Auto power-on on SYS_CTRL (Q101) kept.
-- UART: `BT_RX`, `BT_TX`, `BT_CTS`, `BT_RTS` global labels (USART2, PD3-PD6). `BT_RESET` global label (PE0,
-  open-drain).
-- I2S from the VS1053: `I2S_SCLK` / `I2S_LRCK` / `I2S_SDATA` → R51-R53 (0R, unfit to free the bus for the DAC) →
-  PCM_CLK / PCM_SYNC / PCM_IN. PCM_MCLK_OUT is left open.
-- Removed: USB-C (VCHG, VCHG_SENSE, USB_D± open: no USB firmware update path), line-in jack and its dividers
-  (MIC inputs open), debug header (PIO6-8 open), reset button, the Nucleo/UART/I2S headers.
-- Kept: status LEDs D101/D102, bypass jumper JP101.
+- **U701 CS43131-CNZ** (QFN-40, own symbol `opentone:CS43131-CNZ`, footprint
+  `TQFN-40-1EP_5x5mm_P0.4mm_EP3.5x3.5mm`, EP on GND as section 8.4 asks). I2C 0x30 (ADR to GND, `0110000`).
+- **Power**: +3.3V → JP701 (drain) → `DAC_3V3` → VP directly, and U702 **TPS7A2018** (same part as U14) →
+  `DAC_1V8` for VA, VCP, VD, VL. U702 EN = `DAC_EN` (PE2, R701 100k pull-down).
+  - Why VP on +3.3V and not VSYS: the 2 Vrms mode (HV_EN = 1) only supports loads of 600 Ω and more
+    (section 4.3). Headphones run with HV_EN = 0: 1.4 Vrms full scale, VP ≥ 3.0 V. +3.3V also keeps RESET and
+    INT (VP domain) at MCU levels; with VP = VSYS (≈5 V on USB) the RESET threshold was unknown.
+  - Sequencing (section 5.2): VP first, last off. VP is up as soon as +3.3V is; `DAC_EN` brings the 1.8 V rail
+    later, and RESET stays low (R705 100k) until the firmware releases it.
+  - Why the TPS7A2018 and not the AP2112K-1.8: 7 µVrms, same part as U14, so the comparison with the VS1053
+    is not biased by a noisy rail. Self-sourced like U14.
+- **Decoupling** per Fig. 2-1: VL, VD 100 nF; VA, VCP 2.2 µF; VP 4.7 µF + 100 nF; FILT+ to **VA** and FILT− to
+  **−VA** (not to GND); −VA 2.2 µF; flying caps FLYP_VA–FLYN_VA, FLYP_VCP–FLYC_VCP, FLYC_VCP–FLYN_VCP 2.2 µF;
+  VCP_FILT± 2.2 µF to GND (EXT_VCPFILT = 0). FILT± are 22 µF 0805 X5R (datasheet: 15 µF nominal; 22 µF lands
+  near 15 µF once DC bias and tolerance are counted). All caps X5R/X7R.
+- **I2S**: U703 SN74AVC4T245 (C81461), A side on +3.3V from `I2S_MCLK/SCLK/LRCK/SDATA`, B side on `DAC_1V8`,
+  DIR fixed A → B, OE always on. When `DAC_1V8` is off its outputs go Hi-Z by themselves (VCC isolation). The
+  VS1053 pull-downs R43-R46 keep the A inputs defined while the VS1053 is off: one more reason to keep them.
+  The DAC and the BT module share the I2S lines with no route jumper (R51-R53 still cut the BT side).
+  MCLK 12.288 MHz goes to the CS43131 PLL (a listed reference, Table 3-15).
+- **I2C**: U704 PCA9306DCUR (C33196), `I2C1_SCL/SDA` (3.3 V, R402/R403) ↔ `DAC_SCL/SDA` (R703/R704 4.7k to
+  `DAC_1V8`). EN/VREF2 through R702 200k from `DAC_EN`: the DAC leaves I2C1 when it is off.
+- **Control**: `DAC_RESET` PE1 (R705 100k pull-down), `DAC_INT` **PA10** (EXTI10, R706 10k to +3.3V). PA10 was
+  jack 2 detect: that now goes through the DAC, so the pin is reused for INT and PA2 stays spare on J404.
+- **Jack 2** (SJ-43515TS, same as Jack1): tip → HPOUTA, ring 1 → HPOUTB, sleeve + ring 2 → `HP2_SLEEVE`, which
+  reaches GND only through NT701 at the jack. HPREFA and HPREFB go to `HP2_SLEEVE` on separate traces (section
+  8.3). Tip switch → HP_DETECT.
+  - **Detect is inverted**: the CS43131 expects a switch that is open with no plug and touches the tip with a
+    plug; this jack's switch does the opposite. So HPDETECT reads "plugged" with no plug. Firmware swaps the two
+    status bits / interrupts (both exist, Interrupt Status 1).
+  - ESD: D701-D703 TPD1E10B06DPYR (C48260), **bidirectional**: the outputs swing ±2.6 V around ground, so the
+    jack 1 TPD4E05U06 (one-way) would clip them. 100 nA max leakage against the 1-2.9 µA HP_DETECT current.
+- Unused: XTO, CLKOUT, TSO, the second serial port (SCLK2/LRCK2/SDIN2) and HPINA/B have no-connect flags
+  (internal weak pull-downs).
+
+Limits of the A/B test: the VS1053 outputs **16-bit I2S at 48 kHz** (44.1 kHz files are resampled), so the
+CS43131 is capped at ≈97 dB of dynamic range (Table 3-5, 16-bit) instead of 130 dB. The test compares the analog
+stages (noise floor, drive into real headphones, current), not what the chip can do with 24-bit sources.
 
 TODO
 
-- [x] Wire the global labels on the MCU sheet
-- [ ] Firmware: before pulling `BT_EN` low, put USART2, `BT_RESET` and the I2S lines in analog mode (back-powering)
-
-## Screens (`screens.kicad_sch`)
-
-Added on 2026-10-18 (replaces the old screen symbol + connector on the root sheet):
-
-- J201: cheap ILI9341 TN panel, pinout from `notes/screens.md` ("FPC" column: pin 1 = X- touch). J301: Newhaven
-  NHD-2.4-240320AF-CSXP (ST7789VI, `datasheets/display/NHD-2.4-240320AF-CSXP.pdf`). Both on Hirose FH12-40S-0.5SH.
-- Shared 16-bit 8080 bus as global labels: `TFT_D0`-`TFT_D15`, `TFT_DC`, `TFT_WR`; `TFT_CS1` (TN), `TFT_CS2` (IPS).
-  RDX tied to the panel rail, RESX on `NRST`, IM0-IM2 low, SDI/SDA low, SDO/TE/FMARK/touch open.
-- Each panel: +3.3V → drain jumper (JP201 / JP301) → VDD + VDDI, 10u + 100n. No load switch: both stay powered.
-- Backlight per panel: anode from +3.3V or VSYS (3-pad jumper JP202 / JP302) → ferrite → LED-A + 10u/100n;
-  4.7 Ω ballast per cathode; constant-current sink MCP6001 + AO3400A + 1 Ω. Reference = `TFT_BL` / `TFT_BL2` PWM
-  through 56k/1k (TN, ~58 mA) or 39k/1k (IPS, ~82 mA). C206 / C306 (DNP 1u) turn it into analog dimming.
-
-TODO
-
-- [ ] Check the FH12 contact side (bottom contact) against both panels' FPC before ordering
-- [x] Wire `TFT_*` and `NRST` on the MCU sheet
-- [ ] Tune the ballast and reference resistors after measuring each panel
-- [x] Q201/Q301 (and D4) updated from the library: ERC no longer flags them
+- [ ] Tidy the sheet layout in KiCad (parts were auto-placed, labels overlap) and run Update Symbols from Library
+- [ ] Order CS43131-CNZ outside JLC (not in the JLC snapshot), with the other self-sourced parts
+- [ ] Firmware: power-up = `DAC_EN` high, wait for `DAC_1V8`, RESET low ≥ 1 ms then high, wait tPUD, then the PLL
+  (12.288 MHz ref) and Ex. 5-5 (PCM power-up). Power-down: RESET low, then `DAC_EN` low. Invert HPDETECT
+- [ ] Firmware: before `DAC_EN` goes low, stop I2C traffic to 0x30 (the PCA9306 cuts the bus anyway)
+- [ ] PCB: FILT+ cap close to VA, FILT− close to −VA, VCP_FILT± caps close to GNDCP, clocks away from FILT±,
+  EP vias to the ground plane, NT701 at the jack sleeve pin
 
 ## MCU (`mcu.kicad_sch`)
 
@@ -152,8 +155,8 @@ Added on 2026-10-18, pinout from `docs/public/pinout/LQFP100/mapping.json`:
 - J401 SWD 2x5 1.27 mm (SWO on PB3, RESET on NRST), J402 6-pin 2.54 mm matching the Nucleo's ST-LINK CN4,
   J403 log UART4 (PA0 TX, PA1 RX), J404 spare GPIO header (PA2, PA15, PB4, PC9, PC10, PC13).
 - I2C1 pull-ups R402/R403 4.7k on the always-on +3.3V (there were none anywhere).
-- Global labels for blocks that have no sheet yet (ERC `isolated_pin_label`, expected): `DAC_RESET`, `DAC_EN`,
-  `HP2_DET`. `VS_EN` and `DRV_EN` now land on the Power and Buttons sheets, `PSRAM_*` and `SD_*` on Memory.
+- `DAC_EN` (PE2), `DAC_RESET` (PE1) and `DAC_INT` (PA10, was `HP2_DET`) land on the DAC sheet. `VS_EN` and
+  `DRV_EN` land on the Power and Buttons sheets, `PSRAM_*` and `SD_*` on Memory.
 
 TODO
 
@@ -317,9 +320,8 @@ Every block has a VDD drain jumper (solder jumper, bridged, cut it to put a mete
 | Haptics | JP502 | `DRV_EN` (PB5, chip shutdown) | `DRV_VDD` |
 | PSRAM | JP601 | - (holds the page cache) | `PSRAM_VDD` |
 | SD card | JP602 | `SD_EN` (TPS22917) | `SD_VDD` |
-| CS43131 | later | `DAC_EN` | on hold with its sheet |
+| CS43131 | JP701 | `DAC_EN` (PE2, U702 EN; VP stays on) | `DAC_3V3` (VP + LDO input), `DAC_1V8` |
 
-- [ ] CS43131: drain jumper and switch when its sheet is drawn
 
 ## AVDD source A/B test (JP4)
 

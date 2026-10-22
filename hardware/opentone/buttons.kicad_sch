@@ -6028,6 +6028,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 139.7 87.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "30be08c9-9e9f-49fd-be55-c1a3d60469c8")
+		(property "Reference" "#PWR1106"
+			(at 139.7 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 139.7 91.186 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 139.7 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6156873b-aedb-44ae-bdc1-d99b31317640")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/a2d473bc-020f-4f45-b688-c249a4b738f4"
+					(reference "#PWR1106")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 97.79 139.7 0)
 		(unit 1)
@@ -10799,71 +10876,4 @@
 			)
 		)
 	)
-  (symbol (lib_id "power:+3.3V") (at 139.7 87.63 0) (unit 1)
-    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
-    (uuid "30be08c9-9e9f-49fd-be55-c1a3d60469c8")
-    (property "Reference" "#PWR1106"
-      (at 139.7 83.82 0)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Value" "+3.3V"
-      (at 139.7 91.186 0)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Footprint" ""
-      (at 139.7 87.63 0)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Datasheet" ""
-      (at 139.7 87.63 0)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Description" "Power symbol creates a global label with name \"+3.3V\""
-      (at 139.7 87.63 0)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (pin "1" (uuid "6156873b-aedb-44ae-bdc1-d99b31317640"))
-    (instances
-      (project "opentone"
-        (path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/a2d473bc-020f-4f45-b688-c249a4b738f4"
-          (reference "#PWR1106")
-          (unit 1)
-        )
-      )
-    )
-  )
 )

@@ -3624,6 +3624,12 @@
 		(uuid "7367beab-1fa7-480c-a2f7-96e9d293410c")
 	)
 	(junction
+		(at 304.8 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "754b70f8-a6fc-43be-9b46-45fa02c78ebc")
+	)
+	(junction
 		(at 313.69 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3634,6 +3640,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "80308b1a-80a7-43fb-a062-aef7a0dfcc68")
+	)
+	(junction
+		(at 116.84 180.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "94aa3df9-cb9a-4a1a-9aa8-9e7ea07581a2")
 	)
 	(junction
 		(at 53.34 175.26)
@@ -3718,38 +3730,6 @@
 	(no_connect
 		(at 236.22 81.28)
 		(uuid "fbbbe8c9-c723-427c-8fbc-eb5cf2cc8c2c")
-	)
-(junction
-		(at 116.84 180.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "94aa3df9-cb9a-4a1a-9aa8-9e7ea07581a2")
-	)
-(junction
-		(at 304.8 180.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "754b70f8-a6fc-43be-9b46-45fa02c78ebc")
-	)
-	(wire
-		(pts
-			(xy 97.79 182.88) (xy 97.79 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3ca7c763-e9a2-46e6-b19d-18099c9c64e9")
-	)
-	(wire
-		(pts
-			(xy 285.75 182.88) (xy 285.75 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "25d74529-8349-4506-bdac-5cb8a3339088")
 	)
 	(wire
 		(pts
@@ -3913,6 +3893,16 @@
 	)
 	(wire
 		(pts
+			(xy 285.75 182.88) (xy 285.75 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25d74529-8349-4506-bdac-5cb8a3339088")
+	)
+	(wire
+		(pts
 			(xy 236.22 99.06) (xy 241.3 99.06)
 		)
 		(stroke
@@ -4060,6 +4050,16 @@
 			(type default)
 		)
 		(uuid "3c68ff6e-0ef3-4ae8-84c7-8f0e1fcf3ce3")
+	)
+	(wire
+		(pts
+			(xy 97.79 182.88) (xy 97.79 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ca7c763-e9a2-46e6-b19d-18099c9c64e9")
 	)
 	(wire
 		(pts
@@ -5441,6 +5441,16 @@
 		)
 		(uuid "4edd40b0-db7c-495b-a33a-44b7a686d6fa")
 	)
+	(label "TFT2_BL_S"
+		(at 304.8 187.96 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6303c434-01f3-43ac-95c0-df5570c79c6c")
+	)
 	(label "TFT2_BL_D"
 		(at 320.04 152.4 0)
 		(effects
@@ -5540,6 +5550,16 @@
 			(justify left bottom)
 		)
 		(uuid "aefcf19a-ecdd-485a-93ca-2ee8ffebf632")
+	)
+	(label "TFT1_BL_S"
+		(at 116.84 187.96 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "df94ca8d-623d-4ec6-9bbe-28f19ca11738")
 	)
 	(label "TFT2_VDD"
 		(at 314.96 81.28 0)
@@ -8586,7 +8606,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				) (justify right)
+				)
+				(justify right)
 			)
 		)
 		(property "Value" "1u"
@@ -8596,7 +8617,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				) (justify right)
+				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
@@ -8787,6 +8809,120 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
 					(reference "R315")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 304.8 184.15 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "5295f647-308a-446d-b437-46b157e9edfd")
+		(property "Reference" "C307"
+			(at 302.26 186.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "4n7"
+			(at 302.26 189.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 305.765 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8770989226131640320"
+			(at 304.8 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Backlight loop compensation, DNP: fit 1-10 nF (with R x16 = 1k) if the sink rings"
+			(at 304.8 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "FH Guangdong Fenghua Advanced Tech"
+			(at 304.8 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part number" "0603B472K500NT"
+			(at 304.8 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C53987"
+			(at 304.8 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b3179924-6482-4168-8c58-728d09c0914f")
+		)
+		(pin "2"
+			(uuid "2352b11f-3946-4555-a697-18e9d6c2482c")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
+					(reference "C307")
 					(unit 1)
 				)
 			)
@@ -9225,7 +9361,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				) (justify right)
+				)
+				(justify right)
 			)
 		)
 		(property "Value" "1u"
@@ -9235,7 +9372,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				) (justify right)
+				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
@@ -9652,6 +9790,120 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
 					(reference "R202")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 138.43 185.42 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5f54b061-84e0-496d-8036-870ccda3abb4")
+		(property "Reference" "R216"
+			(at 145.42 187.96 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0R"
+			(at 145.42 190.5 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 96.012 186.69 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8756450222375747584"
+			(at 97.79 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Backlight loop: 0R, change to 1k with the DNP cap if the sink rings"
+			(at 97.79 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 97.79 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part number" "0603WAF0000T5E"
+			(at 97.79 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 97.79 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e33954af-9d97-4175-b912-a420e5fe679c")
+		)
+		(pin "2"
+			(uuid "7529e4cb-f953-46d8-a154-3977a78980c0")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
+					(reference "R216")
 					(unit 1)
 				)
 			)
@@ -10759,6 +11011,120 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
 					(reference "#PWR1012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 116.84 184.15 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "861c80d3-95f3-4b8e-adf5-61536296601e")
+		(property "Reference" "C207"
+			(at 114.3 186.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "4n7"
+			(at 114.3 189.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 117.805 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8770989226131640320"
+			(at 116.84 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Backlight loop compensation, DNP: fit 1-10 nF (with R x16 = 1k) if the sink rings"
+			(at 116.84 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "FH Guangdong Fenghua Advanced Tech"
+			(at 116.84 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part number" "0603B472K500NT"
+			(at 116.84 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C53987"
+			(at 116.84 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3286c32e-b139-46f3-a9d5-75af2e6b08fe")
+		)
+		(pin "2"
+			(uuid "b0c76cb5-28ee-4c49-922e-9a1b200b5840")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
+					(reference "C207")
 					(unit 1)
 				)
 			)
@@ -13672,6 +14038,120 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 326.39 185.42 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e89a28a9-c81e-485b-97c3-2cc37a681271")
+		(property "Reference" "R316"
+			(at 333.38 187.96 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0R"
+			(at 333.38 190.5 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 283.972 186.69 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8756450222375747584"
+			(at 285.75 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Backlight loop: 0R, change to 1k with the DNP cap if the sink rings"
+			(at 285.75 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 285.75 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part number" "0603WAF0000T5E"
+			(at 285.75 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 285.75 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f42e25ab-57cc-4bfd-9abe-1c8399b7605c")
+		)
+		(pin "2"
+			(uuid "4bdbf1b6-7fa6-4f86-8f24-f395afcafd21")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
+					(reference "R316")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 116.84 121.92 0)
 		(unit 1)
@@ -14275,474 +14755,6 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 138.43 185.42 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5f54b061-84e0-496d-8036-870ccda3abb4")
-		(property "Reference" "R216"
-			(at 145.42 187.96 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				) (justify right)
-			)
-		)
-		(property "Value" "0R"
-			(at 145.42 190.5 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				) (justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 96.012 186.69 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8756450222375747584"
-			(at 97.79 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight loop: 0R, change to 1k with the DNP cap if the sink rings"
-			(at 97.79 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 97.79 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part number" "0603WAF0000T5E"
-			(at 97.79 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C21189"
-			(at 97.79 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e33954af-9d97-4175-b912-a420e5fe679c")
-		)
-		(pin "2"
-			(uuid "7529e4cb-f953-46d8-a154-3977a78980c0")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
-					(reference "R216")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 326.39 185.42 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e89a28a9-c81e-485b-97c3-2cc37a681271")
-		(property "Reference" "R316"
-			(at 333.38 187.96 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				) (justify right)
-			)
-		)
-		(property "Value" "0R"
-			(at 333.38 190.5 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				) (justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 283.972 186.69 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8756450222375747584"
-			(at 285.75 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight loop: 0R, change to 1k with the DNP cap if the sink rings"
-			(at 285.75 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL"
-			(at 285.75 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part number" "0603WAF0000T5E"
-			(at 285.75 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C21189"
-			(at 285.75 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f42e25ab-57cc-4bfd-9abe-1c8399b7605c")
-		)
-		(pin "2"
-			(uuid "4bdbf1b6-7fa6-4f86-8f24-f395afcafd21")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
-					(reference "R316")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 116.84 184.15 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "861c80d3-95f3-4b8e-adf5-61536296601e")
-		(property "Reference" "C207"
-			(at 114.3 186.69 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				) (justify right)
-			)
-		)
-		(property "Value" "4n7"
-			(at 114.3 189.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				) (justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 117.805 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8770989226131640320"
-			(at 116.84 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight loop compensation, DNP: fit 1-10 nF (with R x16 = 1k) if the sink rings"
-			(at 116.84 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "FH Guangdong Fenghua Advanced Tech"
-			(at 116.84 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part number" "0603B472K500NT"
-			(at 116.84 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C53987"
-			(at 116.84 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3286c32e-b139-46f3-a9d5-75af2e6b08fe")
-		)
-		(pin "2"
-			(uuid "b0c76cb5-28ee-4c49-922e-9a1b200b5840")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
-					(reference "C207")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 304.8 184.15 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "5295f647-308a-446d-b437-46b157e9edfd")
-		(property "Reference" "C307"
-			(at 302.26 186.69 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				) (justify right)
-			)
-		)
-		(property "Value" "4n7"
-			(at 302.26 189.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				) (justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 305.765 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8770989226131640320"
-			(at 304.8 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight loop compensation, DNP: fit 1-10 nF (with R x16 = 1k) if the sink rings"
-			(at 304.8 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "FH Guangdong Fenghua Advanced Tech"
-			(at 304.8 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part number" "0603B472K500NT"
-			(at 304.8 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C53987"
-			(at 304.8 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b3179924-6482-4168-8c58-728d09c0914f")
-		)
-		(pin "2"
-			(uuid "2352b11f-3946-4555-a697-18e9d6c2482c")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
-					(reference "C307")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(label "TFT1_BL_S"
-		(at 116.84 187.96 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "df94ca8d-623d-4ec6-9bbe-28f19ca11738")
-	)
-	(label "TFT2_BL_S"
-		(at 304.8 187.96 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6303c434-01f3-43ac-95c0-df5570c79c6c")
 	)
 	(sheet_instances
 		(path "/"

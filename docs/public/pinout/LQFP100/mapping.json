@@ -304,13 +304,20 @@
       {
         "pin": "PE1",
         "role": "DAC_RESET",
-        "macro": "DAC_RESET"
+        "macro": "DAC_RESET",
+        "note": "100k pull-down. Hold low >= 1 ms after DAC_1V8 is up, before any I2C access."
       },
       {
         "pin": "PE2",
-        "role": "DAC_EN (load switch)",
+        "role": "DAC_EN (TPS7A2018 EN + PCA9306 EN)",
         "macro": "DAC_EN",
-        "note": "I2C1 is always on: if the DAC is switched off, isolate it from the bus (see back-powering)."
+        "note": "100k pull-down. Switches DAC_1V8 (VA/VCP/VD/VL) and disconnects the DAC from I2C1 through the PCA9306. VP stays on +3.3V."
+      },
+      {
+        "pin": "PA10",
+        "role": "DAC_INT (CS43131 INT, open drain)",
+        "macro": "DAC_INT",
+        "note": "EXTI10. 10k pull-up to +3.3V (VP domain). Jack 2 plug/unplug comes through here (DAC HP_DETECT), plus PLL and other DAC events."
       }
     ]
   },
@@ -323,12 +330,6 @@
         "role": "Jack 1 detect (ADC12_IN9)",
         "macro": "HP1_DET",
         "note": "Analog read, not EXTI: 47k pull-up to +3.3VA. Plug in: ~3.3 V; no plug: the tip switch shows LEFT (~1.2 V bias). Threshold ~2.2 V, sample time 480 cycles. Only valid while VS_EN is high."
-      },
-      {
-        "pin": "PA10",
-        "role": "Jack 2 detect",
-        "macro": "HP2_DET",
-        "note": "EXTI10. Test board only (second jack)."
       }
     ]
   },

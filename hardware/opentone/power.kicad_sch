@@ -5,273 +5,6 @@
 	(uuid "889eec29-bf07-43c4-9ca8-390ad0d5ecfd")
 	(paper "A4")
 	(lib_symbols
-		(symbol "opentone:MCP73831-2-MC_EP"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at -7.62 6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "MCP73831-2-MC"
-				(at 1.27 6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.7x1.4mm"
-				(at 1.27 -6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf"
-				(at -3.81 -1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Single cell, Li-Ion/Li-Po charge management controller, 4.20V, Tri-State Status Output, in DFN-8 package"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "battery charger lithium"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "DFN*3x2mm*P0.5mm*EP1.7x1.4mm*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "MCP73831-2-MC_EP_0_1"
-				(rectangle
-					(start -7.62 5.08)
-					(end 7.62 -5.08)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "MCP73831-2-MC_EP_1_1"
-				(pin passive line
-					(at 0 7.62 270)
-					(length 2.54)
-					(hide yes)
-					(name "V_{DD}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 7.62 270)
-					(length 2.54)
-					(name "V_{DD}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(name "V_{BAT}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(hide yes)
-					(name "V_{BAT}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin tri_state line
-					(at 10.16 -2.54 180)
-					(length 2.54)
-					(name "STAT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "V_{SS}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "PROG"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 2.54 -7.62 90)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:TestPoint"
 			(pin_numbers
 				(hide yes)
@@ -2150,6 +1883,172 @@
 				)
 			)
 			(symbol "D_Schottky_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:D_Zener"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Zener"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Zener diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Zener_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Zener_1_1"
 				(pin passive line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -5824,6 +5723,273 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "opentone:MCP73831-2-MC_EP"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -7.62 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MCP73831-2-MC"
+				(at 1.27 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.7x1.4mm"
+				(at 1.27 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf"
+				(at -3.81 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Single cell, Li-Ion/Li-Po charge management controller, 4.20V, Tri-State Status Output, in DFN-8 package"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "battery charger lithium"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "DFN*3x2mm*P0.5mm*EP1.7x1.4mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MCP73831-2-MC_EP_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "MCP73831-2-MC_EP_1_1"
+				(pin passive line
+					(at 0 7.62 270)
+					(length 2.54)
+					(hide yes)
+					(name "V_{DD}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "V_{DD}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "V_{BAT}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(hide yes)
+					(name "V_{BAT}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin tri_state line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "STAT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "V_{SS}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "PROG"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "opentone:TPS63802"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -6838,156 +7004,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D_Zener"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "D_Zener"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Zener diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "D_Zener_0_1"
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_Zener_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(rectangle
 		(start 95.25 113.03)
@@ -7219,6 +7235,12 @@
 		(uuid "893a625e-3d6a-4289-b1f9-6d211527e27a")
 	)
 	(junction
+		(at 222.25 45.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8e350d09-3711-48e8-a48f-824b09f76b5a")
+	)
+	(junction
 		(at 218.44 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7340,12 +7362,6 @@
 		(at 40.64 144.78)
 		(uuid "e9d218c9-77d5-4c06-a400-a41eb72acb6b")
 	)
-	(junction
-		(at 222.25 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8e350d09-3711-48e8-a48f-824b09f76b5a")
-	)
 	(wire
 		(pts
 			(xy 226.06 152.4) (xy 226.06 144.78)
@@ -7405,6 +7421,16 @@
 			(type default)
 		)
 		(uuid "13e6ac17-c751-47f9-8951-8d0fe65e378d")
+	)
+	(wire
+		(pts
+			(xy 31.75 57.15) (xy 36.83 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "165ba6c9-5495-4d79-9e06-36ffdf55a22b")
 	)
 	(wire
 		(pts
@@ -7588,6 +7614,16 @@
 	)
 	(wire
 		(pts
+			(xy 222.25 45.72) (xy 226.06 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47f22737-b694-427b-b88f-7ed1fbd2ae81")
+	)
+	(wire
+		(pts
 			(xy 95.25 83.82) (xy 95.25 80.01)
 		)
 		(stroke
@@ -7715,6 +7751,26 @@
 			(type default)
 		)
 		(uuid "7d6b6f3b-25db-4462-93d2-063ebd223bf8")
+	)
+	(wire
+		(pts
+			(xy 46.99 57.15) (xy 50.8 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e8a9e90-f613-45ff-a08b-245b684cbab0")
+	)
+	(wire
+		(pts
+			(xy 162.56 83.82) (xy 162.56 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "886256f6-a495-4aa6-a0a4-b52443cee594")
 	)
 	(wire
 		(pts
@@ -7895,16 +7951,6 @@
 			(type default)
 		)
 		(uuid "b272ff4d-77dc-4470-9462-cd732038c0bf")
-	)
-	(wire
-		(pts
-			(xy 222.25 45.72) (xy 226.06 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "47f22737-b694-427b-b88f-7ed1fbd2ae81")
 	)
 	(wire
 		(pts
@@ -8236,6 +8282,16 @@
 		)
 		(uuid "1aeb283d-5c1c-451f-b009-04d8e80f3073")
 	)
+	(label "VS_VIN"
+		(at 215.9 45.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1c371a58-307c-4abb-96fd-e7a0f36ee640")
+	)
 	(label "PROG_2K"
 		(at 154.94 95.25 0)
 		(effects
@@ -8245,6 +8301,16 @@
 			(justify left bottom)
 		)
 		(uuid "1d52e4bf-a6ec-48a1-aabc-514d05e4753f")
+	)
+	(label "VS_VIN"
+		(at 215.9 81.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "22e9cd34-31ff-4f82-b4b9-b5ab9c66e8b1")
 	)
 	(label "CC1"
 		(at 40.64 91.44 0)
@@ -8472,6 +8538,28 @@
 		(uuid "0396c75a-b24d-4ca2-85b7-ad4540ebc440")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 66.04 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "VSYS"
+		(shape bidirectional)
+		(at 172.72 38.1 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "03cae61a-7385-469f-8e68-7d7ac0d7c355")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 172.72 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8758,6 +8846,28 @@
 			)
 		)
 	)
+	(global_label "VBUS"
+		(shape bidirectional)
+		(at 88.9 97.79 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6570b7bf-0f4b-4e9a-a73f-2cfe7324c057")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 88.9 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "VSYS"
 		(shape bidirectional)
 		(at 113.03 34.29 270)
@@ -8861,6 +8971,28 @@
 		(uuid "88653b1c-439d-4abd-a107-88b734eb7339")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 264.16 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "VBAT"
+		(shape bidirectional)
+		(at 179.07 38.1 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9af3b7f2-0bd7-4125-9ded-48d12b885456")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 179.07 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9106,6 +9238,83 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "#PWR0736")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+1V8")
+		(at 191.77 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "01e83d72-99fb-4025-8c1e-e957ec801ec3")
+		(property "Reference" "#PWR0742"
+			(at 191.77 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+1V8"
+			(at 191.77 31.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 177.8 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+1V8\""
+			(at 177.8 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2990124c-550e-4e5c-a954-81fe8f2b58fd")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "#PWR0742")
 					(unit 1)
 				)
 			)
@@ -9621,6 +9830,83 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "R35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 185.42 38.1 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "18665de0-a5cb-42a8-9169-8fd331e123c2")
+		(property "Reference" "TP4"
+			(at 185.42 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 185.42 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 162.56 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test pad (rail probe), out of BOM"
+			(at 167.64 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d92275ad-27bd-427e-9e6b-27bd408ebc85")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -11594,6 +11880,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3VA")
+		(at 198.12 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "445e1248-0bfb-4838-8d97-6b7f6492d2fb")
+		(property "Reference" "#PWR0743"
+			(at 198.12 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3VA"
+			(at 198.12 31.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 187.96 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
+			(at 187.96 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "32c9a558-b493-49c7-a691-9119ff0ddaa8")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "#PWR0743")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 50.8 63.5 0)
 		(unit 1)
@@ -12216,6 +12579,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 162.56 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4ef529af-6ed1-4184-8df8-6d7935bea477")
+		(property "Reference" "#PWR0737"
+			(at 162.56 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 162.56 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 162.56 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c47b2503-8cca-4272-8444-4ba22d3eabea")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "#PWR0737")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 113.03 71.12 90)
 		(unit 1)
@@ -12482,6 +12922,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 198.12 38.1 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "59a94347-503b-444a-ac94-377d11380856")
+		(property "Reference" "TP6"
+			(at 198.12 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3VA"
+			(at 198.12 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 182.88 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test pad (rail probe), out of BOM"
+			(at 187.96 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0d8f48c0-4a84-4b43-8c06-9be7a54bc459")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 210.82 53.34 0)
 		(unit 1)
@@ -12630,6 +13147,83 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "#PWR0709")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 191.77 38.1 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5ff76197-27c0-4762-b1b8-ab89c95a75fb")
+		(property "Reference" "TP5"
+			(at 191.77 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+1V8"
+			(at 191.77 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 172.72 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test pad (rail probe), out of BOM"
+			(at 177.8 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "720a37a6-6233-4893-81d3-d37f06b4b69c")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "TP5")
 					(unit 1)
 				)
 			)
@@ -13276,6 +13870,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 41.91 72.39 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6fad5da6-ed02-478e-9f4f-05ca4ad20474")
+		(property "Reference" "#PWR0744"
+			(at 41.91 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 41.91 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 41.91 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 41.91 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 41.91 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2ab4cd15-7af9-45a9-9e83-eb599989bd61")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "#PWR0744")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 177.8 151.13 0)
 		(unit 1)
@@ -13384,6 +14055,84 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "C63")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 88.9 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "74bffc78-23dd-4fd7-af3f-fafadda85995")
+		(property "Reference" "#PWR0740"
+			(at 88.9 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 86.36 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 88.9 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6cdf6cca-6242-4d16-a791-107bc3fd069a")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "#PWR0740")
 					(unit 1)
 				)
 			)
@@ -13858,6 +14607,195 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 41.91 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8153aa1e-00f7-48e4-8412-26ee12210f60")
+		(property "Reference" "R6"
+			(at 39.37 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 44.45 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 40.132 68.58 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706265439817728"
+			(at 41.91 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 41.91 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 41.91 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part number" "0603WAF1003T5E"
+			(at 41.91 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 41.91 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ef4980f4-be7c-4085-8d46-2f7927150b5e")
+		)
+		(pin "2"
+			(uuid "92c9f609-b9d1-485b-a813-833bc644f77c")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 172.72 38.1 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "81c74252-f111-4795-be36-6d3af205d100")
+		(property "Reference" "TP2"
+			(at 172.72 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VSYS"
+			(at 172.72 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 142.24 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test pad (rail probe), out of BOM"
+			(at 147.32 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b53c7f4c-f795-4f00-8184-cbc1b2ff60dd")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 20.32 63.5 0)
 		(unit 1)
@@ -13966,6 +14904,83 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "C61")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 185.42 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8adf6365-c708-41f6-9118-771f11a618af")
+		(property "Reference" "#PWR0741"
+			(at 185.42 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 185.42 31.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 167.64 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 167.64 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 167.64 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "88b65d9a-5aa5-4a20-ae41-774541aa9361")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "#PWR0741")
 					(unit 1)
 				)
 			)
@@ -14121,6 +15136,125 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "#FLG0105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:AO3401A")
+		(at 41.91 59.69 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "958c6cd2-6891-4c4b-a751-966dbb2c9fb7")
+		(property "Reference" "Q2"
+			(at 41.91 52.07 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AO3401A"
+			(at 41.91 49.53 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 40.005 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
+			(at 38.1 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Battery reverse-polarity guard: drain on J3+, source on VBAT, gate to GND. On (~60 mOhm) both ways with a correct pack, off with a reversed one"
+			(at 41.91 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Alpha & Omega Semiconductor"
+			(at 41.91 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part number" "AO3401A"
+			(at 41.91 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C15127"
+			(at 41.91 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6e814fcb-1927-4c86-ad01-52aa4a2120e0")
+		)
+		(pin "2"
+			(uuid "0a3aeeca-5732-4666-87c2-de9d0c924233")
+		)
+		(pin "3"
+			(uuid "e5cc5c7e-caf3-41b6-b45e-7738ad094c0b")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -16526,6 +17660,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 179.07 38.1 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dcfab262-f85a-481b-bff5-313733022c0f")
+		(property "Reference" "TP3"
+			(at 179.07 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBAT"
+			(at 179.07 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 152.4 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test pad (rail probe), out of BOM"
+			(at 157.48 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "72c6b7d8-3c1b-4689-8692-864b0fe4a6e7")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 196.85 52.07 0)
 		(unit 1)
@@ -17342,6 +18553,120 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "U10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Zener")
+		(at 88.9 101.6 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e878d2fe-12eb-4f94-9b02-ac480333826e")
+		(property "Reference" "D8"
+			(at 91.44 100.33 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMF5.0A"
+			(at 91.44 102.87 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123F"
+			(at 88.9 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588884619031171072"
+			(at 88.9 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "5 V unidirectional TVS, 200 W, VBUS transient clamp after F2 (place next to USB1)"
+			(at 88.9 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Littelfuse"
+			(at 88.9 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part number" "SMF5.0A"
+			(at 88.9 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C151296"
+			(at 88.9 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7c676c06-786a-4638-ae80-3a1c346d676d")
+		)
+		(pin "2"
+			(uuid "33d5d625-2b71-4189-93b0-891ed7ac21ec")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -18686,1255 +20011,4 @@
 			)
 		)
 	)
-	(label "VS_VIN"
-		(at 215.9 45.72 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1c371a58-307c-4abb-96fd-e7a0f36ee640")
-	)
-	(label "VS_VIN"
-		(at 215.9 81.28 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "22e9cd34-31ff-4f82-b4b9-b5ab9c66e8b1")
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 162.56 86.36 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4ef529af-6ed1-4184-8df8-6d7935bea477")
-		(property "Reference" "#PWR0737"
-			(at 162.56 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 162.56 90.17 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 162.56 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 162.56 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 162.56 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c47b2503-8cca-4272-8444-4ba22d3eabea")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "#PWR0737")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 162.56 83.82000000000001) (xy 162.56 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "886256f6-a495-4aa6-a0a4-b52443cee594")
-	)
-	(symbol
-		(lib_id "Device:D_Zener")
-		(at 88.9 101.6 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e878d2fe-12eb-4f94-9b02-ac480333826e")
-		(property "Reference" "D8"
-			(at 91.44 100.33 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SMF5.0A"
-			(at 91.44 102.87 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123F"
-			(at 88.9 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588884619031171072"
-			(at 88.9 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "5 V unidirectional TVS, 200 W, VBUS transient clamp after F2 (place next to USB1)"
-			(at 88.9 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Littelfuse"
-			(at 88.9 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part number" "SMF5.0A"
-			(at 88.9 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C151296"
-			(at 88.9 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7c676c06-786a-4638-ae80-3a1c346d676d")
-		)
-		(pin "2"
-			(uuid "33d5d625-2b71-4189-93b0-891ed7ac21ec")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "D8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "VBUS"
-		(at 88.9 97.79 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6570b7bf-0f4b-4e9a-a73f-2cfe7324c057")
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 88.9 105.41 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "74bffc78-23dd-4fd7-af3f-fafadda85995")
-		(property "Reference" "#PWR0740"
-			(at 88.9 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 86.36 107.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 88.9 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 88.9 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6cdf6cca-6242-4d16-a791-107bc3fd069a")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "#PWR0740")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 172.72 38.1 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "81c74252-f111-4795-be36-6d3af205d100")
-		(property "Reference" "TP2"
-			(at 172.72 44.45 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VSYS"
-			(at 172.72 46.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 142.24 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 142.24 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test pad (rail probe), out of BOM"
-			(at 147.32 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b53c7f4c-f795-4f00-8184-cbc1b2ff60dd")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "TP2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 179.07 38.1 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "dcfab262-f85a-481b-bff5-313733022c0f")
-		(property "Reference" "TP3"
-			(at 179.07 44.45 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VBAT"
-			(at 179.07 46.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 152.4 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 152.4 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test pad (rail probe), out of BOM"
-			(at 157.48 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "72c6b7d8-3c1b-4689-8692-864b0fe4a6e7")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "TP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 185.42 38.1 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "18665de0-a5cb-42a8-9169-8fd331e123c2")
-		(property "Reference" "TP4"
-			(at 185.42 44.45 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 185.42 46.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 162.56 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 162.56 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test pad (rail probe), out of BOM"
-			(at 167.64 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d92275ad-27bd-427e-9e6b-27bd408ebc85")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "TP4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 191.77 38.1 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5ff76197-27c0-4762-b1b8-ab89c95a75fb")
-		(property "Reference" "TP5"
-			(at 191.77 44.45 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+1V8"
-			(at 191.77 46.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 172.72 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test pad (rail probe), out of BOM"
-			(at 177.8 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "720a37a6-6233-4893-81d3-d37f06b4b69c")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "TP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 198.12 38.1 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "59a94347-503b-444a-ac94-377d11380856")
-		(property "Reference" "TP6"
-			(at 198.12 44.45 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3VA"
-			(at 198.12 46.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 182.88 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 182.88 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test pad (rail probe), out of BOM"
-			(at 187.96 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0d8f48c0-4a84-4b43-8c06-9be7a54bc459")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "TP6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 185.42 38.1 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8adf6365-c708-41f6-9118-771f11a618af")
-		(property "Reference" "#PWR0741"
-			(at 185.42 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Value" "+3.3V"
-			(at 185.42 31.75 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 167.64 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 167.64 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 167.64 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "88b65d9a-5aa5-4a20-ae41-774541aa9361")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "#PWR0741")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+1V8")
-		(at 191.77 38.1 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "01e83d72-99fb-4025-8c1e-e957ec801ec3")
-		(property "Reference" "#PWR0742"
-			(at 191.77 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Value" "+1V8"
-			(at 191.77 31.75 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 177.8 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 177.8 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+1V8\""
-			(at 177.8 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2990124c-550e-4e5c-a954-81fe8f2b58fd")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "#PWR0742")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3VA")
-		(at 198.12 38.1 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "445e1248-0bfb-4838-8d97-6b7f6492d2fb")
-		(property "Reference" "#PWR0743"
-			(at 198.12 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Value" "+3.3VA"
-			(at 198.12 31.75 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 187.96 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 187.96 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 187.96 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "32c9a558-b493-49c7-a691-9119ff0ddaa8")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "#PWR0743")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "VSYS"
-		(at 172.72 38.1 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "03cae61a-7385-469f-8e68-7d7ac0d7c355")
-	)
-	(global_label "VBAT"
-		(at 179.07 38.1 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "9af3b7f2-0bd7-4125-9ded-48d12b885456")
-	)
-	(symbol
-		(lib_id "Transistor_FET:AO3401A")
-		(at 41.91 59.69 90)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "958c6cd2-6891-4c4b-a751-966dbb2c9fb7")
-		(property "Reference" "Q2"
-			(at 41.91 52.07 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AO3401A"
-			(at 41.91 49.53 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 40.005 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
-			(at 38.1 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "Battery reverse-polarity guard: drain on J3+, source on VBAT, gate to GND. On (~60 mOhm) both ways with a correct pack, off with a reversed one"
-			(at 41.91 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Alpha & Omega Semiconductor"
-			(at 41.91 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part number" "AO3401A"
-			(at 41.91 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C15127"
-			(at 41.91 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6e814fcb-1927-4c86-ad01-52aa4a2120e0")
-		)
-		(pin "2"
-			(uuid "0a3aeeca-5732-4666-87c2-de9d0c924233")
-		)
-		(pin "3"
-			(uuid "e5cc5c7e-caf3-41b6-b45e-7738ad094c0b")
-		)
-		(instances
-			(project "opentone"
-				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 31.75 57.15) (xy 36.83 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "165ba6c9-5495-4d79-9e06-36ffdf55a22b")
-	)
-	(wire
-		(pts
-			(xy 46.989999999999995 57.15) (xy 50.800000000000004 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7e8a9e90-f613-45ff-a08b-245b684cbab0")
-	)
-  (symbol (lib_id "Device:R") (at 41.91 68.58 0) (unit 1)
-    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
-    (uuid "8153aa1e-00f7-48e4-8412-26ee12210f60")
-    (property "Reference" "R6"
-      (at 39.37 68.58 0)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Value" "100k"
-      (at 44.45 68.58 0)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-      (at 40.132 68.58 90)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706265439817728"
-      (at 41.91 68.58 0)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Description" "Resistor"
-      (at 41.91 68.58 0)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Manufacturer" "UNI-ROYAL"
-			(at 41.91 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part number" "0603WAF1003T5E"
-			(at 41.91 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C25803"
-			(at 41.91 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1" (uuid "ef4980f4-be7c-4085-8d46-2f7927150b5e"))
-    (pin "2" (uuid "92c9f609-b9d1-485b-a813-833bc644f77c"))
-    (instances
-      (project "opentone"
-        (path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-          (reference "R6")
-          (unit 1)
-        )
-      )
-    )
-  )
-  (symbol (lib_id "power:GND") (at 41.91 72.39 0) (unit 1)
-    (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no)
-    (uuid "6fad5da6-ed02-478e-9f4f-05ca4ad20474")
-    (property "Reference" "#PWR0744"
-      (at 41.91 69.85 0)
-     
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-     (hide yes))
-    (property "Value" "GND"
-      (at 41.91 74.93 0)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Footprint" ""
-      (at 41.91 72.39 0)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Datasheet" ""
-      (at 41.91 72.39 0)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-      (at 41.91 72.39 0)
-      (hide yes)
-      (show_name no)
-      (do_not_autoplace no)
-      (effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-    )
-    (pin "1" (uuid "2ab4cd15-7af9-45a9-9e83-eb599989bd61"))
-    (instances
-      (project "opentone"
-        (path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
-          (reference "#PWR0744")
-          (unit 1)
-        )
-      )
-    )
-  )
 )

@@ -285,10 +285,10 @@ Notes:
 
 - CS43131-CWZR is (I think) the WLCSP package: 0.4 mm pitch, no hand soldering. The QFN one is
   CS43131-CNZ. Check before ordering.
-- The DAC needs a 1.8 V rail, an I2C address on the shared bus and a RESET pin: decided (AP2112K-1.8 on
-  `DAC_EN` PE2, address 0x30, RESET on PE1), see `notes/devboard-todo.md`. The sheet is not drawn yet.
-- The VS1053 has a single I2S output, already going to the BT module. It now has to reach both the BT
-  module and the DAC: add jumpers to pick the route.
+- The DAC sheet is drawn (`hardware/opentone/dac.kicad_sch`): TPS7A2018 on `DAC_EN` PE2, VP on +3.3V,
+  address 0x30, RESET on PE1, INT on PA10. Details in `notes/devboard-todo.md` ("DAC").
+- The VS1053's single I2S output feeds both the BT module and the DAC (through a level shifter), no route
+  jumper needed. It is 16-bit at 48 kHz, which caps the DAC at ≈97 dB dynamic range in this test.
 - The VS1053 jack ground is GBUF, not GND. If the board is powered over USB by the laptop and the jack goes
   into the same laptop's line-in, GBUF gets shorted to ground. Measure on battery, or through a USB audio
   interface (also better than the laptop's own input).
