@@ -41,6 +41,13 @@ code it references.
   iPod-sized final board. Contains the LQFP100 package recommendation and order
   of work. References `docs/recaps/bluetooth.md`, `docs/next-step-pinout.md`,
   `datasheets/mcu/lqfp100-pins.md`.
+- `notes/bom-surface.md` — board area taken by the BOM (courtyards read from
+  `hardware/opentone/opentone.kicad_pcb`, MPNs from
+  `docs/public/datasheets/index.json`): 3854 mm² for 260 parts, by category
+  and per MPN. Then what smaller packages would save: passives 0603 → 0402
+  (~550 mm²) or 0201 (~660 mm²), same-die IC packages (~130 mm²), part changes
+  (~55 mm²), and the MCU in UFBGA-144 + CS43131 WLCSP (~240 mm², needs 4
+  layers). About 730 mm² (19 %) is reachable on the current 2-layer board.
 
 ## Audio (VS1053b + FLAC)
 
