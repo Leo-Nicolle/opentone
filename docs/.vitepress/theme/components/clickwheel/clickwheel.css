@@ -1,0 +1,117 @@
+/* Shared by Clickwheel and its panels. Tokens follow BenchLive (bench-live.css):
+   light first, dark below. Each selector carries one more class than it needs so the
+   panels' scoped rules still override it. */
+.cw.cw {
+  --cw-bg: var(--vp-c-bg);
+  --cw-surface: var(--vp-c-bg-soft);
+  --cw-surface2: #ebebef;
+  --cw-line: var(--vp-c-divider);
+  --cw-line2: #c2c2c4;
+  --cw-text: var(--vp-c-text-1);
+  --cw-muted: var(--vp-c-text-2);
+  --cw-brand: #972d6f;
+  --cw-brandbtn: #972d6f;
+  --cw-brandhover: #b03d83;
+  --cw-brandsoft: rgba(151, 45, 111, 0.11);
+  --cw-sgreen: #60a534;
+  --cw-amber: #9a5b00;
+  --cw-ambersoft: rgba(154, 91, 0, 0.11);
+  --cw-red: #a9392f;
+  --cw-redsoft: rgba(169, 57, 47, 0.11);
+  --cw-board: #dfe3d6;
+  --cw-copper: #b8692e;
+  --cw-mono: "IBM Plex Mono", var(--vp-font-family-mono);
+  /* For the shared bench Seg control. */
+  --bl-line2: var(--cw-line2);
+  --bl-surface2: var(--cw-surface2);
+  --bl-text: var(--cw-text);
+  --bl-muted: var(--cw-muted);
+
+  margin-top: 24px;
+  font-family: "Space Grotesk", var(--vp-font-family-base);
+  font-size: 14px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  color: var(--cw-text);
+  container-type: inline-size;
+}
+:root.dark .cw.cw {
+  --cw-surface2: #32363f;
+  --cw-line2: #3c3f44;
+  --cw-brand: #cb5297;
+  --cw-brandsoft: rgba(203, 82, 151, 0.16);
+  --cw-sgreen: #96dd42;
+  --cw-amber: #f0a83a;
+  --cw-ambersoft: rgba(240, 168, 58, 0.13);
+  --cw-red: #e8857b;
+  --cw-redsoft: rgba(232, 133, 123, 0.14);
+  --cw-board: #2a2e27;
+  --cw-copper: #d08a4f;
+}
+.cw.cw button,
+.cw.cw input {
+  font-family: inherit;
+}
+.cw.cw p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cw.cw .cw-panel {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  background: var(--cw-surface);
+  border: 1px solid var(--cw-line);
+  border-radius: 12px;
+}
+.cw.cw .cw-h {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.cw.cw .cw-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cw-muted);
+}
+.cw.cw .cw-sub {
+  font-size: 12px;
+  color: var(--cw-muted);
+  text-wrap: pretty;
+}
+.cw.cw .cw-mono {
+  font-family: var(--cw-mono);
+}
+
+.cw.cw .cw-btn {
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--cw-line2);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--cw-text);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.cw.cw .cw-btn:hover {
+  background: var(--cw-surface2);
+}
+.cw.cw .cw-btn.primary {
+  height: 38px;
+  border: 0;
+  background: var(--cw-brandbtn);
+  color: #fff;
+  font-weight: 600;
+}
+.cw.cw .cw-btn.primary:hover {
+  background: var(--cw-brandhover);
+}
+.cw.cw .cw-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

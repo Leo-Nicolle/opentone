@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-23",
+  "generated": "2026-10-26",
   "source": "hardware/opentone/*.kicad_sch + datasheets/overrides.json",
   "generator": "scripts/datasheets.py",
   "categories": [
@@ -384,6 +384,26 @@
       "file": "datasheets/devboards/nucleo144-boards.pdf"
     },
     {
+      "id": "1206l110thyr",
+      "mpn": "1206L110THYR",
+      "manufacturer": "Littelfuse",
+      "lcsc": "C126818",
+      "category": "discretes",
+      "description": "PTC 1.1 A hold / 2.2 A trip, 8 V: charge 500 mA + system load on USB",
+      "values": [
+        "1206L110THYR"
+      ],
+      "refs": [
+        "F2"
+      ],
+      "sheets": [
+        "power"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588884694661914624",
+      "file": "datasheets/discretes/1206l110thyr.pdf"
+    },
+    {
       "id": "ao3400a",
       "mpn": "AO3400A",
       "manufacturer": "Alpha & Omega Semiconductor",
@@ -424,26 +444,6 @@
       "inBom": true,
       "url": "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf",
       "file": "datasheets/discretes/ao3401a.pdf"
-    },
-    {
-      "id": "asmd1206-075",
-      "mpn": "ASMD1206-075",
-      "manufacturer": "Shenzhen JDT Fuse",
-      "lcsc": "C135339",
-      "category": "discretes",
-      "description": "",
-      "values": [
-        "ASMD1206-075"
-      ],
-      "refs": [
-        "F2"
-      ],
-      "sheets": [
-        "power"
-      ],
-      "inBom": true,
-      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899511045799936",
-      "file": "datasheets/discretes/asmd1206-075.pdf"
     },
     {
       "id": "b5819w-sl",
@@ -957,7 +957,9 @@
         "R53",
         "R102",
         "R216",
+        "R217",
         "R316",
+        "R317",
         "R601",
         "R602",
         "R603",
@@ -1078,7 +1080,7 @@
         "R8",
         "R16",
         "R17",
-        "R34",
+        "R35",
         "R36",
         "R41",
         "R42",
@@ -1123,7 +1125,7 @@
       "refs": [
         "R18",
         "R32",
-        "R35"
+        "R39"
       ],
       "sheets": [
         "audio",
@@ -1314,6 +1316,7 @@
       "refs": [
         "R4",
         "R5",
+        "R34",
         "R615",
         "R616",
         "R617",
@@ -1340,7 +1343,7 @@
         "470k"
       ],
       "refs": [
-        "R39"
+        "R48"
       ],
       "sheets": [
         "power"
@@ -1498,6 +1501,7 @@
         "C44",
         "C45",
         "C67",
+        "C70",
         "C102",
         "C103",
         "C202",
@@ -1890,19 +1894,15 @@
       "category": "passives",
       "description": "Ferrite bead",
       "values": [
-        "600R@100MHz",
-        "600R/100MHz"
+        "600R@100MHz"
       ],
       "refs": [
         "FB3",
-        "FB201",
-        "FB301",
         "FB401"
       ],
       "sheets": [
         "mcu",
-        "power",
-        "screens"
+        "power"
       ],
       "inBom": true,
       "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579709915071365120",

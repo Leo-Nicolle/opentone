@@ -1,5 +1,5 @@
 import { EnhanceAppContext, useRoute, withBase } from "vitepress";
-import Clickwheel from "./components/clickwheel.vue";
+import Clickwheel from "./components/clickwheel/Clickwheel.vue";
 import Video from "./components/video.vue";
 import IndexCalculator from "./components/index-calculator.vue";
 import UIBuilder from "./components/ui-builder/UIBuilder.vue";
@@ -11,6 +11,7 @@ import ScrollConfig from "./components/bench/ScrollConfig.vue";
 import MemoryLayout from "./components/memory/MemoryLayout.vue";
 import PinoutLayout from "./layouts/PinoutLayout.vue";
 import SyncLayout from "./layouts/SyncLayout.vue";
+import ToolLayout from "./layouts/ToolLayout.vue";
 import { setup } from "@css-render/vue3-ssr";
 import { NConfigProvider } from "naive-ui";
 import DefaultTheme from "vitepress/theme";
@@ -73,6 +74,7 @@ export default {
     app.component("MemoryLayout", MemoryLayout);
     app.component("PinoutLayout", PinoutLayout);
     app.component("SyncLayout", SyncLayout);
+    app.component("ToolLayout", ToolLayout);
 
     if (import.meta.env.SSR) {
       const { collect } = setup(app);
