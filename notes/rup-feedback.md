@@ -35,6 +35,8 @@ The real problem is the **current budget**. The charger alone is set to 500 mA (
 
 **Next steps:** keep F2. It costs cents and pairs with D8. Either move to a ~1.1 A hold part, or lower the charge current to ~300 mA. Optionally route CC1/CC2 to MCU ADC pins so firmware can tell a 500 mA source from a 1.5 A or 3 A one. Removing F2 in production saves nothing worth having.
 
+**Done (2026-10-26):** F2 = Littelfuse 1206L110THYR (C126818): 1.1 A hold / 2.2 A trip, 8 V, same 1206 footprint. It derates to 0.83 A at 50 °C, still above the ~0.7 A charge + play worst case.
+
 ## Diode D7: It eats 0.5V, not a problem it seems since VSYS is boosted back up next?
 
 **Confirmed, it's not a problem.** D7 (B5819W Schottky) drops about 0.3–0.45 V, not 0.5 V, so VSYS sits around 4.6 V on USB. The TPS63802 buck-boost then runs in buck mode and outputs 3.3 V.
@@ -63,6 +65,8 @@ R34 (100k) and R35 (1M) belong to the charge-status line:
 **But the remark points at a real problem.** STAT is push-pull to VBUS, so it outputs 5 V when charging is done. Today that puts the PB0 node at about 4.85 V with the MCU on. With the device off and charging finished, the 3.3 V rail is at 0 V and the node sits at about 4.55 V. STM32 5 V-tolerant pins are only allowed up to VDD + 4 V, and positive current injection into them isn't allowed (datasheet abs-max table), so this exceeds the rating. The 1M pull-up is also a weak, noise-prone node, which is what your friend noticed.
 
 **Proposal:** use the same pattern as VBUS_SENSE (R5 47k / R7 100k): STAT → 47k → PB0 → 100k → GND. That gives about 3.4 V high and 0 V low. The catch is that "high-Z" (fault or no battery) then reads the same as "charging". Detect that case in firmware instead: VBUS present, "charging", but VCELL from the MAX17048 isn't rising.
+
+**Done (2026-10-26):** R34 = 47k (0603WAF4702T5E), R35 = 100k (0603WAF1003T5E) from CHG_STAT to GND. CHG_STAT (PB0) reads high = charge done, low = charging, or no USB / fault (STAT Hi-Z). Firmware must AND it with VBUS_SENSE.
 
 ## Why not connect the LDO after the Buck/Boost ?
 
@@ -167,6 +171,8 @@ A 600 Ω @ 100 MHz bead is also only ~0.3–0.5 Ω at audio and PWM frequencies,
 
 **Next step:** keep the 0603 footprint and fit 0R. Its only real use would be as a cut point (see item 17).
 
+**Done (2026-10-26):** FB201 and FB301 became R217 and R317, 0R 0603 (0603WAF0000T5E) with an R_Small symbol so the wiring is unchanged. FB3 (VS1053 AVDD filter) and FB401 (MCU VDDA) stay ferrite beads.
+
 ## Make the power LED driven by the MCU? Anyway make sure that when the circuit is shut for low battery, nothing is powered otherwise the battery will continue being drained till the last drop (LED, modules etc), not good
 
 **LEDs are fine:**
@@ -187,6 +193,16 @@ A 600 Ω @ 100 MHz bead is also only ~0.3–0.5 Ω at audio and PWM frequencies,
 - SW506 still shorts EN to GND for OFF.
 - The OFF current also drops, because R39 becomes ~2.2M instead of 470k.
 - Firmware does a clean shutdown earlier (MAX17048 ALRT at ~3.4 V, then STOP mode). The divider is the hardware backstop.
+
+**Done (2026-10-26), with different values than proposed:** the EN pin can leak up to 0.2 µA, which would shift a 2.2M/1M divider by up to ~14 %. Used R39 = 1M (VSYS to 3V3_EN) and new R48 = 470k (3V3_EN to GND), plus C70 = 100 nF on EN. Both resistor values were already in the BOM.
+
+- Cutoff (EN falling, 0.97–1.03 V): VSYS ≈ 3.13 V (3.04–3.22 V).
+- Restart (EN rising, 1.07–1.13 V): VSYS ≈ 3.44 V (3.35–3.54 V).
+- Divider current when on: ~2.5 µA. Current when OFF (switch shorts EN): VSYS/1M ≈ 3.7 µA, down from ~8 µA.
+- On USB, VSYS ≈ 4.6 V puts EN at 1.47 V, so the device runs while charging.
+- C70 with the ~320k divider gives about 32 ms of turn-on delay, which filters switching noise on EN.
+
+Firmware still needs a clean shutdown above the cutoff: watch the MAX17048 ALRT at ~3.4 V, then STOP mode.
 
 ## DAC and other modules: use the INT or EN pins to shut them down rather than physical switches
 

@@ -7,6 +7,7 @@
 
     <div class="cw-finger">
       <Field :def="FINGER_FIELD" />
+      <Field :def="OVERLAY_FIELD" />
       <Field :def="cw.distanceDef.value" :model="cw.distanceField" />
       <Field :def="cw.angleDef" :model="cw.angleField" />
     </div>
@@ -53,7 +54,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Field from "./Field.vue";
-import { D2R, FINGER_FIELD, toUiDeg } from "./geometry.ts";
+import { D2R, FINGER_FIELD, OVERLAY_FIELD, toUiDeg } from "./geometry.ts";
 import { useClickwheel } from "./state.ts";
 
 const cw = useClickwheel();

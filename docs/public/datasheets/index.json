@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26",
+  "generated": "2026-10-27",
   "source": "hardware/opentone/*.kicad_sch + datasheets/overrides.json",
   "generator": "scripts/datasheets.py",
   "categories": [
@@ -705,6 +705,26 @@
       "file": "datasheets/input/drv2605l.pdf"
     },
     {
+      "id": "iqs7222a102qfr",
+      "mpn": "IQS7222A102QFR",
+      "manufacturer": "Azoteq",
+      "lcsc": "",
+      "category": "input",
+      "description": "Click wheel touch controller (self-capacitance), I2C 0x57 (order code 102)",
+      "values": [
+        "IQS7222A"
+      ],
+      "refs": [
+        "U1201"
+      ],
+      "sheets": [
+        "touch"
+      ],
+      "inBom": true,
+      "url": "https://www.azoteq.com/images/stories/pdf/iqs7222a_datasheet.pdf",
+      "file": "datasheets/input/iqs7222a.pdf"
+    },
+    {
       "id": "mpr121qr2",
       "mpn": "MPR121QR2",
       "manufacturer": "NXP",
@@ -1265,15 +1285,21 @@
       "manufacturer": "UNI-ROYAL",
       "lcsc": "C23179",
       "category": "passives",
-      "description": "",
+      "description": "Self-capacitance series resistor",
       "values": [
         "470R"
       ],
       "refs": [
-        "R22"
+        "R22",
+        "R1201",
+        "R1202",
+        "R1203",
+        "R1204",
+        "R1205"
       ],
       "sheets": [
-        "power"
+        "power",
+        "touch"
       ],
       "inBom": true,
       "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706265439817728",
@@ -1293,11 +1319,13 @@
         "R402",
         "R403",
         "R703",
-        "R704"
+        "R704",
+        "R1206"
       ],
       "sheets": [
         "dac",
-        "mcu"
+        "mcu",
+        "touch"
       ],
       "inBom": true,
       "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706251506339840",
@@ -1661,11 +1689,14 @@
         "C713",
         "C714",
         "C715",
-        "C716"
+        "C716",
+        "C1203",
+        "C1205"
       ],
       "sheets": [
         "dac",
-        "mcu"
+        "mcu",
+        "touch"
       ],
       "inBom": true,
       "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707132658442240",
@@ -1684,12 +1715,14 @@
       "refs": [
         "C407",
         "C602",
-        "C703"
+        "C703",
+        "C1201"
       ],
       "sheets": [
         "dac",
         "mcu",
-        "memory"
+        "memory",
+        "touch"
       ],
       "inBom": true,
       "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707103462166528",
@@ -1715,6 +1748,28 @@
       ],
       "inBom": true,
       "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706978448228352",
+      "file": "datasheets/passives/samsung-cl-mlcc.pdf"
+    },
+    {
+      "id": "cl10c101jb8nnnc",
+      "mpn": "CL10C101JB8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C14858",
+      "category": "passives",
+      "description": "Unpolarized capacitor",
+      "values": [
+        "100pF"
+      ],
+      "refs": [
+        "C1202",
+        "C1204",
+        "C1206"
+      ],
+      "sheets": [
+        "touch"
+      ],
+      "inBom": true,
+      "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707092674142208",
       "file": "datasheets/passives/samsung-cl-mlcc.pdf"
     },
     {

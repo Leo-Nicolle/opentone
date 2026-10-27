@@ -15,6 +15,14 @@
       <Seg v-model="mode" :options="modeOpts" label="Finger movement" />
     </div>
 
+    <div class="cw-est">
+      <div class="cw-est-pick">
+        <span class="cw-label">Estimate</span>
+        <Seg v-model="cw.est.kind" :options="estOpts" label="How the angle is computed" size="sm" />
+      </div>
+      <Field v-if="cw.est.kind === 'pair'" :def="FULL_DELTA_FIELD" :model="cw.fullDeltaField" class="cw-est-full" />
+    </div>
+
     <div class="cw-kpis">
       <div v-for="k in kpis" :key="k.label">
         <div class="cw-sub">{{ k.label }}</div>
@@ -72,8 +80,16 @@
     <div class="cw-xaxis"><span v-for="x in [0, 90, 180, 270, 360]" :key="x">{{ x }}°</span></div>
 
     <p class="cw-sub">
-      Reported angle = circular mean of the pad centres weighted by the share each pad gets, with one constant offset
-      calibrated out. Hover the chart to move the finger around the wheel at its current distance from the centre.
+      <template v-if="cw.est.kind === 'pair'">
+        Reported angle as the firmware computes it (getWheelAngle): the two pads with the largest deltas, their centres
+        blended by delta; the strongest pad's centre alone when the second reads under 3 counts, no touch under 6.
+        Deltas are the finger's share on each pad times the full-touch delta, in whole counts.
+      </template>
+      <template v-else>
+        Reported angle = circular mean of all pad centres weighted by the share each pad gets (the parked firmware
+        change).
+      </template>
+      One constant offset is calibrated out. Hover the chart to move the finger around the wheel at its current distance from the centre.
     </p>
   </section>
 </template>
@@ -81,7 +97,8 @@
 <script setup lang="ts">
 import { computed, ref, useTemplateRef } from "vue";
 import Seg from "../bench/Seg.vue";
-import { SWEEP_STEPS, niceMax, toUiDeg } from "./geometry.ts";
+import Field from "./Field.vue";
+import { FULL_DELTA_FIELD, SWEEP_STEPS, niceMax, toUiDeg } from "./geometry.ts";
 import { TRACK_COLORS, useClickwheel, type Pt } from "./state.ts";
 
 const TRACK_NAMES = ["Inner track", "Middle track", "Outer track"];
@@ -93,6 +110,11 @@ const mode = ref<"around" | "across">("around");
 const modeOpts = [
   { value: "around" as const, label: "Around" },
   { value: "across" as const, label: "Across" },
+];
+
+const estOpts = [
+  { value: "pair" as const, label: "Firmware" },
+  { value: "mean" as const, label: "Average" },
 ];
 
 const s = computed(() => cw.sweep.value);
@@ -192,6 +214,21 @@ function onTrack(e: PointerEvent | MouseEvent): Pt {
   font-size: 13px;
   color: var(--cw-muted);
   text-wrap: pretty;
+}
+.cw-est {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px 24px;
+}
+.cw-est-pick {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cw-est-full {
+  flex: 1 1 260px;
+  max-width: 380px;
 }
 .cw-kpis {
   display: flex;

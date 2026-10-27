@@ -44,6 +44,7 @@
         <path :d="ray(r.act)" class="ray-act" />
         <path v-if="r.reported != null" :d="ray(r.reported)" class="ray-est" />
         <circle :cx="f.x" :cy="f.y" :r="cw.params.finger / 2" class="finger" />
+        <circle v-if="m.g.blur > 0" :cx="f.x" :cy="f.y" :r="cw.params.finger / 2 + m.g.blur" class="finger-blur" />
         <circle :cx="f.x" :cy="f.y" :r="m.V * 0.008" class="finger-dot" />
       </svg>
       <template v-if="byPad">
@@ -237,6 +238,13 @@ function toMM(e: PointerEvent | MouseEvent): Pt {
   fill-opacity: 0.14;
   stroke: var(--cw-text);
   stroke-width: 1.5;
+}
+.finger-blur {
+  fill: none;
+  stroke: var(--cw-text);
+  stroke-opacity: 0.5;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
 }
 .finger-dot {
   fill: var(--cw-text);

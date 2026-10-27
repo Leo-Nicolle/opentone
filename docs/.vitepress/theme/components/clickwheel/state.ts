@@ -2,7 +2,11 @@
 // Made once per <Clickwheel> and handed to its panels with provide/inject.
 import { computed, inject, onBeforeUnmount, onMounted, reactive, ref, shallowRef, watch, type InjectionKey } from "vue";
 import { useData } from "vitepress";
-import { D2R, DEFAULTS, buildGeo, buildSweep, cover, estimate, mod, padColors, toUiDeg, wrapPI, type FieldDef, type Params } from "./geometry.ts";
+import { COPPER_COST_DEFAULT, COPPER_COST_FIELD, type Progress } from "./optimize.ts";
+import {
+  D2R, DEFAULTS, ESTIMATOR_DEFAULT, FULL_DELTA_FIELD, buildGeo, buildSweep, cover, estimate, mod, padColors, toUiDeg, wrapPI,
+  type Estimator, type FieldDef, type Params,
+} from "./geometry.ts";
 
 export type Pt = { x: number; y: number };
 
@@ -32,13 +36,17 @@ export function createClickwheel() {
   const pin = ref<Pt>(defaultPin(DEFAULTS));
   const sweeping = ref(false);
 
-  // Geometry is keyed by everything but the finger; the sweep also by the finger.
+  // How the pads' readings become an angle: the firmware's rule by default.
+  const est = reactive<Estimator>({ ...ESTIMATOR_DEFAULT });
+
+  // Geometry is keyed by everything but the finger; the sweep also by the finger and the estimator.
   const model = computed(() => buildGeo(params));
-  const sweep = shallowRef(buildSweep(model.value.g, params.finger));
+  const runSweep = () => buildSweep(model.value.g, params.finger, { est: { ...est } });
+  const sweep = shallowRef(runSweep());
   let sweepTimer: ReturnType<typeof setTimeout> | undefined;
-  watch([model, () => params.finger], () => {
+  watch([model, () => params.finger, () => est.kind, () => est.full], () => {
     clearTimeout(sweepTimer);
-    sweepTimer = setTimeout(() => (sweep.value = buildSweep(model.value.g, params.finger)), SWEEP_DEBOUNCE_MS);
+    sweepTimer = setTimeout(() => (sweep.value = runSweep()), SWEEP_DEBOUNCE_MS);
   });
 
   const colors = computed(() => padColors(model.value.g.N, isDark.value));
@@ -84,6 +92,7 @@ export function createClickwheel() {
 
   function reset() {
     stopSweep();
+    stopOptimize(false);
     load({ ...DEFAULTS });
     pin.value = defaultPin(DEFAULTS);
   }
@@ -94,12 +103,12 @@ export function createClickwheel() {
 
   const reading = computed(() => {
     const m = model.value, g = m.g, f = finger.value, fr = params.finger / 2;
-    const cov = cover(g, f.x, f.y, fr, 33), est = estimate(g, cov);
+    const cov = cover(g, f.x, f.y, fr, 33), guess = estimate(g, cov, est);
     const rho = Math.hypot(f.x, f.y), act = Math.atan2(f.y, f.x);
     const onWheel = rho >= g.r - fr && rho <= g.R + fr;
     let err: number | null = null, reported: number | null = null;
-    if (est != null && onWheel) {
-      err = wrapPI(est - sweep.value.offset - act);
+    if (guess != null && onWheel) {
+      err = wrapPI(guess - sweep.value.offset - act);
       reported = act + err;
     }
     return { cov, rho, act, onWheel, err, reported };
@@ -180,15 +189,47 @@ export function createClickwheel() {
     timer = undefined;
     sweeping.value = false;
   }
+
+  // --- Pattern optimizer, in a worker ------------------------------------------
+
+  const opt = reactive({ running: false, progress: null as Progress | null, copperCost: COPPER_COST_DEFAULT });
+  const fullDeltaField = bindField(() => FULL_DELTA_FIELD, { get: () => est.full, set: (v) => (est.full = v) });
+  const copperCostField = bindField(() => COPPER_COST_FIELD, { get: () => opt.copperCost, set: (v) => (opt.copperCost = v) });
+  let worker: Worker | undefined;
+
+  function startOptimize() {
+    if (worker) return;
+    stopSweep();
+    worker = new Worker(new URL("./optimize.worker.ts", import.meta.url), { type: "module" });
+    worker.onmessage = (e: MessageEvent<Progress>) => {
+      opt.progress = e.data;
+      if (e.data.final) stopOptimize();
+    };
+    worker.onerror = () => stopOptimize(false);
+    opt.running = true;
+    opt.progress = null;
+    worker.postMessage({ params: { ...params }, copperCost: opt.copperCost, est: { ...est } });
+  }
+
+  /** Ends the run; `apply` loads the best pattern found so far. Size, pads and gap are left as they are. */
+  function stopOptimize(apply = true) {
+    worker?.terminate();
+    worker = undefined;
+    const best = opt.progress?.best;
+    if (opt.running && apply && best) load({ ...params, ...best });
+    opt.running = false;
+  }
+
   onBeforeUnmount(() => {
     stopSweep();
+    stopOptimize(false);
     clearTimeout(sweepTimer);
   });
 
   return {
-    params, paint, layers, hover, pin, sweeping, model, sweep, colors, finger, reading, status,
+    params, paint, layers, hover, pin, sweeping, model, sweep, colors, finger, reading, status, est, fullDeltaField, opt, copperCostField,
     distanceDef, angleDef, distanceField, angleField,
-    bindField, field, load, reset, point, pinAt, pinRadius, atPinRadius, startSweep,
+    bindField, field, load, reset, point, pinAt, pinRadius, atPinRadius, startSweep, startOptimize, stopOptimize,
   };
 }
 

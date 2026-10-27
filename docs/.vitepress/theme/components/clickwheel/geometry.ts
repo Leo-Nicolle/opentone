@@ -3,7 +3,7 @@
 // increasing clockwise. The UI shows angles from 12 o'clock (see toUiDeg).
 
 export const D2R = Math.PI / 180;
-const TAU = Math.PI * 2;
+export const TAU = Math.PI * 2;
 
 export type Params = {
   od: number; // outer diameter, mm
@@ -16,9 +16,10 @@ export type Params = {
   sq: number; // square outline side, mm
   gap: number; // copper gap, mm
   finger: number; // test finger diameter, mm
+  overlay: number; // cover thickness over the pads, mm
 };
 
-export const DEFAULTS: Params = { od: 38, id: 19, pads: 4, zig: 8, inter: 7.5, round: 0, rot: 0, sq: 30, gap: 0.2, finger: 8 };
+export const DEFAULTS: Params = { od: 38, id: 19, pads: 4, zig: 8, inter: 7.5, round: 0, rot: 0, sq: 30, gap: 0.2, finger: 8, overlay: 1 };
 
 export type FieldDef = {
   key: string; // a Params key, or a UI-only field like the finger position
@@ -64,7 +65,12 @@ export const FINGER_FIELD: FieldDef = {
   key: "finger", label: "Finger diameter", unit: "mm", min: 3, max: 16, step: 0.5, decimals: 1, hint: "Contact patch of a fingertip, usually 7 to 10 mm.",
 };
 
-const ALL_FIELDS = [...SECTIONS.flatMap((s) => s.fields), FINGER_FIELD];
+export const OVERLAY_FIELD: FieldDef = {
+  key: "overlay", label: "Overlay", unit: "mm", min: 0, max: 5, step: 0.1, decimals: 1,
+  hint: "Cover over the pads. The field spreads through it, blurring the finger’s edge by about half this thickness.",
+};
+
+const ALL_FIELDS = [...SECTIONS.flatMap((s) => s.fields), FINGER_FIELD, OVERLAY_FIELD];
 
 export const mod = (a: number, m: number) => ((a % m) + m) % m;
 export const wrapPI = (a: number) => mod(a + Math.PI, TAU) - Math.PI;
@@ -83,11 +89,12 @@ export type Geo = {
   q: number;
   gap: number;
   s: number;
+  blur: number; // finger edge softness, mm (σ)
 };
 
 export function geo(p: Params): Geo {
   const R = p.od / 2, r = Math.max(0, Math.min(p.id / 2, R - 1)), N = Math.round(p.pads), pitch = TAU / N, il = p.inter * D2R;
-  return { R, r, N, pitch, lo: -il, hi: pitch + il, a0: (p.rot - 90) * D2R, zig: Math.max(1, Math.round(p.zig)), q: p.round / 100, gap: p.gap, s: p.sq / 2 };
+  return { R, r, N, pitch, lo: -il, hi: pitch + il, a0: (p.rot - 90) * D2R, zig: Math.max(1, Math.round(p.zig)), q: p.round / 100, gap: p.gap, s: p.sq / 2, blur: p.overlay / 2 };
 }
 
 /** Angular offset of a pad border at radius rho, and its derivative d/drho. */
@@ -113,27 +120,73 @@ export function padAt(g: Geo, x: number, y: number): number {
   return k % g.N;
 }
 
-/** Share of a finger disc (centre cx, cy, radius fr) on each pad, last entry = no copper. */
+/**
+ * Share of a finger (centre cx, cy, radius fr) on each pad, last entry = no copper.
+ * Through an overlay the finger's edge is soft: a disc blurred by g.blur (σ, mm),
+ * drawn with a logistic falloff. Sampled on an n × n grid across the disc, kept as fine past its edge.
+ */
 export function cover(g: Geo, cx: number, cy: number, fr: number, n: number): number[] {
   const c = new Array(g.N + 1).fill(0);
-  const st = (2 * fr) / n;
+  const sb = g.blur, ext = fr + 2 * sb, cnt = Math.round((n * ext) / fr), st = (2 * ext) / cnt;
   let tot = 0;
-  for (let i = 0; i < n; i++)
-    for (let j = 0; j < n; j++) {
-      const dx = -fr + (i + 0.5) * st, dy = -fr + (j + 0.5) * st;
-      if (dx * dx + dy * dy > fr * fr) continue;
-      tot++;
+  for (let i = 0; i < cnt; i++)
+    for (let j = 0; j < cnt; j++) {
+      const dx = -ext + (i + 0.5) * st, dy = -ext + (j + 0.5) * st, d = Math.hypot(dx, dy);
+      const w = sb > 0 ? 1 / (1 + Math.exp((1.7 * (d - fr)) / sb)) : d <= fr ? 1 : 0;
+      if (w < 0.01) continue;
+      tot += w;
       const k = padAt(g, cx + dx, cy + dy);
-      c[k < 0 ? g.N : k]++;
+      c[k < 0 ? g.N : k] += w;
     }
-  return c.map((v) => v / Math.max(1, tot));
+  return c.map((v) => v / Math.max(1e-9, tot));
 }
 
-/** Reported angle: circular mean of the pad centres weighted by coverage. */
-export function estimate(g: Geo, c: number[]): number | null {
+/**
+ * How the reported angle is computed from the pads.
+ * - "pair": the firmware's getWheelAngle() (software/src/ClickWheel.hpp). Takes the two
+ *   strongest pads and blends their centres linearly by delta; snaps to the strongest
+ *   pad's centre when the second one is weak.
+ * - "mean": circular mean of all pad centres weighted by delta (parked firmware change,
+ *   plans/clickwheel-vector-angle.md).
+ * `full` is the delta, in counts, of a pad with the finger entirely on it: deltas are
+ * whole counts, and the firmware's thresholds are counts too.
+ */
+export type Estimator = { kind: "pair" | "mean"; full: number };
+export const ESTIMATOR_DEFAULT: Estimator = { kind: "pair", full: 30 };
+
+/** Thresholds of getWheelAngle(), in counts. */
+const FW_TOUCH_THRESHOLD = 6;
+const FW_SECOND_PAD_THRESHOLD = 3;
+
+export const FULL_DELTA_FIELD: FieldDef = {
+  key: "full", label: "Full-touch delta", unit: "", min: 5, max: 200, step: 1, decimals: 0,
+  hint: "What one pad reads with a finger fully on it (debug screen). Sets where the firmware’s thresholds fall.",
+};
+
+/** Reported angle from the pad coverage, or null when it reports no touch. */
+export function estimate(g: Geo, c: number[], est: Estimator = ESTIMATOR_DEFAULT): number | null {
+  return est.kind === "pair" ? estimatePair(g, c, est.full) : estimateMean(g, c);
+}
+
+const padCentre = (g: Geo, k: number) => g.a0 + (k + 1) * g.pitch;
+
+function estimatePair(g: Geo, c: number[], full: number): number | null {
+  let i1 = -1, i2 = -1, v1 = 0, v2 = 0;
+  for (let k = 0; k < g.N; k++) {
+    const d = Math.round(c[k] * full);
+    if (d > v1) [i2, v2, i1, v1] = [i1, v1, k, d];
+    else if (d > v2) [i2, v2] = [k, d];
+  }
+  if (v1 < FW_TOUCH_THRESHOLD) return null;
+  const a1 = padCentre(g, i1);
+  if (v2 < FW_SECOND_PAD_THRESHOLD || i2 < 0) return a1;
+  return a1 + (v2 / (v1 + v2)) * wrapPI(padCentre(g, i2) - a1);
+}
+
+function estimateMean(g: Geo, c: number[]): number | null {
   let sx = 0, sy = 0, cu = 0;
   for (let k = 0; k < g.N; k++) {
-    const a = g.a0 + (k + 1) * g.pitch;
+    const a = padCentre(g, k);
     sx += c[k] * Math.cos(a);
     sy += c[k] * Math.sin(a);
     cu += c[k];
@@ -235,6 +288,7 @@ export type Sweep = {
   rms: number;
   single: number; // share of track positions with one pad holding ≥ 95% of the copper
   tw: number[]; // worst error per track
+  dead: number; // share of track positions with no estimate
   across: Across;
 };
 
@@ -251,11 +305,34 @@ export type Across = {
 export const SWEEP_STEPS = 180; // 2° apart
 const ACROSS_STEPS = 7; // finger centre from the inner edge to the outer one
 
+/** Sampling of a sweep: `steps` angles over `span` rad, finger disc sampled on a `disc`² grid, read with `est`. */
+export type SweepOpts = { steps?: number; span?: number; disc?: number; est?: Estimator };
+
+/** Thickness of one zigzag tooth, mm (rough: ring width per zigzag over the border's angular swing). */
+export const toothThickness = (g: Geo) => ((g.R - g.r) / g.zig) * g.pitch / Math.max(1e-3, g.hi - g.lo);
+
+/**
+ * Length of one pad border (mm) and the share of the ring's copper its gaps remove,
+ * all borders together. Long borders also add pad-to-pad and pad-to-ground capacitance.
+ */
+export function copperLost(g: Geo) {
+  const S = g.zig * 24;
+  let border = 0, prev = [g.r, zf(g, g.r)[0]];
+  for (let j = 1; j <= S; j++) {
+    const rho = g.r + ((g.R - g.r) * j) / S, phi = zf(g, rho)[0];
+    border += Math.hypot(rho - prev[0], ((rho + prev[0]) / 2) * (phi - prev[1]));
+    prev = [rho, phi];
+  }
+  const ring = Math.PI * (g.R * g.R - g.r * g.r);
+  return { border, lost: Math.min(1, (g.N * border * g.gap) / Math.max(1e-9, ring)) };
+}
+
 /**
  * Error of the reported angle at SWEEP_STEPS angles: around the wheel on three
  * tracks, and across the ring along each radius, from edge to edge.
+ * The pattern repeats every pad, so a span of one pitch gives the same stats, N× faster.
  */
-export function buildSweep(g: Geo, finger: number): Sweep {
+export function buildSweep(g: Geo, finger: number, { steps = SWEEP_STEPS, span = TAU, disc = 15, est = ESTIMATOR_DEFAULT }: SweepOpts = {}): Sweep {
   const fr = finger / 2;
   let tin = g.r + fr, tout = g.R - fr;
   if (tin > tout) tin = tout = (g.r + g.R) / 2;
@@ -265,9 +342,9 @@ export function buildSweep(g: Geo, finger: number): Sweep {
   // Raw errors in rad, before calibration. The offset is calibrated on the tracks.
   let ss = 0, sc = 0, single = 0, n = 0;
   const row = (rho: number, onTrack: boolean) =>
-    Array.from({ length: SWEEP_STEPS }, (_, i) => {
-      const a = ((i * 360) / SWEEP_STEPS - 90) * D2R;
-      const c = cover(g, rho * Math.cos(a), rho * Math.sin(a), fr, 15), e = estimate(g, c);
+    Array.from({ length: steps }, (_, i) => {
+      const a = (i * span) / steps - 90 * D2R;
+      const c = cover(g, rho * Math.cos(a), rho * Math.sin(a), fr, disc), e = estimate(g, c, est);
       if (!onTrack) return e == null ? null : wrapPI(e - a);
       n++;
       if (e == null) return null;
@@ -298,7 +375,7 @@ export function buildSweep(g: Geo, finger: number): Sweep {
   // Across: per angle, how far the error moves along the radius.
   const lo: (number | null)[] = [], hi: (number | null)[] = [];
   let worstDrift = 0, dsq = 0, dcnt = 0, aworst = 0;
-  for (let i = 0; i < SWEEP_STEPS; i++) {
+  for (let i = 0; i < steps; i++) {
     const col = grid.map((row) => row[i]).filter((v): v is number => v != null);
     if (!col.length) {
       lo.push(null);
@@ -322,6 +399,7 @@ export function buildSweep(g: Geo, finger: number): Sweep {
     rms: cnt ? Math.sqrt(sq / cnt) : 0,
     single: single / n,
     tw,
+    dead: n ? 1 - cnt / n : 0,
     across: { radii, lo, hi, worstDrift, rmsDrift: dcnt ? Math.sqrt(dsq / dcnt) : 0, worst: aworst },
   };
 }
