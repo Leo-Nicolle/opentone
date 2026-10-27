@@ -98,6 +98,52 @@
 		)
 	)
 	(sheet
+		(at 160.02 22.86)
+		(size 50.8 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "7466aa0c-7529-4264-b079-e28ce5974efe")
+		(property "Sheetname" "Touch"
+			(at 160.02 22.1484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "touch.kicad_sch"
+			(at 160.02 48.8446 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 84.328 106.68)
 		(size 53.594 20.32)
 		(exclude_from_sim no)

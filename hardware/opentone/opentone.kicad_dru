@@ -1,0 +1,8 @@
+(version 1)
+
+# Net class clearances (Power 0.2, Analog 0.25, Touch 0.3) are for routing.
+# Pads are spaced by their footprint (0.4 mm pitch QFNs, FPC connectors), so
+# pad-to-pad only needs the fab minimum.
+(rule "pad_to_pad"
+	(condition "A.Type == 'Pad' && B.Type == 'Pad'")
+	(constraint clearance (min 0.1mm)))

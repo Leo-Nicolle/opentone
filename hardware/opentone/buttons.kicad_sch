@@ -8,7 +8,7 @@
 		(title "Buttons")
 		(date "2026-10-18")
 		(rev "A")
-		(comment 1 "MPR121 click wheel (FPC or header) + mechanical buttons")
+		(comment 1 "MPR121 click wheel (FPC or header) + mechanical buttons. Wheel lines go through the select jumpers on the Touch sheet")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
@@ -4776,26 +4776,6 @@
 		)
 		(uuid "ffd091ee-2d9f-4ec3-8132-aa627004695d")
 	)
-	(label "WHEEL_BOTTOM"
-		(at 54.61 147.32 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "32144b90-a3a0-4550-b858-bf32f3ac1b18")
-	)
-	(label "WHEEL_BOTTOM"
-		(at 102.87 29.21 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "40b12dec-2ff1-48e6-8e8b-2c3a356631c0")
-	)
 	(label "MPR_VDD"
 		(at 80.01 78.74 0)
 		(effects
@@ -4816,116 +4796,6 @@
 		)
 		(uuid "6483a187-6fad-4c87-b4f2-2617ca060954")
 	)
-	(label "WHEEL_CENTER"
-		(at 44.45 36.83 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "67ddfd14-45cf-4c1c-aac0-e0f8806278a1")
-	)
-	(label "WHEEL_TOP"
-		(at 44.45 24.13 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6c58ce03-43bd-408b-8375-73def329b490")
-	)
-	(label "WHEEL_RIGHT"
-		(at 44.45 26.67 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "780a0c34-5176-4f81-a788-b060841509b7")
-	)
-	(label "WHEEL_RIGHT"
-		(at 102.87 26.67 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7a6bb959-5fca-4aec-8963-9e3e97e1f546")
-	)
-	(label "WHEEL_CENTER"
-		(at 54.61 149.86 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "913c0b79-7f3b-4ac9-ab4f-d99ad5ff9052")
-	)
-	(label "WHEEL_TOP"
-		(at 54.61 144.78 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a36324f8-3357-4271-87f0-f1e9235891fb")
-	)
-	(label "WHEEL_LEFT"
-		(at 102.87 31.75 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a54b60bf-7681-4b6d-a31f-77512e02015a")
-	)
-	(label "WHEEL_LEFT"
-		(at 44.45 31.75 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b901e40a-9ce5-4f12-abae-387cc45bfcfb")
-	)
-	(label "WHEEL_RIGHT"
-		(at 54.61 139.7 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c413a441-619d-4cea-a778-492bdb0bd32c")
-	)
-	(label "WHEEL_CENTER"
-		(at 102.87 36.83 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d764ec83-12d5-49d6-a932-68d73a4967fe")
-	)
-	(label "WHEEL_BOTTOM"
-		(at 44.45 29.21 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d81d3774-e054-44b9-8fa7-6add44831679")
-	)
 	(label "MPR_VDD"
 		(at 100.33 121.92 0)
 		(effects
@@ -4935,26 +4805,6 @@
 			(justify left bottom)
 		)
 		(uuid "df4323a7-a96f-4092-9e8c-5f82a2bc13b5")
-	)
-	(label "WHEEL_LEFT"
-		(at 54.61 142.24 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "df9a4edb-61c1-4371-8755-c94244846a87")
-	)
-	(label "WHEEL_TOP"
-		(at 102.87 24.13 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "e367467a-4b5f-4761-a49d-faaf8b3c3131")
 	)
 	(label "MPR_VDD"
 		(at 54.61 127 180)
@@ -4985,6 +4835,54 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+	)
+	(global_label "MPR_WHEEL_BOTTOM"
+		(shape bidirectional)
+		(at 54.61 147.32 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "32144b90-a3a0-4550-b858-bf32f3ac1b18")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 54.61 147.32 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "WHEEL_BOTTOM"
+		(shape bidirectional)
+		(at 102.87 29.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "40b12dec-2ff1-48e6-8e8b-2c3a356631c0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.87 29.21 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -5080,6 +4978,54 @@
 			)
 		)
 	)
+	(global_label "WHEEL_CENTER"
+		(shape bidirectional)
+		(at 44.45 36.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "67ddfd14-45cf-4c1c-aac0-e0f8806278a1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.45 36.83 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "WHEEL_TOP"
+		(shape bidirectional)
+		(at 44.45 24.13 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6c58ce03-43bd-408b-8375-73def329b490")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.45 24.13 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "BTN_RIGHT"
 		(shape output)
 		(at 255.27 67.31 180)
@@ -5093,6 +5039,30 @@
 		(uuid "70798936-cc49-48e4-88b0-11854c132d98")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 255.27 67.31 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "WHEEL_RIGHT"
+		(shape bidirectional)
+		(at 44.45 26.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "780a0c34-5176-4f81-a788-b060841509b7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.45 26.67 180)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5128,6 +5098,30 @@
 			)
 		)
 	)
+	(global_label "WHEEL_RIGHT"
+		(shape bidirectional)
+		(at 102.87 26.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7a6bb959-5fca-4aec-8963-9e3e97e1f546")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.87 26.67 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "BTN_LEFT"
 		(shape output)
 		(at 255.27 26.67 180)
@@ -5141,6 +5135,30 @@
 		(uuid "7bad9ba9-7f2e-4980-996a-1481c377fd23")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 255.27 26.67 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "MPR_WHEEL_CENTER"
+		(shape bidirectional)
+		(at 54.61 149.86 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "913c0b79-7f3b-4ac9-ab4f-d99ad5ff9052")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 54.61 149.86 180)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5246,6 +5264,78 @@
 			)
 		)
 	)
+	(global_label "MPR_WHEEL_TOP"
+		(shape bidirectional)
+		(at 54.61 144.78 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a36324f8-3357-4271-87f0-f1e9235891fb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 54.61 144.78 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "WHEEL_LEFT"
+		(shape bidirectional)
+		(at 102.87 31.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a54b60bf-7681-4b6d-a31f-77512e02015a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.87 31.75 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "WHEEL_LEFT"
+		(shape bidirectional)
+		(at 44.45 31.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b901e40a-9ce5-4f12-abae-387cc45bfcfb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.45 31.75 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "BTN_CENTER"
 		(shape output)
 		(at 245.11 110.49 180)
@@ -5270,6 +5360,30 @@
 			)
 		)
 	)
+	(global_label "MPR_WHEEL_RIGHT"
+		(shape bidirectional)
+		(at 54.61 139.7 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c413a441-619d-4cea-a778-492bdb0bd32c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 54.61 139.7 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "I2C1_SDA"
 		(shape bidirectional)
 		(at 54.61 132.08 180)
@@ -5283,6 +5397,102 @@
 		(uuid "cadd7217-46c2-48ac-b76c-0838140386c2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 54.61 132.08 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "WHEEL_CENTER"
+		(shape bidirectional)
+		(at 102.87 36.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d764ec83-12d5-49d6-a932-68d73a4967fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.87 36.83 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "WHEEL_BOTTOM"
+		(shape bidirectional)
+		(at 44.45 29.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d81d3774-e054-44b9-8fa7-6add44831679")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.45 29.21 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "MPR_WHEEL_LEFT"
+		(shape bidirectional)
+		(at 54.61 142.24 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "df9a4edb-61c1-4371-8755-c94244846a87")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 54.61 142.24 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "WHEEL_TOP"
+		(shape bidirectional)
+		(at 102.87 24.13 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e367467a-4b5f-4761-a49d-faaf8b3c3131")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.87 24.13 180)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

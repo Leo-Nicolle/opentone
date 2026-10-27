@@ -128,7 +128,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:USB_C_Receptacle"
+		(symbol "Connector:USB_C_Receptacle_USB2.0_16P"
 			(pin_names
 				(offset 1.016)
 			)
@@ -138,25 +138,23 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
-				(at -10.16 29.21 0)
+				(at 0 22.225 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "USB_C_Receptacle"
-				(at 10.16 29.21 0)
+			(property "Value" "USB_C_Receptacle_USB2.0_16P"
+				(at 0 19.685 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify right)
 				)
 			)
 			(property "Footprint" ""
@@ -181,7 +179,7 @@
 					)
 				)
 			)
-			(property "Description" "USB Full-Featured Type-C Receptacle connector"
+			(property "Description" "USB 2.0-only 16P Type-C Receptacle connector"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -192,7 +190,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "usb universal serial bus type-C full-featured"
+			(property "ki_keywords" "usb universal serial bus type-C USB2.0"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -214,10 +212,10 @@
 					)
 				)
 			)
-			(symbol "USB_C_Receptacle_0_0"
+			(symbol "USB_C_Receptacle_USB2.0_16P_0_0"
 				(rectangle
-					(start -0.254 -35.56)
-					(end 0.254 -34.544)
+					(start -0.254 -17.78)
+					(end 0.254 -16.764)
 					(stroke
 						(width 0)
 						(type default)
@@ -227,41 +225,8 @@
 					)
 				)
 				(rectangle
-					(start 10.16 25.654)
-					(end 9.144 25.146)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 10.16 20.574)
-					(end 9.144 20.066)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 10.16 18.034)
-					(end 9.144 17.526)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 10.16 12.954)
-					(end 9.144 12.446)
+					(start 10.16 15.494)
+					(end 9.144 14.986)
 					(stroke
 						(width 0)
 						(type default)
@@ -293,8 +258,8 @@
 					)
 				)
 				(rectangle
-					(start 10.16 5.334)
-					(end 9.144 4.826)
+					(start 10.16 2.794)
+					(end 9.144 2.286)
 					(stroke
 						(width 0)
 						(type default)
@@ -326,8 +291,8 @@
 					)
 				)
 				(rectangle
-					(start 10.16 -7.366)
-					(end 9.144 -7.874)
+					(start 10.16 -4.826)
+					(end 9.144 -5.334)
 					(stroke
 						(width 0)
 						(type default)
@@ -337,8 +302,8 @@
 					)
 				)
 				(rectangle
-					(start 10.16 -9.906)
-					(end 9.144 -10.414)
+					(start 10.16 -12.446)
+					(end 9.144 -12.954)
 					(stroke
 						(width 0)
 						(type default)
@@ -358,66 +323,11 @@
 						(type none)
 					)
 				)
-				(rectangle
-					(start 10.16 -17.526)
-					(end 9.144 -18.034)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 10.16 -22.606)
-					(end 9.144 -23.114)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 10.16 -25.146)
-					(end 9.144 -25.654)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 10.16 -30.226)
-					(end 9.144 -30.734)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 10.16 -32.766)
-					(end 9.144 -33.274)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 			)
-			(symbol "USB_C_Receptacle_0_1"
+			(symbol "USB_C_Receptacle_USB2.0_16P_0_1"
 				(rectangle
-					(start -10.16 27.94)
-					(end 10.16 -35.56)
+					(start -10.16 17.78)
+					(end 10.16 -17.78)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -533,8 +443,6 @@
 						(type none)
 					)
 				)
-			)
-			(symbol "USB_C_Receptacle_1_1"
 				(circle
 					(center -2.54 1.143)
 					(radius 0.635)
@@ -616,8 +524,10 @@
 						(type outline)
 					)
 				)
+			)
+			(symbol "USB_C_Receptacle_USB2.0_16P_1_1"
 				(pin passive line
-					(at 0 -40.64 90)
+					(at 0 -22.86 90)
 					(length 5.08)
 					(name "GND"
 						(effects
@@ -634,44 +544,8 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at 15.24 -10.16 180)
-					(length 5.08)
-					(name "TX1+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "A2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 15.24 -7.62 180)
-					(length 5.08)
-					(name "TX1-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "A3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin passive line
-					(at 15.24 25.4 180)
+					(at 15.24 15.24 180)
 					(length 5.08)
 					(name "VBUS"
 						(effects
@@ -689,7 +563,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at 15.24 20.32 180)
+					(at 15.24 10.16 180)
 					(length 5.08)
 					(name "CC1"
 						(effects
@@ -707,7 +581,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at 15.24 7.62 180)
+					(at 15.24 -2.54 180)
 					(length 5.08)
 					(name "D+"
 						(effects
@@ -725,7 +599,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at 15.24 12.7 180)
+					(at 15.24 2.54 180)
 					(length 5.08)
 					(name "D-"
 						(effects
@@ -743,7 +617,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at 15.24 -30.48 180)
+					(at 15.24 -12.7 180)
 					(length 5.08)
 					(name "SBU1"
 						(effects
@@ -761,7 +635,7 @@
 					)
 				)
 				(pin passive line
-					(at 15.24 25.4 180)
+					(at 15.24 15.24 180)
 					(length 5.08)
 					(hide yes)
 					(name "VBUS"
@@ -779,44 +653,8 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at 15.24 -15.24 180)
-					(length 5.08)
-					(name "RX2-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "A10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 15.24 -17.78 180)
-					(length 5.08)
-					(name "RX2+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "A11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin passive line
-					(at 0 -40.64 90)
+					(at 0 -22.86 90)
 					(length 5.08)
 					(hide yes)
 					(name "GND"
@@ -835,7 +673,7 @@
 					)
 				)
 				(pin passive line
-					(at 0 -40.64 90)
+					(at 0 -22.86 90)
 					(length 5.08)
 					(hide yes)
 					(name "GND"
@@ -853,44 +691,8 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at 15.24 -25.4 180)
-					(length 5.08)
-					(name "TX2+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "B2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 15.24 -22.86 180)
-					(length 5.08)
-					(name "TX2-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "B3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin passive line
-					(at 15.24 25.4 180)
+					(at 15.24 15.24 180)
 					(length 5.08)
 					(hide yes)
 					(name "VBUS"
@@ -909,7 +711,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at 15.24 17.78 180)
+					(at 15.24 7.62 180)
 					(length 5.08)
 					(name "CC2"
 						(effects
@@ -927,7 +729,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at 15.24 5.08 180)
+					(at 15.24 -5.08 180)
 					(length 5.08)
 					(name "D+"
 						(effects
@@ -945,7 +747,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at 15.24 10.16 180)
+					(at 15.24 0 180)
 					(length 5.08)
 					(name "D-"
 						(effects
@@ -963,7 +765,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at 15.24 -33.02 180)
+					(at 15.24 -15.24 180)
 					(length 5.08)
 					(name "SBU2"
 						(effects
@@ -981,7 +783,7 @@
 					)
 				)
 				(pin passive line
-					(at 15.24 25.4 180)
+					(at 15.24 15.24 180)
 					(length 5.08)
 					(hide yes)
 					(name "VBUS"
@@ -999,44 +801,8 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at 15.24 0 180)
-					(length 5.08)
-					(name "RX1-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "B10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 15.24 -2.54 180)
-					(length 5.08)
-					(name "RX1+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "B11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin passive line
-					(at 0 -40.64 90)
+					(at 0 -22.86 90)
 					(length 5.08)
 					(hide yes)
 					(name "GND"
@@ -1055,7 +821,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 -40.64 90)
+					(at -7.62 -22.86 90)
 					(length 5.08)
 					(name "SHIELD"
 						(effects
@@ -7199,6 +6965,12 @@
 		(uuid "4b6399f6-cdcd-4c7d-8a05-ebe2772a77d4")
 	)
 	(junction
+		(at 127 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4f47713a-34cd-4244-ad0d-a6242c0aa864")
+	)
+	(junction
 		(at 177.8 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7301,6 +7073,12 @@
 		(uuid "f0f6cc49-db3b-44d9-95ac-22f2b3ed82da")
 	)
 	(junction
+		(at 121.92 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f2812a25-df0b-422e-9233-8ebc016a74d3")
+	)
+	(junction
 		(at 163.83 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7319,48 +7097,16 @@
 		(uuid "fc7d908b-f8f2-4792-8a4e-024035d64549")
 	)
 	(no_connect
-		(at 40.64 111.76)
-		(uuid "00bf89e9-38ee-4979-9600-1163f8ab02d6")
-	)
-	(no_connect
-		(at 40.64 137.16)
-		(uuid "08aa963b-e96d-4c03-84ec-543e320e6169")
-	)
-	(no_connect
-		(at 40.64 127)
-		(uuid "1db5a409-81a7-4c20-bbcf-fea68cde242d")
-	)
-	(no_connect
-		(at 40.64 119.38)
-		(uuid "4315a5b9-21d9-41e8-b7ab-016ff8272387")
-	)
-	(no_connect
 		(at 40.64 114.3)
 		(uuid "6cf01351-1d1d-40a0-84ca-1e7a97098396")
-	)
-	(no_connect
-		(at 40.64 134.62)
-		(uuid "7156b41e-bd7a-449c-a6c4-9aa18bd5049a")
-	)
-	(no_connect
-		(at 40.64 121.92)
-		(uuid "73e8193e-f961-401a-9fab-948b1b5f2d9f")
-	)
-	(no_connect
-		(at 40.64 142.24)
-		(uuid "88c19217-8633-408a-af3f-3a8743d3615c")
-	)
-	(no_connect
-		(at 40.64 129.54)
-		(uuid "ac606f6a-558b-4732-959b-93da15416895")
 	)
 	(no_connect
 		(at 157.48 142.24)
 		(uuid "dce38e95-6cd9-411c-915e-7db0aa995a2c")
 	)
 	(no_connect
-		(at 40.64 144.78)
-		(uuid "e9d218c9-77d5-4c06-a400-a41eb72acb6b")
+		(at 40.64 116.84)
+		(uuid "fae885f7-7a98-4d7b-8e2b-375ba82068f3")
 	)
 	(wire
 		(pts
@@ -7381,6 +7127,16 @@
 			(type default)
 		)
 		(uuid "08ac9498-1b18-4d8a-9cb0-c815b9d46fa1")
+	)
+	(wire
+		(pts
+			(xy 121.92 139.7) (xy 127 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09a6fe22-af85-4fcf-a62a-d125d5bbd51e")
 	)
 	(wire
 		(pts
@@ -7694,6 +7450,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 139.7) (xy 121.92 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c97514d-4232-4875-96f1-44310cb38592")
+	)
+	(wire
+		(pts
 			(xy 130.81 124.46) (xy 130.81 137.16)
 		)
 		(stroke
@@ -7794,7 +7560,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 71.12) (xy 100.33 72.39)
+			(xy 200.66 123.19) (xy 200.66 124.46)
 		)
 		(stroke
 			(width 0)
@@ -8154,13 +7920,23 @@
 	)
 	(wire
 		(pts
-			(xy 17.78 152.4) (xy 17.78 161.29)
+			(xy 17.78 124.46) (xy 17.78 161.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ea31ae20-4d9c-4e05-a689-60f6499e067a")
+	)
+	(wire
+		(pts
+			(xy 127 139.7) (xy 137.16 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea92cbdf-3ed7-47bb-8c40-8447f4796759")
 	)
 	(wire
 		(pts
@@ -8231,16 +8007,6 @@
 			(type default)
 		)
 		(uuid "f44a7034-9094-4aea-907d-d39b5fef348b")
-	)
-	(wire
-		(pts
-			(xy 115.57 139.7) (xy 137.16 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fa7f7223-36cb-42db-82c7-1dbc17d4748d")
 	)
 	(wire
 		(pts
@@ -8322,7 +8088,7 @@
 		)
 		(uuid "342e8ae6-35e8-4f9d-ba56-5c19d5ec5462")
 	)
-	(label "USB_C_DM"
+	(label "USB_C_DN"
 		(at 40.64 99.06 0)
 		(effects
 			(font
@@ -8342,7 +8108,7 @@
 		)
 		(uuid "3aa8c349-f799-4b07-98ca-2335abc07435")
 	)
-	(label "USB_C_DM"
+	(label "USB_C_DN"
 		(at 40.64 101.6 0)
 		(effects
 			(font
@@ -8452,7 +8218,7 @@
 		)
 		(uuid "c9f2f230-e6c8-447b-8ea7-4c3de6e6deae")
 	)
-	(label "USB_C_DM"
+	(label "USB_C_DN"
 		(at 106.68 80.01 270)
 		(effects
 			(font
@@ -8482,7 +8248,7 @@
 		)
 		(uuid "dd0383ee-b2a2-4044-82a6-e2925a1df15e")
 	)
-	(label "USB_C_DM"
+	(label "USB_C_DN"
 		(at 90.17 77.47 180)
 		(effects
 			(font
@@ -8593,7 +8359,7 @@
 			)
 		)
 	)
-	(global_label "USB_DM"
+	(global_label "USB_DN"
 		(shape bidirectional)
 		(at 116.84 78.74 0)
 		(fields_autoplaced yes)
@@ -9724,8 +9490,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 196.85 55.88 0)
+		(lib_id "power:GND")
+		(at 127 147.32 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9733,29 +9499,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "1398fb76-418d-4eca-b459-ccb38a710764")
-		(property "Reference" "R35"
-			(at 193.802 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1M"
-			(at 196.85 56.134 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 195.072 55.88 90)
+		(uuid "1378c619-225a-4c2c-8cc8-9fb48f218b33")
+		(property "Reference" "#PWR0748"
+			(at 127 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9765,8 +9511,105 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706152755920896"
-			(at 196.85 55.88 0)
+		(property "Value" "GND"
+			(at 127 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 127 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8bf524c0-054d-4fcf-8850-60bffffb5aca")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "#PWR0748")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 196.85 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1398fb76-418d-4eca-b459-ccb38a710764")
+		(property "Reference" "R35"
+			(at 193.802 63.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 196.85 63.754 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 195.072 63.5 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706350726930432"
+			(at 196.85 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9777,7 +9620,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 196.85 55.88 0)
+			(at 196.85 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9788,7 +9631,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL"
-			(at 196.85 55.88 0)
+			(at 196.85 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9798,8 +9641,8 @@
 				)
 			)
 		)
-		(property "Part number" "0603WAF1004T5E"
-			(at 196.85 55.88 0)
+		(property "Part number" "0603WAF1003T5E"
+			(at 196.85 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9809,8 +9652,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C22935"
-			(at 196.85 55.88 0)
+		(property "LCSC" "C25803"
+			(at 196.85 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10574,7 +10417,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "294a5598-5700-4302-b422-e5c0f2aad1a5")
 		(property "Reference" "F2"
 			(at 48.26 80.01 90)
@@ -10586,7 +10428,7 @@
 				)
 			)
 		)
-		(property "Value" "ASMD1206-075"
+		(property "Value" "1206L110THYR"
 			(at 48.26 82.55 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10608,7 +10450,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899511045799936"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588884694661914624"
 			(at 48.26 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -10619,8 +10461,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 48.26 86.36 0)
+		(property "Description" "PTC 1.1 A hold / 2.2 A trip, 8 V: charge 500 mA + system load on USB"
+			(at 64.516 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10629,18 +10471,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Shenzhen JDT Fuse"
-			(at 48.26 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part number" "ASMD1206-075"
+		(property "Manufacturer" "Littelfuse"
 			(at 48.26 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -10651,7 +10482,18 @@
 				)
 			)
 		)
-		(property "LCSC" "C135339"
+		(property "Part number" "1206L110THYR"
+			(at 48.26 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C126818"
 			(at 48.26 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12167,8 +12009,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:USB_C_Receptacle")
-		(at 25.4 111.76 0)
+		(lib_id "Connector:USB_C_Receptacle_USB2.0_16P")
+		(at 25.4 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12188,7 +12030,7 @@
 				)
 			)
 		)
-		(property "Value" "USB_C_Receptacle"
+		(property "Value" "USB_C_Receptacle_USB2.0_16P"
 			(at 25.4 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12199,7 +12041,7 @@
 			)
 		)
 		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
-			(at 29.21 111.76 0)
+			(at 29.21 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12210,7 +12052,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8550723676069908480"
-			(at 29.21 111.76 0)
+			(at 29.21 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12221,7 +12063,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 25.4 111.76 0)
+			(at 25.4 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12231,7 +12073,7 @@
 			)
 		)
 		(property "Manufacturer" "Korean Hroparts Elec"
-			(at 25.4 111.76 0)
+			(at 25.4 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12242,7 +12084,7 @@
 			)
 		)
 		(property "Part number" "TYPE-C-31-M-12"
-			(at 25.4 111.76 0)
+			(at 25.4 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12253,7 +12095,7 @@
 			)
 		)
 		(property "LCSC" "C165948"
-			(at 25.4 111.76 0)
+			(at 25.4 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12293,9 +12135,6 @@
 		(pin "A6"
 			(uuid "b15c0a60-ee51-4acf-8bcc-818e6099ad34")
 		)
-		(pin "B3"
-			(uuid "ac15dac8-e486-4985-8d13-58f86074bce4")
-		)
 		(pin "A7"
 			(uuid "b72cea81-56fc-4236-9f28-d44e14f5565c")
 		)
@@ -12308,32 +12147,11 @@
 		(pin "B12"
 			(uuid "6bba0d93-80cd-46cf-9dfb-a9394705d419")
 		)
-		(pin "A11"
-			(uuid "95f8d8f7-6a61-4b8d-9132-7751861a4846")
-		)
 		(pin "A4"
 			(uuid "df821b2a-8005-43e6-9ca8-2ae46d1503e1")
 		)
-		(pin "A3"
-			(uuid "a33d693f-c3d2-42c5-b107-ed0332b366f6")
-		)
-		(pin "B11"
-			(uuid "5404945d-83a8-4678-8b95-b10fdfbe61d5")
-		)
-		(pin "B2"
-			(uuid "8d8e5e9e-ff84-4190-b394-54e284d8a63a")
-		)
-		(pin "B10"
-			(uuid "fde78ca2-a5a4-4de3-a7c8-64ec871d24ee")
-		)
 		(pin "A8"
 			(uuid "66be7436-b810-4b16-87de-9a7b9cfa1a77")
-		)
-		(pin "A10"
-			(uuid "b17fe0c2-a674-413c-8507-9944c863fe6d")
-		)
-		(pin "A2"
-			(uuid "b67ba0b3-2dcf-456e-ac92-a1da9c1ec422")
 		)
 		(pin "A12"
 			(uuid "83de0986-fb73-4b82-9fe2-f31183285160")
@@ -13224,6 +13042,118 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "TP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 121.92 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "61b3c292-ec84-4f3a-bdba-6189acac39c0")
+		(property "Reference" "R48"
+			(at 118.11 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "470k"
+			(at 121.92 143.51 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 120.142 143.51 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706262591750144"
+			(at 121.92 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 121.92 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 121.92 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part number" "0603WAF4703T5E"
+			(at 121.92 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C23178"
+			(at 121.92 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "54354202-1320-4f79-83c5-95ca9a42c2ea")
+		)
+		(pin "2"
+			(uuid "39766e6d-b3c2-454e-a3d5-0ed1f2e37f5c")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "R48")
 					(unit 1)
 				)
 			)
@@ -14409,7 +14339,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 25.4 152.4 0)
+		(at 25.4 124.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14419,7 +14349,7 @@
 		(dnp no)
 		(uuid "7bce2b08-4ec6-43b0-a45b-0285103a7c75")
 		(property "Reference" "#PWR0700"
-			(at 25.4 152.4 0)
+			(at 25.4 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14430,7 +14360,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 25.4 157.48 0)
+			(at 25.4 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14440,7 +14370,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 25.4 152.4 0)
+			(at 25.4 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14451,7 +14381,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 25.4 152.4 0)
+			(at 25.4 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14462,7 +14392,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 25.4 152.4 0)
+			(at 25.4 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14904,6 +14834,120 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "C61")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 127 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8a460eea-7266-46db-99d2-24221711a733")
+		(property "Reference" "C70"
+			(at 122.936 141.224 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 127.254 145.796 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 127.965 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8667086713681608704"
+			(at 127 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 127 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 127 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part number" "CC0603KRX7R9BB104"
+			(at 127 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 127 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "65ff6619-e57a-4274-8dd1-be3b818b943b")
+		)
+		(pin "2"
+			(uuid "a765abfc-725b-44ce-8269-bb71251e498d")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "C70")
 					(unit 1)
 				)
 			)
@@ -15784,7 +15828,7 @@
 				)
 			)
 		)
-		(property "Value" "470k"
+		(property "Value" "1M"
 			(at 115.57 128.27 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15805,7 +15849,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706262591750144"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706152755920896"
 			(at 115.57 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -15838,7 +15882,7 @@
 				)
 			)
 		)
-		(property "Part number" "0603WAF4703T5E"
+		(property "Part number" "0603WAF1004T5E"
 			(at 115.57 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -15849,7 +15893,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C23178"
+		(property "LCSC" "C22935"
 			(at 115.57 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -16857,7 +16901,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "47k"
 			(at 189.23 55.88 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16878,7 +16922,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706350726930432"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706364627128320"
 			(at 189.23 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -16911,7 +16955,7 @@
 				)
 			)
 		)
-		(property "Part number" "0603WAF1003T5E"
+		(property "Part number" "0603WAF4702T5E"
 			(at 189.23 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -16922,7 +16966,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25803"
+		(property "LCSC" "C25819"
 			(at 189.23 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -17099,6 +17143,83 @@
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
 					(reference "#PWR0727")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 121.92 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cbf16e91-d93e-4de3-9717-04e5a3093b34")
+		(property "Reference" "#PWR0747"
+			(at 121.92 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 121.92 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e8ed2127-7087-46db-8212-5e4e03a786f5")
+		)
+		(instances
+			(project "opentone"
+				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/ddcf786c-06d2-421e-b65a-77775151c20a"
+					(reference "#PWR0747")
 					(unit 1)
 				)
 			)
@@ -17737,8 +17858,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 196.85 52.07 0)
+		(lib_id "power:GND")
+		(at 196.85 67.31 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17748,7 +17869,7 @@
 		(dnp no)
 		(uuid "df48c83a-11d0-4f58-87fb-a49cfb125561")
 		(property "Reference" "#PWR0718"
-			(at 196.85 52.07 0)
+			(at 196.85 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17758,8 +17879,8 @@
 				)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 196.85 48.26 0)
+		(property "Value" "GND"
+			(at 196.85 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17769,7 +17890,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 196.85 52.07 0)
+			(at 196.85 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17780,7 +17901,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 196.85 52.07 0)
+			(at 196.85 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17791,7 +17912,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 196.85 52.07 0)
+			(at 196.85 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20010,5 +20131,15 @@
 				)
 			)
 		)
+	)
+	(wire
+		(pts
+			(xy 100.33 72.39) (xy 100.33 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24b6f75f-a7f6-4393-b504-b55956041f30")
 	)
 )

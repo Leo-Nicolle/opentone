@@ -69,7 +69,18 @@
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        },
+        {
+          "gap": 0.15,
+          "via_gap": 0.25,
+          "width": 0.25
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -141,11 +152,11 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.3,
+        "min_clearance": 0.1,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_copper_edge_clearance": 0.3,
         "min_groove_width": 0.0,
-        "min_hole_clearance": 0.25,
+        "min_hole_clearance": 0.2,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
@@ -153,10 +164,10 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
+        "min_through_hole_diameter": 0.2,
+        "min_track_width": 0.1,
         "min_via_annular_width": 0.1,
-        "min_via_diameter": 0.5,
+        "min_via_diameter": 0.4,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -207,7 +218,17 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -234,7 +255,24 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 0.4,
+          "drill": 0.2
+        },
+        {
+          "diameter": 0.45,
+          "drill": 0.25
+        },
+        {
+          "diameter": 0.6,
+          "drill": 0.3
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -507,10 +545,10 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.15,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
+        "diff_pair_width": 0.25,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -518,10 +556,124 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.15,
+        "tuning_profile": "",
+        "via_diameter": 0.45,
+        "via_drill": 0.25,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.25,
+        "diff_pair_gap": 0.15,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.25,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Analog",
+        "pcb_color": "rgba(60, 200, 90, 0.800)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "tuning_profile": "",
+        "via_diameter": 0.45,
+        "via_drill": 0.25,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.15,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.25,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "GND",
+        "pcb_color": "rgba(80, 160, 255, 0.800)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.4,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.15,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.25,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "HighCurrent",
+        "pcb_color": "rgba(220, 50, 50, 0.800)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.8,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.15,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.25,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Power",
+        "pcb_color": "rgba(240, 140, 40, 0.800)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.4,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.3,
+        "diff_pair_gap": 0.15,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.25,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Touch",
+        "pcb_color": "rgba(200, 80, 220, 0.800)",
+        "priority": 4,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.15,
+        "tuning_profile": "",
+        "via_diameter": 0.45,
+        "via_drill": 0.25,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.15,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.25,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "USB",
+        "pcb_color": "rgba(240, 220, 40, 0.800)",
+        "priority": 5,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "tuning_profile": "",
+        "via_diameter": 0.45,
+        "via_drill": 0.25,
         "wire_width": 6
       }
     ],
@@ -530,7 +682,148 @@
     },
     "net_colors": {},
     "netclass_assignments": {},
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "HighCurrent",
+        "pattern": "VBUS"
+      },
+      {
+        "netclass": "HighCurrent",
+        "pattern": "/Power/VBUS_IN"
+      },
+      {
+        "netclass": "HighCurrent",
+        "pattern": "VBAT"
+      },
+      {
+        "netclass": "HighCurrent",
+        "pattern": "VSYS"
+      },
+      {
+        "netclass": "HighCurrent",
+        "pattern": "/Power/VS_VIN"
+      },
+      {
+        "netclass": "HighCurrent",
+        "pattern": "/Power/3V3_REG"
+      },
+      {
+        "netclass": "HighCurrent",
+        "pattern": "Net-(U11-L*)"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+3.3V"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/MCU/MCU_3V3"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+1V8"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Bluetooth/BT_3V3*"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Bluetooth/BT_1V8"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Screens/TFT*_VDD"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Screens/TFT*_LED_A"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Memory/SD_VDD"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/DAC/DAC_3V3"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/DAC/DAC_1V8"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Touch/IQS_VDD"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Buttons/*_VDD"
+      },
+      {
+        "netclass": "GND",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "+3.3VA"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "GNDA"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "/Audio/HP_*"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "/DAC/HP2_*"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "/DAC/DAC_NVA"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "/Power/AVDD_*"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "/MCU/MCU_VDDA"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "Net-(U701-FLY*)"
+      },
+      {
+        "netclass": "Touch",
+        "pattern": "WHEEL_*"
+      },
+      {
+        "netclass": "Touch",
+        "pattern": "MPR_WHEEL_*"
+      },
+      {
+        "netclass": "Touch",
+        "pattern": "/Touch/IQS_CRX*"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "USB_DP"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "USB_DN"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "/Power/USB_C_DP"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "/Power/USB_C_DN"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -753,6 +1046,10 @@
     [
       "c05daabd-a37d-42db-a955-99e21a795887",
       "DAC"
+    ],
+    [
+      "7466aa0c-7529-4264-b079-e28ce5974efe",
+      "Touch"
     ]
   ],
   "text_variables": {},

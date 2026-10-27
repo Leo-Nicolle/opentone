@@ -361,173 +361,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:FerriteBead_Small"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "FB"
-				(at 1.905 1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "FerriteBead_Small"
-				(at 1.905 -1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Ferrite bead, small symbol"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "L ferrite bead inductor filter"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Inductor_* L_* *Ferrite*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "FerriteBead_Small_0_1"
-				(polyline
-					(pts
-						(xy -1.8288 0.2794) (xy -1.1176 1.4986) (xy 1.8288 -0.2032) (xy 1.1176 -1.4224) (xy -1.8288 0.2794)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.889) (xy 0 1.2954)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy 0 -0.7874)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "FerriteBead_Small_1_1"
-				(pin passive line
-					(at 0 2.54 270)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -650,6 +483,147 @@
 				(pin passive line
 					(at 0 -3.81 90)
 					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "Value" "R_Small"
+				(at 1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor, small symbol"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_Small_0_1"
+				(rectangle
+					(start -0.762 1.778)
+					(end 0.762 -1.778)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_Small_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 0.762)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 0.762)
 					(name ""
 						(effects
 							(font
@@ -6767,7 +6741,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:FerriteBead_Small")
+		(lib_id "Device:R_Small")
 		(at 104.14 111.76 90)
 		(unit 1)
 		(body_style 1)
@@ -6777,7 +6751,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "009f6b30-3aa4-430a-be23-d5e0625fa4e5")
-		(property "Reference" "FB201"
+		(property "Reference" "R217"
 			(at 101.6 109.22 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6788,7 +6762,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "600R/100MHz"
+		(property "Value" "0R"
 			(at 101.6 115.57 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6799,7 +6773,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 104.14 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -6810,7 +6784,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579709915071365120"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8756450222375747584"
 			(at 104.14 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -6821,17 +6795,7 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 104.14 111.76 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Sunlord"
+		(property "Description" "Backlight LED supply: 0R (was a ferrite bead, the LED current is DC). Cut point for the backlight"
 			(at 104.14 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -6842,7 +6806,7 @@
 				)
 			)
 		)
-		(property "Part number" "GZ1608D601TF"
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 104.14 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -6853,7 +6817,18 @@
 				)
 			)
 		)
-		(property "LCSC" "C1002"
+		(property "Part number" "0603WAF0000T5E"
+			(at 104.14 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
 			(at 104.14 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -6873,7 +6848,7 @@
 		(instances
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
-					(reference "FB201")
+					(reference "R217")
 					(unit 1)
 				)
 			)
@@ -9570,7 +9545,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:FerriteBead_Small")
+		(lib_id "Device:R_Small")
 		(at 292.1 111.76 90)
 		(unit 1)
 		(body_style 1)
@@ -9580,7 +9555,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5b62031d-8ed7-46de-b105-e2c9b9b9b3ca")
-		(property "Reference" "FB301"
+		(property "Reference" "R317"
 			(at 289.56 109.22 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9591,7 +9566,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "600R/100MHz"
+		(property "Value" "0R"
 			(at 289.56 115.57 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9602,7 +9577,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 292.1 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -9613,7 +9588,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579709915071365120"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8756450222375747584"
 			(at 292.1 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -9624,17 +9599,7 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 292.1 111.76 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Sunlord"
+		(property "Description" "Backlight LED supply: 0R (was a ferrite bead, the LED current is DC). Cut point for the backlight"
 			(at 292.1 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -9645,7 +9610,7 @@
 				)
 			)
 		)
-		(property "Part number" "GZ1608D601TF"
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 292.1 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -9656,7 +9621,18 @@
 				)
 			)
 		)
-		(property "LCSC" "C1002"
+		(property "Part number" "0603WAF0000T5E"
+			(at 292.1 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
 			(at 292.1 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -9676,7 +9652,7 @@
 		(instances
 			(project "opentone"
 				(path "/0122bb8c-dbef-4db1-a6c6-9be780a38d9f/89f9057f-f2b8-4b1e-8a19-f61bc42bac09"
-					(reference "FB301")
+					(reference "R317")
 					(unit 1)
 				)
 			)
