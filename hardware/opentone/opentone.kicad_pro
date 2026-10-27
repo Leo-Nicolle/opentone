@@ -286,7 +286,7 @@
     },
     "layer_pairs": [
       {
-        "bottomLayer": 4,
+        "bottomLayer": 2,
         "enabled": true,
         "topLayer": 0
       }
