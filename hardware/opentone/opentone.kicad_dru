@@ -6,3 +6,10 @@
 (rule "pad_to_pad"
 	(condition "A.Type == 'Pad' && B.Type == 'Pad'")
 	(constraint clearance (min 0.1mm)))
+
+# Touch controllers (MPR121, IQS7222A) have 0.4 mm pitch pins: the Touch 0.3 mm
+# (and Power/GND 0.2 mm) clearance cannot fit between them. Relax it only inside
+# the fanout rule areas (courtyard + 1 mm); electrode lines keep 0.3 mm beyond.
+(rule "touch_ic_fanout"
+	(condition "A.intersectsArea('fanout_U501') || A.intersectsArea('fanout_U1201') || B.intersectsArea('fanout_U501') || B.intersectsArea('fanout_U1201')")
+	(constraint clearance (min 0.15mm)))
