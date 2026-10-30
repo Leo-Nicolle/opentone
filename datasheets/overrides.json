@@ -1,0 +1,111 @@
+{
+  "_comment": "Hand-kept metadata merged by scripts/datasheets.py. 'parts' is keyed by the schematic 'Part number'. Passives/discretes/connectors are categorised from the KiCad lib_id; list a category here only for ICs and odd parts.",
+  "_shared": "Series catalogs that cover many part numbers: file -> fnmatch patterns on 'Part number'.",
+  "shared": {
+    "datasheets/passives/uniohm-0603waf-thick-film-resistors.pdf": ["0603WAF[1-9]*"],
+    "datasheets/passives/samsung-cl-mlcc.pdf": ["CL10*", "CL21*"],
+    "datasheets/passives/fenghua-0603-mlcc.pdf": ["0603B*", "0603CG*"]
+  },
+  "parts": {
+    "STM32F446VET6": {
+      "category": "mcu",
+      "file": "datasheets/mcu/stm32f446re.pdf",
+      "extra": [
+        { "title": "RM0390 STM32F446xx reference manual", "file": "datasheets/mcu/rm0390-stm32f446xx.pdf", "url": "https://www.st.com/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" },
+        { "title": "AN2606 system memory boot mode", "file": "datasheets/mcu/an2606-introduction-to-system-memory-boot-mode-on-stm32-mcus-stmicroelectronics.pdf", "url": "https://www.st.com/resource/en/application_note/an2606-introduction-to-system-memory-boot-mode-on-stm32-mcus-stmicroelectronics.pdf" },
+        { "title": "LQFP100 pin notes", "file": "datasheets/mcu/lqfp100-pins.md" },
+        { "title": "LQFP100 pinout diagram", "file": "datasheets/mcu/LQFP100-pinout.png" },
+        { "title": "LQFP100 pin / alternate-function table", "file": "datasheets/mcu/test-pinouts.csv" }
+      ]
+    },
+
+    "TPS63802DLAR": { "category": "power", "file": "datasheets/power/tps63802.pdf" },
+    "TPS7A2033PDBVR": { "category": "power", "file": "datasheets/power/tps7a20.pdf" },
+    "TPS7A2018PDBVR": { "category": "power", "file": "datasheets/power/tps7a20.pdf" },
+    "MCP73831-2ACI/MC": { "category": "power", "file": "datasheets/power/MCP73831.pdf" },
+    "MAX17048G+T10": { "category": "power", "file": "datasheets/power/MAX17048-MAX17049.pdf" },
+    "USBLC6-2SC6": { "category": "power", "file": "datasheets/power/DS_usblc6-2.pdf" },
+    "TPS22917DBVR": { "category": "power" },
+
+    "VS1053B-L": {
+      "category": "audio",
+      "file": "datasheets/audio/vs1053.pdf",
+      "extra": [
+        { "title": "VS10xx analog output app note", "file": "datasheets/audio/vs10XXan_output.pdf", "url": "https://www.vlsi.fi/fileadmin/app_notes/vs10XXan_output.pdf" },
+        { "title": "VS10xx family comparison", "file": "datasheets/audio/vs10xx-comparison.pdf", "url": "https://www.vlsi.fi/fileadmin/app_notes/vs10xx-comparison.pdf" }
+      ]
+    },
+    "TPD4E05U06DQAR": { "category": "audio" },
+    "TPD1E10B06DPYR": { "category": "audio", "description": "Bidirectional ESD, jack 2 (CS43131 outputs swing below ground)" },
+    "CS43131-CNZ": { "category": "audio", "file": "datasheets/audio/cs43131.pdf" },
+    "SN74AVC4T245PWR": { "category": "audio" },
+    "PCA9306DCUR": { "category": "audio" },
+    "SJ-43515TS-SMT-TR": { "category": "audio" },
+
+    "FSC-BT1035": {
+      "category": "bluetooth",
+      "file": "datasheets/bluetooth/FSC-BT1035_Datasheet_EN.pdf", "url": "https://www.feasycom.com/datasheet/fsc-bt1035.pdf",
+      "extra": [
+        { "title": "FSC-BT1035 programming user guide", "file": "datasheets/bluetooth/FSC-BT1035_programming_user_guide.pdf", "url": "https://document.feasycom.com/docs/audio/BT1035_EN/latest/_downloads/1522ecd733f972ecc0d22983f6564b04/FSC-BT1035_programming_user_guide_1.1.1.pdf" },
+        { "title": "Feasycom module comparison notes", "file": "datasheets/bluetooth/bluetooth.md" }
+      ]
+    },
+
+    "APS6404L-3SQN-SN": { "category": "memory", "file": "datasheets/memory/APS6404L-3SQR-SN-2(ram).pdf", "url": "https://www.mouser.com/datasheet/2/1127/APM_PSRAM_QSPI_APS6404L_3SQR_v2_3_PKG-1954826.pdf" },
+    "DM3AT-SF-PEJM5": {
+      "category": "memory",
+      "extra": [{ "title": "Hirose DM3 series catalog", "file": "datasheets/memory/hirose-sd-card.pdf" }]
+    },
+
+    "MPR121QR2": { "category": "input" },
+    "IQS7222A102QFR": { "category": "input", "file": "datasheets/input/iqs7222a.pdf", "url": "https://www.azoteq.com/images/stories/pdf/iqs7222a_datasheet.pdf" },
+    "DRV2605LDGSR": { "category": "input", "file": "datasheets/input/drv2605l.pdf" },
+    "SKQGAFE010": { "category": "input" },
+    "PCM13SMTR": { "category": "input" },
+    "PTS810SJG250SMTRLFS": { "category": "input" },
+
+    "FH12-40S-0.5SH(55)": { "category": "display", "description": "40-pin 0.5mm FPC connector for the TFT panels" },
+    "MCP6001T-I/OT": { "category": "display" },
+
+    "B5819W SL": { "category": "discretes", "file": "datasheets/discretes/B5819W.pdf" }
+  },
+
+  "reference": [
+    {
+      "id": "ili9341-tft-2.4", "mpn": "ILI9341", "manufacturer": "Ilitek", "category": "display",
+      "description": "2.4\" TN TFT module, ILI9341 controller (40-pin FPC)", "refs": ["J201"],
+      "file": "datasheets/display/ILI9341.pdf", "url": "https://cdn-shop.adafruit.com/datasheets/ILI9341.pdf",
+      "extra": [
+        { "title": "Screen pin notes", "file": "datasheets/display/screen-pins.md" },
+        { "title": "Screen pinout", "file": "datasheets/display/screen-pinout.png" },
+        { "title": "Screen dimensions", "file": "datasheets/display/screen-dimensions.png" },
+        { "title": "Screen photo", "file": "datasheets/display/screen-1.avif" },
+        { "title": "IM0-2 interface mode table", "file": "datasheets/display/source-truth.webp" }
+      ]
+    },
+    {
+      "id": "nhd-2.4-240320af-csxp", "mpn": "NHD-2.4-240320AF-CSXP", "manufacturer": "Newhaven Display", "category": "display",
+      "description": "2.4\" IPS TFT module (40-pin FPC)", "refs": ["J301"],
+      "file": "datasheets/display/NHD-2.4-240320AF-CSXP.pdf", "url": "https://newhavendisplay.com/content/specs/NHD-2.4-240320AF-CSXP.pdf"
+    },
+    { "id": "vs1063", "mpn": "VS1063a", "manufacturer": "VLSI Solution", "category": "audio", "description": "Audio codec (alternative to VS1053)", "file": "datasheets/audio/vs1063ds.pdf", "url": "https://www.vlsi.fi/fileadmin/datasheets/vs1063ds.pdf" },
+    { "id": "vs1073", "mpn": "VS1073", "manufacturer": "VLSI Solution", "category": "audio", "description": "Audio codec (alternative to VS1053)", "file": "datasheets/audio/vs1073ds.pdf", "url": "https://www.vlsi.fi/fileadmin/datasheets/vs1073ds.pdf" },
+    { "id": "fsc-bt986", "mpn": "FSC-BT986", "manufacturer": "Feasycom", "category": "bluetooth", "description": "Bluetooth module (alternative)", "file": "datasheets/bluetooth/FSC-BT986_Datasheet_EN.pdf", "url": "https://www.feasycom.com/datasheet/fsc-bt986.pdf" },
+    { "id": "fsc-bt677d", "mpn": "FSC-BT677D", "manufacturer": "Feasycom", "category": "bluetooth", "description": "Bluetooth module (alternative)", "file": "datasheets/bluetooth/FSC-BT677D_Datasheet_EN.pdf", "url": "https://www.feasycom.com/datasheet/fsc-bt677d.pdf" },
+    { "id": "fsc-bt630", "mpn": "FSC-BT630", "manufacturer": "Feasycom", "category": "bluetooth", "description": "Bluetooth module (alternative)", "file": "datasheets/bluetooth/FSC-BT630_Datasheet_EN.pdf", "url": "https://www.feasycom.com/datasheet/fsc-bt630.pdf" },
+    { "id": "fsc-bt1026x", "mpn": "FSC-BT1026x", "manufacturer": "Feasycom", "category": "bluetooth", "description": "Bluetooth module (alternative)", "file": "datasheets/bluetooth/FSC-BT1026x_Datasheet_EN.pdf", "url": "https://www.feasycom.com/datasheet/fsc-bt1026.pdf" },
+    { "id": "fsc-hc05", "mpn": "FSC-HC05", "manufacturer": "Feasycom", "category": "bluetooth", "description": "Bluetooth module (alternative)", "file": "datasheets/bluetooth/FSC-HC05_Datasheet_EN.pdf", "url": "https://www.feasycom.com/datasheet/fsc-hc05.pdf" },
+    { "id": "stm32u5a5zj", "mpn": "STM32U5A5ZJ", "manufacturer": "STMicroelectronics", "category": "mcu", "description": "MCU (evaluated on NUCLEO-U5A5ZJ-Q)", "file": "datasheets/mcu/DS_stm32u5a5zj.pdf", "url": "https://www.st.com/resource/en/datasheet/stm32u5a5zj.pdf" },
+    { "id": "xfl4015", "mpn": "XFL4015", "manufacturer": "Coilcraft", "category": "power", "description": "Power inductor (earlier candidate for the buck-boost)", "file": "datasheets/power/xfl4015.pdf", "url": "https://www.coilcraft.com/pdfs/xfl4015.pdf" },
+    {
+      "id": "nucleo-64", "mpn": "NUCLEO-F446RE", "manufacturer": "STMicroelectronics", "category": "devboards",
+      "description": "UM1724 STM32 Nucleo-64 boards (MB1136)", "file": "datasheets/devboards/nucleo.pdf", "url": "https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf",
+      "extra": [
+        { "title": "Nucleo-64 pinout", "file": "datasheets/devboards/nucleo.png" },
+        { "title": "Nucleo-64 pinout (upside down)", "file": "datasheets/devboards/nucleo-upside-down.jpg" }
+      ]
+    },
+    { "id": "nucleo-u5a5zj-q", "mpn": "NUCLEO-U5A5ZJ-Q", "manufacturer": "STMicroelectronics", "category": "devboards", "description": "UM2861 STM32U5 Nucleo-144 board (MB1549)", "file": "datasheets/devboards/nucleo144-boards.pdf", "url": "https://www.st.com/resource/en/user_manual/um2861-stm32u5-nucleo144-board-mb1549-stmicroelectronics.pdf" },
+    { "id": "nucleo-f207zg", "mpn": "NUCLEO-F207ZG", "manufacturer": "STMicroelectronics", "category": "devboards", "description": "Nucleo-144 F207ZG data brief", "file": "datasheets/devboards/DB_nucleo-f207zg.pdf", "url": "https://www.st.com/resource/en/data_brief/nucleo-f207zg.pdf" }
+  ]
+}
