@@ -203,6 +203,18 @@ code it references.
   in `software/platformio.ini`), an `inline` empty stub in the header behind
   `#ifdef`, or a no-op `((void)0)` macro. Relevant for bench/profiling hooks
   such as `software/src/sound/AudioProfiler.h` and `software/src/app/bench.cpp`.
+- `notes/low-power.md` — plan for longer battery life during playback: keep
+  the core asleep while the VS1053 decodes, and move audio down the
+  SD → PSRAM → SRAM → VS1053 chain in a few large bursts. It covers drain
+  times per tier (SD touched every 0.5–4 min), the PSRAM tCEM 8 µs limit
+  (no SPI2 DMA, PSRAM work at full clock), and an EXTI3 DREQ + SPI1 DMA
+  feeder with a drain timer to replace the 1 kHz TIM7 polling. Use Sleep
+  (WFI) during playback and Stop only on pause or idle; clock scaling comes
+  in phase 2. It checks both pinouts: the LQFP64 board needs firmware
+  changes only. The LQFP100 board gets SDIO, QUADSPI PSRAM, DMA on every
+  hop, clock profiles and load switches. Ends with implementation tasks and
+  open measurements. Firmware: `software/src/sound/` (`AudioPlayer`,
+  `Spi1Bus.h`, `RefillPolicy.h`, `AudioFifo.h`), `software/src/storage/PSRAM_controller.hpp`.
 
 ## Software subsystems (READMEs)
 
