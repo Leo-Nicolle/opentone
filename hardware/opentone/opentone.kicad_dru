@@ -13,3 +13,11 @@
 (rule "touch_ic_fanout"
 	(condition "A.intersectsArea('fanout_U501') || A.intersectsArea('fanout_U1201') || B.intersectsArea('fanout_U501') || B.intersectsArea('fanout_U1201')")
 	(constraint clearance (min 0.15mm)))
+
+# Same fanout relaxation for the other fine-pitch parts whose pins sit between
+# Analog/Touch nets: the DAC (U701, 0.4 mm QFN, GND pins next to the EP) and the
+# click wheel FPC (J501, 0.5 mm, GND pin between electrode pins), and the audio
+# codec VS1 / headphone amp U15 (0.5 mm pins carrying Analog nets).
+(rule "fine_pitch_fanout"
+	(condition "A.intersectsArea('fanout_U701') || A.intersectsArea('fanout_J501') || A.intersectsArea('fanout_VS1') || A.intersectsArea('fanout_U15') || B.intersectsArea('fanout_U701') || B.intersectsArea('fanout_J501') || B.intersectsArea('fanout_VS1') || B.intersectsArea('fanout_U15')")
+	(constraint clearance (min 0.15mm)))

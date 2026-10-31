@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "kicad-mcp": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "kicad-mcp-pro"
+      ],
+      "env": {
+        "KICAD_MCP_PROJECT_DIR": "/home/leo/Documents/dev/opentone/hardware/opentone"
+      }
+    }
+  }
+}
