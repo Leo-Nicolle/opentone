@@ -9,11 +9,17 @@
     "sync-app": "npm --prefix ../syncer/app run build:web"
   },
   "devDependencies": {
+    "@types/three": "^0.187.0",
     "gh-pages": "^6.3.0",
     "vitepress": "^2.0.0-alpha.5"
   },
   "dependencies": {
     "fflate": "^0.8.2",
-    "naive-ui": "^2.41.0"
+    "jspdf": "^4.2.1",
+    "naive-ui": "^2.41.0",
+    "occt-import-js": "^0.0.23",
+    "replicad": "^1.2.0",
+    "replicad-opencascadejs": "^1.1.0",
+    "three": "^0.187.0"
   }
 }

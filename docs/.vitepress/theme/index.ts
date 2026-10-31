@@ -16,7 +16,7 @@ import { setup } from "@css-render/vue3-ssr";
 import { NConfigProvider } from "naive-ui";
 import DefaultTheme from "vitepress/theme";
 import "./style.css";
-import { defineComponent, h, inject } from "vue";
+import { defineAsyncComponent, defineComponent, h, inject } from "vue";
 import { onMounted, watch } from 'vue'
 const { Layout } = DefaultTheme;
 
@@ -72,6 +72,8 @@ export default {
     app.component("BenchCompare", BenchCompare);
     app.component("ScrollConfig", ScrollConfig);
     app.component("MemoryLayout", MemoryLayout);
+    // three.js and the CAD code only load on the case designer page.
+    app.component("CaseDesigner", defineAsyncComponent(() => import("./components/case-designer/CaseDesigner.vue")));
     app.component("PinoutLayout", PinoutLayout);
     app.component("SyncLayout", SyncLayout);
     app.component("ToolLayout", ToolLayout);

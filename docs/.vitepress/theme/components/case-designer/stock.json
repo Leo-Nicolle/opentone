@@ -1,0 +1,10 @@
+[
+  { "id": "r6020a", "kind": "Rectangular tube", "w": 60, "d": 20, "t": 1.5, "r": 1 },
+  { "id": "r6020b", "kind": "Rectangular tube", "w": 60, "d": 20, "t": 2, "r": 1.5 },
+  { "id": "r6015", "kind": "Rectangular tube", "w": 60, "d": 15, "t": 1.5, "r": 1 },
+  { "id": "r5020", "kind": "Rectangular tube", "w": 50, "d": 20, "t": 1.5, "r": 1 },
+  { "id": "r6025", "kind": "Rectangular tube", "w": 60, "d": 25, "t": 2, "r": 1.5 },
+  { "id": "r7020", "kind": "Rectangular tube", "w": 70, "d": 20, "t": 2, "r": 1.5 },
+  { "id": "u6020", "kind": "U-channel + flat lid", "w": 60, "d": 20, "t": 2, "r": 0.5, "u": true },
+  { "id": "custom", "kind": "Custom profile" }
+]

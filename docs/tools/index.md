@@ -5,6 +5,7 @@ Small web tools made while building opentone. They all run in the browser, with 
 <div class="op-cards">
   <a class="op-card" href="./sync"><strong>opentone Sync</strong><span>Fill the SD card from your music folders, right in the browser: see what's new, convert what the player can't play, remove albums.</span></a>
   <a class="op-card" href="./clickwheel"><strong>Click wheel designer</strong><span>Generate a capacitive click wheel footprint (pads and edge cuts) as PNG for KiCad, and simulate how the finger position is interpolated.</span></a>
+  <a class="op-card" href="./case-designer/"><strong>Case designer</strong><span>Design the aluminium case around the real 3D models: pick the stock, place the board and modules, mill the cutouts, generate the click-wheel parts and the printed fill, export STEP and 3MF.</span></a>
   <a class="op-card" href="./pinout"><strong>Pinout</strong><span>See which STM32F446 pin drives what on the final board (LQFP100) and on the Nucleo prototype (LQFP64).</span></a>
   <a class="op-card" href="./ui-builder"><strong>UI builder</strong><span>Preview every firmware screen, tweak the colour palette and export the sprites and theme headers.</span></a>
   <a class="op-card" href="./bench"><strong>Benchmarks</strong><span>Performance reports for each firmware version: scrolling, search, boot and audio playback measured on real hardware with a 20k-track library.</span></a>

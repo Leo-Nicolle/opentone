@@ -31,6 +31,7 @@ export default defineConfig({
         items: [
           { text: "opentone Sync", link: "/tools/sync" },
           { text: "Click wheel designer", link: "/tools/clickwheel" },
+          { text: "Case designer", link: "/tools/case-designer/" },
           { text: "Pinout", link: "/tools/pinout" },
           { text: "UI builder", link: "/tools/ui-builder" },
           { text: "Benchmarks", link: "/tools/bench" },
@@ -58,6 +59,7 @@ export default defineConfig({
             { text: "Overview", link: "/tools/" },
             { text: "opentone Sync", link: "/tools/sync" },
             { text: "Click wheel designer", link: "/tools/clickwheel" },
+            { text: "Case designer", link: "/tools/case-designer/" },
             { text: "UI builder", link: "/tools/ui-builder" },
             { text: "Benchmarks", link: "/tools/bench" },
             { text: "Live bench", link: "/tools/bench-live" },
@@ -112,6 +114,8 @@ export default defineConfig({
       alias: { "@bench": fileURLToPath(new URL("../../software/bench", import.meta.url)) },
     },
     server: { fs: { allow: [fileURLToPath(new URL("../..", import.meta.url))] } },
+    // The case designer's CAD worker loads OpenCascade, which needs an ES module worker.
+    worker: { format: "es" },
     ssr: {
       noExternal: ["naive-ui", "date-fns", "vueuc"],
     },
