@@ -7570,7 +7570,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 94.9452 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -7581,7 +7581,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8667086713681608704"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579707269996871680"
 			(at 93.98 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -7602,7 +7602,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 93.98 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -7613,7 +7613,7 @@
 				)
 			)
 		)
-		(property "Part number" "CC0603KRX7R9BB104"
+		(property "Part number" "CL05B104KO5NNNC"
 			(at 93.98 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -7646,7 +7646,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C1525"
 			(at 93.98 87.63 0)
 			(hide yes)
 			(show_name no)

@@ -818,6 +818,10 @@
       {
         "netclass": "USB",
         "pattern": "/Power/USB_C_DN"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/MCU/VCAP*"
       }
     ]
   },

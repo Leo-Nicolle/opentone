@@ -21,6 +21,12 @@
 	(condition "A.intersectsCourtyard('U501') || A.intersectsCourtyard('U1201') || A.intersectsCourtyard('U701') || A.intersectsCourtyard('J501') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('U15') || B.intersectsCourtyard('U501') || B.intersectsCourtyard('U1201') || B.intersectsCourtyard('U701') || B.intersectsCourtyard('J501') || B.intersectsCourtyard('VS1') || B.intersectsCourtyard('U15')")
 	(constraint clearance (min 0.15mm)))
 
+# Crystal pads sit 0.5 mm apart (row gap of the 3225 package): a 0.15 mm
+# crystal track between them leaves 0.175 mm to the GND pads.
+(rule "crystal_fanout"
+	(condition "A.intersectsCourtyard('Y401') || A.intersectsCourtyard('Y402') || A.intersectsCourtyard('Y1')")
+	(constraint clearance (min 0.15mm)))
+
 # Thermal isolation: GND/power pours keep 0.3 mm from MCU pads.
 (rule "mcu_pour_clearance"
 	(condition "A.Type == 'Zone' && B.Type == 'Pad' && (B.memberOfFootprint('U401') || B.memberOfFootprint('VS1') || B.memberOfFootprint('U101'))")
@@ -41,6 +47,14 @@
 # courtyard (keep it <= 1 mm and centred on the pad: checked by eye).
 (rule "power_neck_at_pad"
 	(condition "A.Type == 'Track' && (A.hasNetclass('Power') || A.hasNetclass('GND') || A.hasNetclass('AnalogPower')) && (A.intersectsCourtyard('U*') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('J*'))")
+	(constraint track_width (min 0.15mm) (opt 0.5mm) (max 0.5mm)))
+
+# MCU decoupling links: pin -> cap at signal width, then cap -> via -> plane.
+# A direct thin link beats pin -> via -> plane -> via -> cap (two vias in the
+# loop). Used where a 0.5 mm track cannot pass: U401 pin 6 -> C408, and the
+# VS1 CVDD/IOVDD/AVDD pins (0.5 mm pitch, caps fanned out around the chip).
+(rule "mcu_decoupling_links"
+	(condition "A.Type == 'Track' && (A.NetName == '/MCU/MCU_3V3' || A.NetName == '+1V8' || A.NetName == '+3.3VA')")
 	(constraint track_width (min 0.15mm) (opt 0.5mm) (max 0.5mm)))
 
 # --------------------------------------------------------------------- vias
@@ -70,16 +84,18 @@
 	(constraint disallow via))
 
 # No traces under the crystals, on any layer, except their own nets and GND.
+# Power-class (decoupling) vias may sit in the courtyard margin next to the
+# crystal: U401 pin 19's 3V3 via has no other legal spot between Y401 and U401.
 (rule "no_tracks_under_Y401"
-	(condition "(A.Type == 'Track' || A.Type == 'Via') && A.intersectsCourtyard('Y401') && A.NetName != '/MCU/HSE_IN' && A.NetName != '/MCU/HSE_OUT' && A.NetName != 'GND'")
+	(condition "(A.Type == 'Track' || (A.Type == 'Via' && !A.hasNetclass('Power'))) && A.intersectsCourtyard('Y401') && A.NetName != '/MCU/HSE_IN' && A.NetName != '/MCU/HSE_OUT' && A.NetName != 'GND'")
 	(constraint disallow track via))
 
 (rule "no_tracks_under_Y402"
-	(condition "(A.Type == 'Track' || A.Type == 'Via') && A.intersectsCourtyard('Y402') && A.NetName != '/MCU/LSE_IN' && A.NetName != '/MCU/LSE_OUT' && A.NetName != 'GND'")
+	(condition "(A.Type == 'Track' || (A.Type == 'Via' && !A.hasNetclass('Power'))) && A.intersectsCourtyard('Y402') && A.NetName != '/MCU/LSE_IN' && A.NetName != '/MCU/LSE_OUT' && A.NetName != 'GND'")
 	(constraint disallow track via))
 
 (rule "no_tracks_under_Y1"
-	(condition "(A.Type == 'Track' || A.Type == 'Via') && A.intersectsCourtyard('Y1') && A.NetName != 'Net-(VS1-XTALI)' && A.NetName != 'Net-(VS1-XTALO)' && A.NetName != 'GND'")
+	(condition "(A.Type == 'Track' || (A.Type == 'Via' && !A.hasNetclass('Power'))) && A.intersectsCourtyard('Y1') && A.NetName != 'Net-(VS1-XTALI)' && A.NetName != 'Net-(VS1-XTALO)' && A.NetName != 'GND'")
 	(constraint disallow track via))
 
 # ----------------------------------------------------------------- thermals
