@@ -54,9 +54,9 @@
 # loop). Used where a 0.5 mm track cannot pass: U401 pin 6 -> C408, and the
 # VS1 CVDD/IOVDD/AVDD pins (0.5 mm pitch, caps fanned out around the chip),
 # and the U701 supplies + charge-pump flying caps (0.4 mm pitch fan-out;
-# cap-to-cap links stay 0.5 mm).
+# cap-to-cap links stay 0.5 mm), and U502 DRV_VDD (0.5 mm pitch VSSOP).
 (rule "mcu_decoupling_links"
-	(condition "A.Type == 'Track' && (A.NetName == '/MCU/MCU_3V3' || A.NetName == '+1V8' || A.NetName == '+3.3VA' || A.NetName == '/DAC/DAC_1V8' || A.NetName == '/DAC/DAC_3V3' || A.NetName == 'Net-(U701-FLYP_VCP)' || A.NetName == 'Net-(U701-FLYC_VCP)' || A.NetName == 'Net-(U701-FLYN_VCP)' || A.NetName == 'Net-(U701-FLYP_VA)' || A.NetName == 'Net-(U701-FLYN_VA)')")
+	(condition "A.Type == 'Track' && (A.NetName == '/MCU/MCU_3V3' || A.NetName == '+1V8' || A.NetName == '+3.3VA' || A.NetName == '/DAC/DAC_1V8' || A.NetName == '/DAC/DAC_3V3' || A.NetName == 'Net-(U701-FLYP_VCP)' || A.NetName == 'Net-(U701-FLYC_VCP)' || A.NetName == 'Net-(U701-FLYN_VCP)' || A.NetName == 'Net-(U701-FLYP_VA)' || A.NetName == 'Net-(U701-FLYN_VA)' || A.NetName == '/Buttons/DRV_VDD')")
 	(constraint track_width (min 0.15mm) (opt 0.5mm) (max 0.5mm)))
 
 # --------------------------------------------------------------------- vias
