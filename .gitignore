@@ -31,6 +31,9 @@ scripts/*.zip
 scripts/*.h
 sd-card/
 hardware/*/*.stl
+hardware/opentone/exports/
+hardware/opentone/*.gbr
+hardware/opentone/*.drl
 hardware/*/*auto_saved_files*
 hardware/*/*autosave*
 hardware/*/\~*

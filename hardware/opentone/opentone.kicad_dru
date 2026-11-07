@@ -1,23 +1,92 @@
 (version 1)
 
-# Net class clearances (Power 0.2, Analog 0.25, Touch 0.3) are for routing.
+# Rules from notes/pcb-guidelines.md. Netclass widths/vias/clearances live in
+# opentone.kicad_pro; this file pins them (min = max) and adds the keep-outs.
+# Later rules override earlier ones when both match.
+
+# ---------------------------------------------------------------- clearances
+
 # Pads are spaced by their footprint (0.4 mm pitch QFNs, FPC connectors), so
 # pad-to-pad only needs the fab minimum.
 (rule "pad_to_pad"
 	(condition "A.Type == 'Pad' && B.Type == 'Pad'")
 	(constraint clearance (min 0.1mm)))
 
-# Touch controllers (MPR121, IQS7222A) have 0.4 mm pitch pins: the Touch 0.3 mm
-# (and Power/GND 0.2 mm) clearance cannot fit between them. Relax it only inside
-# the fanout rule areas (courtyard + 1 mm); electrode lines keep 0.3 mm beyond.
-(rule "touch_ic_fanout"
-	(condition "A.intersectsArea('fanout_U501') || A.intersectsArea('fanout_U1201') || B.intersectsArea('fanout_U501') || B.intersectsArea('fanout_U1201')")
+# Fine-pitch parts whose pins sit between Analog/Touch nets: the Touch 0.3 mm
+# and Analog 0.25 mm clearances cannot fit between their pins. Relax inside the
+# part's courtyard only (follows the part when it moves, unlike rule areas).
+# U501 MPR121, U1201 IQS7222A (0.4 mm), U701 CS43131 (0.4 mm), J501 wheel FPC,
+# VS1 VS1053b, U15 TPD4E05 (0.5 mm).
+(rule "fine_pitch_fanout"
+	(condition "A.intersectsCourtyard('U501') || A.intersectsCourtyard('U1201') || A.intersectsCourtyard('U701') || A.intersectsCourtyard('J501') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('U15') || B.intersectsCourtyard('U501') || B.intersectsCourtyard('U1201') || B.intersectsCourtyard('U701') || B.intersectsCourtyard('J501') || B.intersectsCourtyard('VS1') || B.intersectsCourtyard('U15')")
 	(constraint clearance (min 0.15mm)))
 
-# Same fanout relaxation for the other fine-pitch parts whose pins sit between
-# Analog/Touch nets: the DAC (U701, 0.4 mm QFN, GND pins next to the EP) and the
-# click wheel FPC (J501, 0.5 mm, GND pin between electrode pins), and the audio
-# codec VS1 / headphone amp U15 (0.5 mm pins carrying Analog nets).
-(rule "fine_pitch_fanout"
-	(condition "A.intersectsArea('fanout_U701') || A.intersectsArea('fanout_J501') || A.intersectsArea('fanout_VS1') || A.intersectsArea('fanout_U15') || B.intersectsArea('fanout_U701') || B.intersectsArea('fanout_J501') || B.intersectsArea('fanout_VS1') || B.intersectsArea('fanout_U15')")
-	(constraint clearance (min 0.15mm)))
+# Thermal isolation: GND/power pours keep 0.3 mm from MCU pads.
+(rule "mcu_pour_clearance"
+	(condition "A.Type == 'Zone' && B.Type == 'Pad' && (B.memberOfFootprint('U401') || B.memberOfFootprint('VS1') || B.memberOfFootprint('U101'))")
+	(constraint clearance (min 0.3mm)))
+
+# ------------------------------------------------------------ track widths
+# Two widths only: signal 0.15 mm, power 0.5 mm, one width per route.
+
+(rule "signal_width"
+	(condition "A.Type == 'Track' && !A.hasNetclass('Power') && !A.hasNetclass('GND') && !A.hasNetclass('AnalogPower')")
+	(constraint track_width (min 0.15mm) (opt 0.15mm) (max 0.15mm)))
+
+(rule "power_width"
+	(condition "A.Type == 'Track' && (A.hasNetclass('Power') || A.hasNetclass('GND') || A.hasNetclass('AnalogPower'))")
+	(constraint track_width (min 0.5mm) (opt 0.5mm) (max 0.5mm)))
+
+# Power necks to 0.15 mm only to enter a narrow pad, inside an IC/connector
+# courtyard (keep it <= 1 mm and centred on the pad: checked by eye).
+(rule "power_neck_at_pad"
+	(condition "A.Type == 'Track' && (A.hasNetclass('Power') || A.hasNetclass('GND') || A.hasNetclass('AnalogPower')) && (A.intersectsCourtyard('U*') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('J*'))")
+	(constraint track_width (min 0.15mm) (opt 0.5mm) (max 0.5mm)))
+
+# --------------------------------------------------------------------- vias
+# Two vias only: signal 0.45/0.25, power + stitching 0.6/0.3.
+
+(rule "signal_via"
+	(condition "A.Type == 'Via' && !A.hasNetclass('Power') && !A.hasNetclass('GND') && !A.hasNetclass('AnalogPower')")
+	(constraint via_diameter (min 0.45mm) (opt 0.45mm) (max 0.45mm))
+	(constraint hole_size (min 0.25mm) (opt 0.25mm) (max 0.25mm)))
+
+(rule "power_via"
+	(condition "A.Type == 'Via' && (A.hasNetclass('Power') || A.hasNetclass('GND') || A.hasNetclass('AnalogPower'))")
+	(constraint via_diameter (min 0.6mm) (opt 0.6mm) (max 0.6mm))
+	(constraint hole_size (min 0.3mm) (opt 0.3mm) (max 0.3mm)))
+
+# ---------------------------------------------------------------- keep-outs
+
+# No traces under the MCUs (STM32 U401, VS1053b VS1, BT module U101): only
+# their own F.Cu fan-out inside the courtyard, nothing on inner/bottom layers.
+(rule "no_tracks_under_mcu"
+	(condition "A.Type == 'Track' && A.Layer != 'F.Cu' && (A.intersectsCourtyard('U401') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('U101'))")
+	(constraint disallow track))
+
+# Only GND stitching vias under an MCU body.
+(rule "no_vias_under_mcu"
+	(condition "A.Type == 'Via' && A.NetName != 'GND' && (A.intersectsCourtyard('U401') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('U101'))")
+	(constraint disallow via))
+
+# No traces under the crystals, on any layer, except their own nets and GND.
+(rule "no_tracks_under_Y401"
+	(condition "(A.Type == 'Track' || A.Type == 'Via') && A.intersectsCourtyard('Y401') && A.NetName != '/MCU/HSE_IN' && A.NetName != '/MCU/HSE_OUT' && A.NetName != 'GND'")
+	(constraint disallow track via))
+
+(rule "no_tracks_under_Y402"
+	(condition "(A.Type == 'Track' || A.Type == 'Via') && A.intersectsCourtyard('Y402') && A.NetName != '/MCU/LSE_IN' && A.NetName != '/MCU/LSE_OUT' && A.NetName != 'GND'")
+	(constraint disallow track via))
+
+(rule "no_tracks_under_Y1"
+	(condition "(A.Type == 'Track' || A.Type == 'Via') && A.intersectsCourtyard('Y1') && A.NetName != 'Net-(VS1-XTALI)' && A.NetName != 'Net-(VS1-XTALO)' && A.NetName != 'GND'")
+	(constraint disallow track via))
+
+# ----------------------------------------------------------------- thermals
+# GND pads in pours: thermal relief, gap 0.3 mm, spokes 0.3 mm. (>= 2 spokes
+# is the board setting min_resolved_spokes; it is not a DRU constraint — adding
+# it here makes KiCad silently ignore this whole file.)
+(rule "thermal_reliefs"
+	(condition "A.Type == 'Zone' || B.Type == 'Zone'")
+	(constraint thermal_relief_gap (min 0.3mm))
+	(constraint thermal_spoke_width (min 0.3mm)))

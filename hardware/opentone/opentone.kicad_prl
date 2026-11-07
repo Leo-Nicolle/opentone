@@ -4,10 +4,8 @@
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
-    "hidden_nets": [
-      "GND"
-    ],
-    "high_contrast_mode": 1,
+    "hidden_nets": [],
+    "high_contrast_mode": 0,
     "net_color_mode": 1,
     "opacity": {
       "images": 0.6,
@@ -46,13 +44,13 @@
       "drawing_sheet",
       "bitmaps",
       "pads",
-      "zones",
       "drc_warnings",
       "locked_item_shadows",
       "conflict_shadows",
-      "shapes"
+      "shapes",
+      "ly_points"
     ],
-    "visible_layers": "ffffffff_ffffffff_ff555575_f7555575",
+    "visible_layers": "ffffffff_ffffffff_ff55557d_df5577f7",
     "zone_display_mode": 0
   },
   "git": {
