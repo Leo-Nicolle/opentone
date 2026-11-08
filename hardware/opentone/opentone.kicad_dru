@@ -27,6 +27,20 @@
 	(condition "A.intersectsCourtyard('Y401') || A.intersectsCourtyard('Y402') || A.intersectsCourtyard('Y1')")
 	(constraint clearance (min 0.15mm)))
 
+# Headphone 2 bundle out of U701: sleeve / R / L / sleeve packed at 0.3 mm pitch,
+# so the audio lines sit between their own reference lines. Amp-driven, low
+# impedance, about 6 mm long: only relaxed between these three nets.
+(rule "hp2_bundle"
+	(condition "(A.NetName == '/DAC/HP2_L' || A.NetName == '/DAC/HP2_R' || A.NetName == '/DAC/HP2_SLEEVE') && (B.NetName == '/DAC/HP2_L' || B.NetName == '/DAC/HP2_R' || B.NetName == '/DAC/HP2_SLEEVE')")
+	(constraint clearance (min 0.15mm)))
+
+# BT module sits at the board edge by design (castellated pads, antenna in the
+# notch), so its pads are exempt from the board-edge clearance.
+(rule "bt_module_at_edge"
+	(severity ignore)
+	(condition "A.memberOfFootprint('U101')")
+	(constraint edge_clearance (min 0mm)))
+
 # Thermal isolation: GND/power pours keep 0.3 mm from MCU pads.
 (rule "mcu_pour_clearance"
 	(condition "A.Type == 'Zone' && B.Type == 'Pad' && (B.memberOfFootprint('U401') || B.memberOfFootprint('VS1') || B.memberOfFootprint('U101'))")
@@ -46,7 +60,7 @@
 # Power necks to 0.15 mm only to enter a narrow pad, inside an IC/connector
 # courtyard (keep it <= 1 mm and centred on the pad: checked by eye).
 (rule "power_neck_at_pad"
-	(condition "A.Type == 'Track' && (A.hasNetclass('Power') || A.hasNetclass('GND') || A.hasNetclass('AnalogPower')) && (A.intersectsCourtyard('U*') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('J*'))")
+	(condition "A.Type == 'Track' && (A.hasNetclass('Power') || A.hasNetclass('GND') || A.hasNetclass('AnalogPower')) && (A.intersectsCourtyard('U*') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('J*') || A.intersectsCourtyard('bat-man1'))")
 	(constraint track_width (min 0.15mm) (opt 0.5mm) (max 0.5mm)))
 
 # MCU decoupling links: pin -> cap at signal width, then cap -> via -> plane.
@@ -56,7 +70,7 @@
 # and the U701 supplies + charge-pump flying caps (0.4 mm pitch fan-out;
 # cap-to-cap links stay 0.5 mm), and U502 DRV_VDD (0.5 mm pitch VSSOP).
 (rule "mcu_decoupling_links"
-	(condition "A.Type == 'Track' && (A.NetName == '/MCU/MCU_3V3' || A.NetName == '+1V8' || A.NetName == '+3.3VA' || A.NetName == '/DAC/DAC_1V8' || A.NetName == '/DAC/DAC_3V3' || A.NetName == 'Net-(U701-FLYP_VCP)' || A.NetName == 'Net-(U701-FLYC_VCP)' || A.NetName == 'Net-(U701-FLYN_VCP)' || A.NetName == 'Net-(U701-FLYP_VA)' || A.NetName == 'Net-(U701-FLYN_VA)' || A.NetName == '/Buttons/DRV_VDD')")
+	(condition "A.Type == 'Track' && (A.NetName == '/MCU/MCU_3V3' || A.NetName == '+1V8' || A.NetName == '+3.3VA' || A.NetName == '/DAC/DAC_1V8' || A.NetName == '/DAC/DAC_3V3' || A.NetName == 'Net-(U701-FLYP_VCP)' || A.NetName == 'Net-(U701-FLYC_VCP)' || A.NetName == 'Net-(U701-FLYN_VCP)' || A.NetName == 'Net-(U701-FLYP_VA)' || A.NetName == 'Net-(U701-FLYN_VA)' || A.NetName == '/Buttons/DRV_VDD' || A.NetName == '/Buttons/MPR_VDD')")
 	(constraint track_width (min 0.15mm) (opt 0.5mm) (max 0.5mm)))
 
 # --------------------------------------------------------------------- vias
@@ -74,15 +88,11 @@
 
 # ---------------------------------------------------------------- keep-outs
 
-# No traces under the MCUs (STM32 U401, VS1053b VS1, BT module U101): only
-# their own F.Cu fan-out inside the courtyard, nothing on inner/bottom layers.
-(rule "no_tracks_under_mcu"
-	(condition "A.Type == 'Track' && A.Layer != 'F.Cu' && (A.intersectsCourtyard('U401') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('U101'))")
-	(constraint disallow track))
-
-# Only GND stitching vias under an MCU body.
-(rule "no_vias_under_mcu"
-	(condition "A.Type == 'Via' && A.NetName != 'GND' && (A.intersectsCourtyard('U401') || A.intersectsCourtyard('VS1') || A.intersectsCourtyard('U101'))")
+# BT module: no signal vias under it (RF module, antenna end kept clear by its
+# footprint keep-outs). U401 / VS1 are deliberately not restricted: In1 is solid
+# between F.Cu and everything below, and inner-ring fan-out is normal on LQFPs.
+(rule "no_vias_under_bt_module"
+	(condition "A.Type == 'Via' && A.NetName != 'GND' && A.intersectsCourtyard('U101')")
 	(constraint disallow via))
 
 # No traces under the crystals, on any layer, except their own nets and GND.

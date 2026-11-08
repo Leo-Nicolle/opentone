@@ -60,13 +60,13 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.2,
+          "min_clearance": 0.0,
           "min_island_area": 10.0,
-          "min_thickness": 0.2,
+          "min_thickness": 0.25,
           "pad_connection": 1,
           "remove_islands": 0,
-          "thermal_relief_gap": 0.3,
-          "thermal_relief_spoke_width": 0.3
+          "thermal_relief_gap": 0.5,
+          "thermal_relief_spoke_width": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -562,7 +562,6 @@
         "bus_width": 12,
         "clearance": 0.25,
         "diff_pair_gap": 0.2,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.15,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -581,7 +580,6 @@
         "bus_width": 12,
         "clearance": 0.25,
         "diff_pair_gap": 0.2,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.15,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -600,7 +598,6 @@
         "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.2,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.15,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -616,10 +613,16 @@
         "wire_width": 6
       },
       {
+        "name": "Noisy",
+        "pcb_color": "rgb(230, 60, 60)",
+        "priority": 7,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
+      },
+      {
         "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.2,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.15,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -635,10 +638,16 @@
         "wire_width": 6
       },
       {
+        "name": "Quiet",
+        "pcb_color": "rgb(97, 203, 43)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
+      },
+      {
         "bus_width": 12,
         "clearance": 0.3,
         "diff_pair_gap": 0.2,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.15,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -657,7 +666,6 @@
         "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.2,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.15,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -822,6 +830,190 @@
       {
         "netclass": "Power",
         "pattern": "/MCU/VCAP*"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "Net-(JP1-A)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/MCU/HSE_*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/MCU/LSE_*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/Audio/HP_*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/DAC/HP2_L"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/DAC/HP2_R"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/DAC/HP2_SLEEVE"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/DAC/DAC_FILT*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/DAC/DAC_NVA"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(VS1-RCAP)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(C3-Pad2)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(C9-Pad2)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(C29-Pad2)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/Touch/IQS_CRX*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "MPR_WHEEL_*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(JP120*-B)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(U501-REXT)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(U501-VREG)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/Touch/IQS_VREG*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/Power/3V3_FB"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(U201-+)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(U301-+)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/Screens/TFT*_BL_S"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "NRST"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/MCU/BOOT0"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "USB_D*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/Power/USB_C_D*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "Net-(VS1-XTAL*)"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "WHEEL_*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "+3.3VA"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/Power/AVDD_*"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "/MCU/MCU_VDDA"
+      },
+      {
+        "netclass": "Quiet",
+        "pattern": "GNDA"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "Net-(U11-L*)"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "Net-(U701-FLY*)"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "/DAC/DAC_VCPFILT*"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "SD_CK"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "PSRAM_CLK"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "I2S_MCLK"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "I2S_SCLK"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "I2S_LRCK"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "/DAC/DAC_MCLK"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "/DAC/DAC_SCLK"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "/DAC/DAC_LRCK"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "SPI2_SCK"
+      },
+      {
+        "netclass": "Noisy",
+        "pattern": "TFT_WR"
       }
     ]
   },
