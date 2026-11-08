@@ -118,8 +118,8 @@
 		)
 		(capping no)
 		(filling no)
-		(aux_axis_origin 31.5 79.5)
-		(grid_origin 31.5 79.5)
+		(aux_axis_origin 23 79.5)
+		(grid_origin 23 79.5)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -77796,7 +77796,7 @@
 	)
 	(gr_line
 		(start 145.9 79.5)
-		(end 181.5 79.5)
+		(end 185 79.5)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -77815,7 +77815,17 @@
 		(uuid "39eb4c29-260c-4320-b2c4-3d440d012b65")
 	)
 	(gr_line
-		(start 181.5 179.5)
+		(start 185 79.5)
+		(end 185 179.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "65a8d562-b7d1-4ccc-b882-3731b164f9ba")
+	)
+	(gr_line
+		(start 185 179.5)
 		(end 23 179.5)
 		(stroke
 			(width 0.05)
@@ -77823,16 +77833,6 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "cf58c1cc-c1cc-4b38-a2aa-a97e9561b97c")
-	)
-	(gr_line
-		(start 185 86)
-		(end 185 186)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "65a8d562-b7d1-4ccc-b882-3731b164f9ba")
 	)
 	(segment
 		(start 162 131.075)
