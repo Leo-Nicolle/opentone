@@ -49,3 +49,7 @@ hardware/opentone/.history
 
 # Rust sync tool build output
 syncer/target/
+
+# Third-party 3D models that cannot be redistributed (see THIRD_PARTY.md)
+hardware/opentone/3dmodels/opentone.3dshapes/
+hardware/opentone/jack/SJ-43515TS-SMT-TR.step
