@@ -118,3 +118,10 @@
 	(condition "A.Type == 'Zone' || B.Type == 'Zone'")
 	(constraint thermal_relief_gap (min 0.3mm))
 	(constraint thermal_spoke_width (min 0.3mm)))
+
+# Edge-mounted / fine-pitch connector GND pads: the pour can only reach them from
+# one side, so a thermal relief cannot get 2 spokes. These parts are reflowed, and
+# the USB and BT grounds benefit from the lower impedance: connect them solid.
+(rule "solid_gnd_edge_pads"
+	(condition "A.Type == 'Pad' && A.NetName == 'GND' && (A.memberOfFootprint('U101') || A.memberOfFootprint('J201') || A.memberOfFootprint('USB1'))")
+	(constraint zone_connection solid))
