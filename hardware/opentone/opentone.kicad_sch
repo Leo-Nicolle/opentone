@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "0122bb8c-dbef-4db1-a6c6-9be780a38d9f")
 	(paper "A4")
+	(title_block
+		(title "OpenTone")
+		(date "2026-11-08")
+		(rev "0.1")
+	)
 	(lib_symbols)
 	(sheet
 		(at 160.02 96.52)
