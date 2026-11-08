@@ -8226,7 +8226,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDA")
+		(lib_id "power:GND")
 		(at 82.55 143.51 0)
 		(unit 1)
 		(body_style 1)
@@ -8247,7 +8247,7 @@
 				)
 			)
 		)
-		(property "Value" "GNDA"
+		(property "Value" "GND"
 			(at 82.55 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8279,7 +8279,7 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 82.55 143.51 0)
 			(hide yes)
 			(show_name no)

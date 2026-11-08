@@ -58,7 +58,7 @@
     },
 
     "MPR121QR2": { "category": "input" },
-    "IQS7222A102QFR": { "category": "input", "file": "datasheets/input/iqs7222a.pdf", "url": "https://www.azoteq.com/images/stories/pdf/iqs7222a_datasheet.pdf" },
+    "IQS7222A001QNR": { "category": "input", "file": "datasheets/input/iqs7222a.pdf", "url": "https://www.azoteq.com/images/stories/pdf/iqs7222a_datasheet.pdf" },
     "DRV2605LDGSR": { "category": "input", "file": "datasheets/input/drv2605l.pdf" },
     "SKQGAFE010": { "category": "input" },
     "PCM13SMTR": { "category": "input" },

@@ -5011,7 +5011,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2681320"
 			(at 66.04 76.2 0)
 			(hide yes)
 			(show_name no)
