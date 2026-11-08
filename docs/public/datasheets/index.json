@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-07",
+  "generated": "2026-11-08",
   "source": "hardware/opentone/*.kicad_sch + datasheets/overrides.json",
   "generator": "scripts/datasheets.py",
   "categories": [
@@ -20,7 +20,7 @@
       "id": "cs43131-cnz",
       "mpn": "CS43131-CNZ",
       "manufacturer": "Cirrus Logic",
-      "lcsc": "",
+      "lcsc": "C1554759",
       "category": "audio",
       "description": "130 dB 32-bit DAC + Class H headphone amp, QFN-40. I2C 0x30 (ADR to GND), MCLK 12.288 MHz from the VS1053 through the PLL",
       "values": [
@@ -688,7 +688,7 @@
       "id": "drv2605ldgsr",
       "mpn": "DRV2605LDGSR",
       "manufacturer": "Texas Instruments",
-      "lcsc": "",
+      "lcsc": "C527464",
       "category": "input",
       "description": "Haptic driver for LRAs and ERMs with effect library, 2-5.2V, VSSOP-10",
       "values": [
@@ -705,12 +705,12 @@
       "file": "datasheets/input/drv2605l.pdf"
     },
     {
-      "id": "iqs7222a102qfr",
-      "mpn": "IQS7222A102QFR",
+      "id": "iqs7222a001qnr",
+      "mpn": "IQS7222A001QNR",
       "manufacturer": "Azoteq",
-      "lcsc": "",
+      "lcsc": "C3827627",
       "category": "input",
-      "description": "Click wheel touch controller (self-capacitance), I2C 0x57 (order code 102)",
+      "description": "Click wheel touch controller (self-capacitance), I2C 0x44 (order code 001)",
       "values": [
         "IQS7222A"
       ],
@@ -748,7 +748,7 @@
       "id": "pcm13smtr",
       "mpn": "PCM13SMTR",
       "manufacturer": "C&K",
-      "lcsc": "",
+      "lcsc": "C221842",
       "category": "input",
       "description": "",
       "values": [
@@ -873,7 +873,7 @@
       "id": "aps6404l-3sqn-sn",
       "mpn": "APS6404L-3SQN-SN",
       "manufacturer": "AP Memory",
-      "lcsc": "",
+      "lcsc": "C3028887",
       "category": "memory",
       "description": "",
       "values": [
@@ -1250,10 +1250,12 @@
       ],
       "refs": [
         "R2",
-        "R14"
+        "R14",
+        "R405"
       ],
       "sheets": [
-        "audio"
+        "audio",
+        "mcu"
       ],
       "inBom": true,
       "url": "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706172544782336",
@@ -1546,6 +1548,8 @@
         "C408",
         "C410",
         "C417",
+        "C418",
+        "C419",
         "C501",
         "C503",
         "C505",
@@ -1986,7 +1990,7 @@
       "id": "max17048g-t10",
       "mpn": "MAX17048G+T10",
       "manufacturer": "Analog Devices",
-      "lcsc": "",
+      "lcsc": "C2682616",
       "category": "power",
       "description": "1-cell LiPo fuel gauge, ModelGauge, I2C 0x36, TDFN-8 2x2 (T822+3)",
       "values": [
@@ -2026,7 +2030,7 @@
       "id": "tps22917dbvr",
       "mpn": "TPS22917DBVR",
       "manufacturer": "Texas Instruments",
-      "lcsc": "",
+      "lcsc": "C2681320",
       "category": "power",
       "description": "Load switch, 1-5.5 V, 2 A, adjustable slew rate, quick output discharge",
       "values": [
@@ -2048,7 +2052,7 @@
       "id": "tps63802dlar",
       "mpn": "TPS63802DLAR",
       "manufacturer": "Texas Instruments",
-      "lcsc": "",
+      "lcsc": "C2845237",
       "category": "power",
       "description": "2-A buck-boost converter, 1.3-5.5 V in, adjustable out (VFB 500 mV), 11 uA Iq, VSON-HR-10 (DLA)",
       "values": [
@@ -2068,7 +2072,7 @@
       "id": "tps7a2018pdbvr",
       "mpn": "TPS7A2018PDBVR",
       "manufacturer": "Texas Instruments",
-      "lcsc": "",
+      "lcsc": "C963430",
       "category": "power",
       "description": "300 mA ultra-low-noise LDO, 1.8 V fixed, active discharge, SOT-23-5. CS43131 VA/VCP/VD/VL (DAC_1V8), EN on DAC_EN",
       "values": [
@@ -2090,7 +2094,7 @@
       "id": "tps7a2033pdbvr",
       "mpn": "TPS7A2033PDBVR",
       "manufacturer": "Texas Instruments",
-      "lcsc": "",
+      "lcsc": "C2862740",
       "category": "power",
       "description": "300 mA ultra-low-noise LDO, 3.3 V fixed, active discharge, SOT-23-5. VS1053 AVDD/IOVDD (+3.3VA via JP4)",
       "values": [
